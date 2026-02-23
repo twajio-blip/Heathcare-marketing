@@ -1,0 +1,426 @@
+/* ---------------------------------------------------
+   Imports
+--------------------------------------------------- */
+@import "tailwindcss";
+@source "../node_modules/flowbite";
+
+/* ---------------------------------------------------
+   Tailwind Custom Theme
+--------------------------------------------------- */
+@theme {
+  /* -------------------------
+     Colors
+  ------------------------- */
+  --color-skin-primary: #2563EB;
+  /* #2563EB */
+  --color-skin-primary-2: #0D9488;
+  /* #0D9488 (Teal 600) - Strong 2nd Primary */
+  --color-skin-secondary: oklch(0.75 0.0861 65.3);
+  /* #d4a373 */
+  --color-skin-accent: oklch(0.765 0.0691 92.43);
+  /* #a38b5f */
+  --color-skin-accent-dark: oklch(0.5466 0.0916 90.44);
+  /* #685126 */
+  --color-skin-secondary-1: #DBEAFE;
+  /* #b5bdc0 */
+  --color-skin-secondary-2: oklch(0.9659 0.0025 228.78);
+  /* #f2f4f5 */
+  --color-skin-secondary-3: oklch(1 0 0);
+  /* #ffffff */
+  --color-skin-neutral: oklch(0.9761 0 0);
+  /* #f7f7f7 */
+  --color-skin-background: oklch(1 0 0);
+  /* #ffffff */
+
+
+  /* Breakpoints */
+  --breakpoint-xs: 540px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 720px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1140px;
+  --breakpoint-2xl: 1140px;
+
+  /* -------------------------
+     Spacing
+  ------------------------- */
+  --spacing-section-t-desktop: 4rem;
+  --spacing-section-t-tab: 3rem;
+  --spacing-section-t-mobile: 2rem;
+
+  --spacing-section-x-desktop: 20px;
+  --spacing-section-x-tab: 20px;
+  --spacing-section-x-mobile: 20px;
+
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 1.5rem;
+  --spacing-huge: 2rem;
+
+  /* -------------------------
+     Rounded
+  ------------------------- */
+  --radius-sm: 0.125rem;
+  /* 2px */
+  --radius-md: 0.375rem;
+  /* 6px */
+  --radius-lg: 0.5rem;
+  /* 8px */
+  --radius-xl: 0.75rem;
+  /* 12px */
+  --radius-2xl: 1rem;
+  /* 16px */
+  --radius-3xl: 1.5rem;
+  /* 24px */
+  --radius-full: 9999px;
+  /* Fully circular */
+
+  /* -------------------------
+     Shadow
+  ------------------------- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.2);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  /* -------------------------
+     Text Sizes
+  ------------------------- */
+  --text-size-heading: 32px;
+  --text-size-sub-heading: 16px;
+  --text-size-badge: 22px;
+
+  /* -------------------------
+     Fonts
+  ------------------------- */
+  --font-poppins: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-quicksand: "Quicksand", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* -------------------------
+     Animations
+  ------------------------- */
+
+  /* Ken Burns Scale Down */
+  --animate-ken-burns-scale-down: ken-burns-scale-down 8s ease-in-out;
+
+  @keyframes ken-burns-scale-down {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0.9);
+    }
+  }
+
+  /* Ken Burns Scale Up */
+  --animate-ken-burns-scale-up: ken-burns-scale-up 8s ease-in-out forwards;
+
+  @keyframes ken-burns-scale-up {
+    0% {
+      transform: scale(0.9);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Product Ken Burns */
+  --animate-product-ken-burns-scale-up: product-ken-burns-scale-up 3s ease-in-out forwards;
+
+  @keyframes product-ken-burns-scale-up {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  /* Rotate */
+  --animate-rotate: rotate 12s linear infinite;
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Roll */
+  --animate-roll: roll 1.5s ease-in-out infinite;
+
+  @keyframes roll {
+    0% {
+      transform: translateX(0) rotate(0deg);
+    }
+
+    25% {
+      transform: translateX(10px) rotate(10deg);
+    }
+
+    50% {
+      transform: translateX(-10px) rotate(-10deg);
+    }
+
+    75% {
+      transform: translateX(10px) rotate(10deg);
+    }
+
+    100% {
+      transform: translateX(0) rotate(0deg);
+    }
+  }
+
+  /* Fade Slide */
+  --animate-fadeSlide: fadeSlide 1s cubic-bezier(0.5, 1, 0.7, 1) forwards;
+
+  @keyframes fadeSlide {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Width Slide */
+  --animate-widthSlide: widthSlide 1s cubic-bezier(0.5, 1, 0.7, 1) forwards;
+
+  @keyframes widthSlide {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+
+  /* Left Slide */
+  --animate-leftSlide: leftSlide 0.7s cubic-bezier(0.5, 1, 0.7, 1) forwards;
+
+  @keyframes leftSlide {
+    0% {
+      left: 0;
+    }
+
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Slide In Out */
+  --animate-slide-in-out: slide-in-out 700ms forwards ease-out;
+
+  @keyframes slide-in-out {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    50% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* Slide Up */
+  --animate-slide-up: slide-up 700ms forwards ease-out;
+
+  @keyframes slide-up {
+    0% {
+      transform: translateY(50%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  /* Slide Scale */
+  --animate-slide-scale: slide-scale 700ms forwards ease-out;
+
+  @keyframes slide-scale {
+    0% {
+      transform: scale(0.7);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Slide Rotate */
+  --animate-slide-rotate: slide-rotate 700ms forwards ease-out;
+
+  @keyframes slide-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(90deg);
+    }
+  }
+
+  /* Letter flip in */
+  --animate-letter-flip-in: letter-flip-in 0.6s forwards ease-out;
+
+  @keyframes letter-flip-in {
+    from {
+      transform: rotateX(90deg);
+      opacity: 0;
+    }
+
+    to {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
+
+  /* Letter flip out */
+  --animate-letter-flip-out: letter-flip-out 0.4s forwards ease-in;
+
+  @keyframes letter-flip-out {
+    from {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+
+    to {
+      transform: rotateX(90deg);
+      opacity: 0;
+    }
+  }
+
+  /* billboard */
+  --animate-shutters: shutters 2s ease-in-out reverse;
+
+  @keyframes shutters {
+    0% {
+      clip-path: polygon(0% 0%,
+          10% 0%,
+          10% 100%,
+          10% 100%,
+          10% 0%,
+          20% 0%,
+          20% 100%,
+          20% 100%,
+          20% 0%,
+          30% 0%,
+          30% 100%,
+          30% 100%,
+          30% 0%,
+          40% 0%,
+          40% 100%,
+          40% 100%,
+          40% 0%,
+          50% 0%,
+          50% 100%,
+          50% 100%,
+          50% 0%,
+          60% 0%,
+          60% 100%,
+          60% 100%,
+          60% 0%,
+          70% 0%,
+          70% 100%,
+          70% 100%,
+          70% 0%,
+          80% 0%,
+          80% 100%,
+          80% 100%,
+          80% 0%,
+          90% 0%,
+          90% 100%,
+          90% 100%,
+          90% 0%,
+          100% 0%,
+          100% 100%,
+          0% 100%);
+    }
+
+    100% {
+      clip-path: polygon(10% 0%,
+          10% 0%,
+          10% 100%,
+          20% 100%,
+          20% 0%,
+          20% 0%,
+          20% 100%,
+          30% 100%,
+          30% 0%,
+          30% 0%,
+          30% 100%,
+          40% 100%,
+          40% 0%,
+          40% 0%,
+          40% 100%,
+          50% 100%,
+          50% 0%,
+          50% 0%,
+          50% 100%,
+          60% 100%,
+          60% 0%,
+          60% 0%,
+          60% 100%,
+          70% 100%,
+          70% 0%,
+          70% 0%,
+          70% 100%,
+          80% 100%,
+          80% 0%,
+          80% 0%,
+          80% 100%,
+          90% 100%,
+          90% 0%,
+          90% 0%,
+          90% 100%,
+          100% 100%,
+          100% 0%,
+          100% 0%,
+          100% 100%,
+          10% 100%);
+    }
+  }
+
+  /* Blink */
+  --animate-blink: blink 1s ease-in-out infinite;
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+@import "./general.css";
+/* 
+@import "./custom/pages/_swiper-slider.css";
+@import "./custom/pages/_modal.css";
+@import "./custom/pages/_glossy.css";
+@import "./custom/pages/_tooltip.css";
+@import "./custom/pages/_fixed-search.css";
+@import "./custom/pages/_range-slider.css";
+@import "./custom/pages/_accordion.css"; 
+*/
+/* @import "./custom/pages/_preloader.css"; */
