@@ -1,20 +1,20 @@
 <!-- NAVBAR START -->
-<nav class="absolute top-0 left-0 w-full z-50 transition-all duration-300 transform translate-y-0" id="navbar">
-    <div id="nav-primary" class="container-custom flex flex-col transition-all duration-300 origin-top">
-        <div class="flex justify-between items-stretch">
+<nav class="absolute top-0 left-0 w-full z-50 shadow-lg backdrop-blur-sm" id="navbar">
+    <div class="container-custom flex flex-col transition-all duration-300 origin-top">
+        <div id="nav-primary" class="hidden lg:flex justify-between items-stretch ">
             <div class="w-25 h-25 flex items-center my-medium">
                 <img src="/src/images/Legacy_Health_Growth-removebg.png" alt="OmniCare-logo">
             </div>
             <div class="flex items-center gap-medium pb-huge">
                 <div class="flex items-center gap-small">
-                    <i class="fa-solid fa-phone-volume text-skin-primary text-2xl"></i>
+                    <i class="fa-solid fa-phone-volume text-skin-primary text-size-badge"></i>
                     <div>
                         <p class="text-sm font-quicksand">Contact Number</p>
                         <p class="text-sm font-poppins">+8801718-868394</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-small">
-                    <i class="fa-solid fa-envelope text-skin-primary text-2xl"></i>
+                    <i class="fa-solid fa-envelope text-skin-primary text-size-badge"></i>
                     <div>
                         <p class="text-sm font-quicksand">Email Address</p>
                         <p class="text-sm font-poppins">contact@legacyhealthgrowth.com</p>
@@ -29,52 +29,71 @@
                     <div class="w-px h-[150%] bg-skin-primary rotate-20"></div>
                 </div>
                 <div class="flex items-center gap-medium text-skin-primary">
-                    <a href="#" class="hover:text-amber-500 transition-colors">
+                    <a href="#" class="hover:text-skin-primary-2 transition-colors">
                         <i class="fa-brands fa-facebook-f text-lg"></i>
                     </a>
-                    <a href="#" class="hover:text-amber-500 transition-colors">
+                    <a href="#" class="hover:text-skin-primary-2 transition-colors">
                         <i class="fa-brands fa-twitter text-lg"></i>
                     </a>
-                    <a href="#" class="hover:text-amber-500 transition-colors">
+                    <a href="#" class="hover:text-skin-primary-2 transition-colors">
                         <i class="fa-brands fa-linkedin-in text-lg"></i>
                     </a>
                 </div>
             </div>
 
         </div>
-        <div class="absolute flex justify-between w-full items-center h-20 mt-25 right-0 z-[-1] overflow-hidden"
-            style="filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.15));">
+        <!-- Full-width Wrapper for Secondary Nav -->
+        <div id="nav-secondary-wrapper" class="absolute left-0 right-0 lg:mt-25 z-10 w-full drop-shadow-xl">
+            <!-- Full-width Background -->
             <div id="nav-secondary-bg"
-                class="absolute right-0 top-0 h-full w-[70%] bg-skin-primary transition-all duration-300"
-                style="clip-path: polygon(0 0, 100% 0, 100% 100%, 35px 100%);"></div>
-            <div class="container-custom relative hidden md:flex space-x-8 items-center justify-end h-full">
-                <div id="nav-secondary-logo"
-                    class="absolute left-0 w-25 h-25 flex items-center my-medium opacity-0 invisible transition-all duration-300">
-                    <img src="/src/images/Legacy_Health_Growth-removebg.png" alt="OmniCare-logo">
+                class="absolute right-0 top-0 h-full w-full bg-skin-primary lg:w-[75%] xl:w-[65%] lg:[clip-path:polygon(0_0,100%_0,100%_100%,35px_100%)]">
+            </div>
+
+            <!-- Inner Container for Content Alignment -->
+            <div id="nav-secondary-container"
+                class="container-custom relative flex items-center py-large md:py-huge lg:py-large">
+                <div id="nav-secondary"
+                    class="w-full relative flex items-center justify-end h-full transition-all duration-500">
+                    <div id="nav-secondary-logo"
+                        class="absolute lg:hidden left-0 w-18 md:w-23 h-18 md:h-23 items-center transition-all duration-300">
+                        <img src="/src/images/Legacy_Health_Growth-removebg.png" alt="OmniCare-logo"
+                            class="h-full object-contain">
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                        class="lg:hidden flex items-center justify-center text-skin-secondary-2 text-[28px] focus:outline-none z-20 relative">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div id="mobile-menu-items"
+                        class="fixed top-0 -left-full lg:static w-60 lg:w-auto h-screen lg:h-auto bg-skin-primary-2 lg:bg-transparent flex flex-col lg:flex-row items-left lg:items-center gap-medium xl:gap-huge p-large pt-25 lg:p-0 lg:pt-0 transition-all duration-300 shadow-md lg:shadow-none z-50">
+                        <a href="#services"
+                            class="text-size-sub-heading font-semibold text-skin-secondary-2 hover:text-skin-secondary-1 transition-colors relative z-10">Home</a>
+                        <a href="#about"
+                            class="text-size-sub-heading font-semibold text-skin-secondary-2 hover:text-skin-secondary-1 transition-colors relative z-10">About
+                            Us</a>
+                        <a href="#testimonials"
+                            class="text-size-sub-heading font-semibold text-skin-secondary-2 hover:text-skin-secondary-1 transition-colors relative z-10">Who
+                            we help</a>
+                        <a href="#testimonials"
+                            class="group flex items-center gap-1 text-size-sub-heading font-semibold text-skin-secondary-2 hover:text-skin-secondary-1 transition-colors relative z-10">
+                            Service
+                            <i
+                                class="fa-solid fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                        </a>
+                        <a href="#testimonials"
+                            class="text-size-sub-heading font-semibold text-skin-secondary-2 hover:text-skin-secondary-1 transition-colors relative z-10">Login/SignUp</a>
+                        <a href="#testimonials"
+                            class="text-size-sub-heading font-semibold text-skin-secondary-2 hover:text-skin-primary-2 transition-colors relative z-10">Download
+                            App</a>
+                        <div id="secodary-btn" class="right-0 items-center ml-small hidden">
+                            <button class="btn-secondary">Book Appointment</button>
+                        </div>
+                    </div>
                 </div>
-                <a href="#services"
-                    class="text-sm font-semibold text-skin-secondary-2 hover:text-skin-secondary-1 transition-colors relative z-10">HOME</a>
-                <a href="#about"
-                    class="text-sm font-semibold text-skin-secondary-2 hover:text-skin-secondary-1 transition-colors relative z-10">About
-                    Us</a>
-                <a href="#testimonials"
-                    class="text-sm font-semibold text-skin-secondary-2 hover:text-skin-secondary-1 transition-colors relative z-10">Who
-                    we help</a>
-                <a href="#testimonials"
-                    class="group flex items-center gap-1 text-sm font-semibold text-skin-secondary-2 hover:text-skin-secondary-1 transition-colors relative z-10">
-                    service
-                    <i
-                        class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300 group-hover:rotate-180"></i>
-                </a>
-                <a href="#testimonials"
-                    class="text-sm font-semibold text-skin-secondary-2 hover:text-skin-secondary-1 transition-colors relative z-10">Login/SignUp</a>
-                <a href="#testimonials"
-                    class="text-sm font-semibold text-skin-secondary-2 hover:text-skin-primary-2 transition-colors relative z-10">Download
-                    App</a>
             </div>
         </div>
-    </div>
-
 </nav>
 <div id="progress">
     <span id="progress-value">

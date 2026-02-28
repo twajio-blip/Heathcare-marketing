@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./tailwind.css";
+
 
 @theme {
   --font-outfit: "Outfit", sans-serif;

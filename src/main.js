@@ -31,112 +31,77 @@ async function loadComponents() {
 function initNavbarScroll() {
   const navbar = document.getElementById('navbar');
   const navPrimary = document.getElementById('nav-primary');
+  const navSecondaryContainer = document.getElementById('nav-secondary-container');
+  const navSecondaryWrapper = document.getElementById('nav-secondary-wrapper');
   const navSecondaryBg = document.getElementById('nav-secondary-bg');
   const navSecondaryLogo = document.getElementById('nav-secondary-logo');
+  const navSecondary = document.getElementById('nav-secondary');
+  const secodaryBtn = document.getElementById('secodary-btn');
 
-  if (!navbar) return;
+  if (!navbar || !navSecondary || !navSecondaryWrapper) return;
 
-  // Track previous scroll value to determine scroll direction if needed, 
-  // though for this specifically we just check an absolute offset.
+  let wasSticky = false;
+
   window.addEventListener('scroll', () => {
-    // We wait until user scrolls down 150px to trigger the sticky nav
-    if (window.scrollY > 150) {
-      if (navbar.dataset.isSticky !== "true") {
-        // Quickly snap out of view
-        navbar.classList.add('-translate-y-full', 'duration-0');
-        navbar.classList.remove('duration-300');
+    const isSticky = window.scrollY > 250;
 
-        // Force a reflow
-        void navbar.offsetWidth;
+    navbar.classList.toggle('fixed', isSticky);
+    // navbar.classList.toggle('bg-skin-primary', isSticky);
+    navbar.classList.toggle('backdrop-blur-sm', !isSticky);
+    // navPrimary display none on sticky
+    navPrimary.style.display = isSticky ? 'none' : '';
 
-        // Apply sticky styling
-        if (navPrimary) {
-          navPrimary.style.height = '0px';
-          navPrimary.style.opacity = '0';
-          navPrimary.style.overflow = 'hidden';
-        }
+    if (navSecondaryWrapper) {
 
-        navbar.classList.add('fixed', 'bg-skin-secondary-3/90', 'backdrop-blur-xl', 'shadow-md');
-        navbar.classList.remove('absolute');
+      navSecondaryWrapper.classList.toggle('lg:mt-25', !isSticky);
 
-        if (navSecondaryBg) {
-          navSecondaryBg.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0 100%)';
-          navSecondaryBg.classList.replace('w-[70%]', 'w-full');
-        }
 
-        if (navSecondaryLogo) {
-          navSecondaryLogo.classList.remove('opacity-0', 'invisible');
-          navSecondaryLogo.classList.add('opacity-100', 'visible');
-        }
-
-        // Animate in from top
-        navbar.classList.add('duration-300', 'translate-y-0');
-        navbar.classList.remove('duration-0', '-translate-y-full');
-
-        navbar.dataset.isSticky = "true";
-      }
-
-    } else {
-      // Revert when scrolling back top
-      if (navbar.dataset.isSticky === "true") {
-        if (navPrimary) {
-          navPrimary.style.height = '';
-          navPrimary.style.opacity = '1';
-          navPrimary.style.overflow = '';
-        }
-
-        navbar.classList.add('absolute');
-        navbar.classList.remove('fixed', 'bg-skin-secondary-3/90', 'backdrop-blur-xl', 'shadow-md');
-
-        if (navSecondaryBg) {
-          navSecondaryBg.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 35px 100%)';
-          navSecondaryBg.classList.replace('w-full', 'w-[70%]');
-        }
-
-        if (navSecondaryLogo) {
-          navSecondaryLogo.classList.add('opacity-0', 'invisible');
-          navSecondaryLogo.classList.remove('opacity-100', 'visible');
-        }
-
-        navbar.dataset.isSticky = "false";
+      // Animate nav-secondary-wrapper sliding in from top on each sticky transition
+      if (isSticky && !wasSticky) {
+        navSecondaryWrapper.classList.remove('animate-slide-down');
+        void navSecondaryWrapper.offsetWidth; // force reflow to reset animation
+        navSecondaryWrapper.classList.add('animate-slide-down');
+      } else if (!isSticky) {
+        navSecondaryWrapper.classList.remove('animate-slide-down');
       }
     }
+
+    if (navSecondaryBg) {
+      ['lg:w-[75%]', 'xl:w-[65%]'].forEach(cls =>
+        navSecondaryBg.classList.toggle(cls, !isSticky)
+      );
+      // Let CSS handle clip-path when not sticky (uses lg: responsive classes)
+      if (isSticky) {
+        // This removes the polygon completely
+        navSecondaryBg.style.clipPath = 'none';
+      } else {
+        // This allows the Tailwind 'lg:[clip-path:...]' class to take over again
+        navSecondaryBg.style.clipPath = '';
+      }
+    }
+
+    if (navSecondaryLogo) {
+      navSecondaryLogo.style.display = isSticky ? 'flex' : '';
+    }
+    secodaryBtn.classList.toggle('lg:flex', isSticky);
+
+    wasSticky = isSticky;
   });
 }
 
 // Run loader when DOM is ready
 document.addEventListener('DOMContentLoaded', loadComponents);
 
-// Optional: Intersection Observer for scroll animations
-const observerOptions = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('opacity-100', 'translate-y-0');
-      entry.target.classList.remove('opacity-0', 'translate-y-8');
-    }
-  });
-}, observerOptions);
 function initProgressBar() {
-  let scrollProgress = document.getElementById("progress");
+  const scrollProgress = document.getElementById("progress");
   if (!scrollProgress) return;
 
-  let calcScrollValue = () => {
-    let pos = document.documentElement.scrollTop;
-    let calcHeight =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-    let scrollValue = Math.round((pos * 100) / calcHeight);
-    if (pos > 100) {
-      scrollProgress.style.display = "grid";
-    } else {
-      scrollProgress.style.display = "none";
-    }
+  const calcScrollValue = () => {
+    const pos = document.documentElement.scrollTop;
+    const calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollValue = Math.round((pos * 100) / calcHeight);
+
+    scrollProgress.style.display = pos > 100 ? "grid" : "none";
     scrollProgress.style.background = `conic-gradient(#2e3092 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
   };
 
@@ -146,34 +111,15 @@ function initProgressBar() {
   scrollProgress.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-}// Stats Counter Animation
-const counters = document.querySelectorAll('.counter');
-const duration = 2000; // Total duration in ms
 
-const startCounters = () => {
-  let start = null;
+  // Initialize mobile menu
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenuItems = document.getElementById('mobile-menu-items');
 
-  const step = (timestamp) => {
-    if (!start) start = timestamp;
-    const progress = Math.min((timestamp - start) / duration, 1);
-
-    // Ease-out quad: t * (2 - t)
-    const easedProgress = progress * (2 - progress);
-
-    counters.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      counter.innerText = Math.floor(easedProgress * target);
+  if (mobileMenuBtn && mobileMenuItems) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuItems.classList.toggle('-left-full');
+      mobileMenuItems.classList.toggle('left-0');
     });
-
-    if (progress < 1) {
-      window.requestAnimationFrame(step);
-    } else {
-      // Final pass to ensure targets are exact
-      counters.forEach(counter => {
-        counter.innerText = counter.getAttribute('data-target');
-      });
-    }
-  };
-
-  window.requestAnimationFrame(step);
-};
+  }
+}
