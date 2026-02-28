@@ -114,6 +114,7 @@ function initProgressBar() {
 
   // Initialize mobile menu
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
   const mobileMenuItems = document.getElementById('mobile-menu-items');
   const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 
@@ -133,6 +134,7 @@ function initProgressBar() {
     };
 
     mobileMenuBtn.addEventListener('click', toggleMenu);
+    if (mobileMenuClose) mobileMenuClose.addEventListener('click', toggleMenu);
     mobileMenuOverlay.addEventListener('click', toggleMenu);
 
     // Close menu when a link inside is clicked
