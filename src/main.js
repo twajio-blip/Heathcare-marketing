@@ -115,11 +115,34 @@ function initProgressBar() {
   // Initialize mobile menu
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenuItems = document.getElementById('mobile-menu-items');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 
-  if (mobileMenuBtn && mobileMenuItems) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenuItems.classList.toggle('-left-full');
-      mobileMenuItems.classList.toggle('left-0');
+  if (mobileMenuBtn && mobileMenuItems && mobileMenuOverlay) {
+    const toggleMenu = () => {
+      const isOpen = mobileMenuItems.classList.contains('left-0');
+
+      // Toggle Menu Side
+      mobileMenuItems.classList.toggle('-left-full', isOpen);
+      mobileMenuItems.classList.toggle('left-0', !isOpen);
+
+      // Toggle Overlay
+      mobileMenuOverlay.classList.toggle('hidden', isOpen);
+
+      // Lock/Unlock Body Scroll
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    };
+
+    mobileMenuBtn.addEventListener('click', toggleMenu);
+    mobileMenuOverlay.addEventListener('click', toggleMenu);
+
+    // Close menu when a link inside is clicked
+    const mobileLinks = mobileMenuItems.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenuItems.classList.contains('left-0')) {
+          toggleMenu();
+        }
+      });
     });
   }
 }
