@@ -11,13 +11,13 @@
   /* -------------------------
      Colors
   ------------------------- */
-  --color-skin-primary: #2d728f;
+  --color-skin-primary: #2563eb;
   /* #10B981 (Emerald 500) - Fresh modern green */
-  --color-skin-primary-2: #3b8ea5;
+  --color-skin-primary-2: #14b8a6;
   /* #059669 (Emerald 600) - Strong 2nd Primary */
-  --color-skin-secondary: #2a8070;
+  --color-skin-secondary: #1e40af;
   /* #0F172A (Slate 900) - Modern dark modern navy */
-  --color-skin-accent: #38BDF8;
+  --color-skin-accent: #0f172a;
   /* #38BDF8 (Sky 400) - Modern accent */
   --color-skin-accent-dark: #0284C7;
   /* #0284C7 (Sky 600) - Darker accent */
@@ -30,7 +30,7 @@
   /* #ffffff */
   --color-skin-neutral: oklch(0.9761 0 0);
   /* #f7f7f7 */
-  --color-skin-background: oklch(1 0 0);
+  --color-skin-background: #f8fafc;
   /* #ffffff */
 
 
@@ -53,10 +53,10 @@
   --spacing-section-x-tab: 20px;
   --spacing-section-x-mobile: 20px;
 
-  --spacing-small: 0.5rem;
-  --spacing-medium: 1rem;
-  --spacing-large: 1.5rem;
-  --spacing-huge: 2rem;
+  --spacing-small: 0.5rem; /* 8px */
+  --spacing-medium: 1rem; /* 16px */
+  --spacing-large: 1.5rem; /* 24px */
+  --spacing-huge: 2rem; /* 32px */
 
   /* -------------------------
      Rounded

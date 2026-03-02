@@ -289,3 +289,14 @@ html {
     background-color: rgb(59 130 246 / var(--tw-bg-opacity));
   }
 }
+
+/* ================================
+       SWIPER CUSTOM STYLES
+       ================================ */
+.swiper-slide {
+  height: auto;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-skin-primary) !important;
+}

@@ -1,4 +1,10 @@
 import '/src/css/style.css';
+import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Component Loader
 async function loadComponents() {
@@ -22,6 +28,8 @@ async function loadComponents() {
     // Initialize scripts that depend on the injected DOM
     initNavbarScroll();
     initProgressBar();
+    initMobileServicesMenu();
+    initThirdPartyLibraries();
   } catch (err) {
     console.error('Failed to load components', err);
   }
@@ -147,4 +155,86 @@ function initProgressBar() {
       });
     });
   }
+}
+
+function initMobileServicesMenu() {
+  const toggle = document.getElementById('mobile-services-toggle');
+  const menu = document.getElementById('mobile-services-menu');
+  const chevron = document.getElementById('mobile-services-chevron');
+
+  if (toggle && menu && chevron) {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isHidden = menu.classList.contains('hidden');
+
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        chevron.classList.add('rotate-180');
+      } else {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        chevron.classList.remove('rotate-180');
+      }
+    });
+  }
+}
+
+function initThirdPartyLibraries() {
+  // Initialize AOS
+  AOS.init({ once: true, offset: 50, duration: 800 });
+
+  // Initialize Swipers
+  new Swiper('.aboutSwiper', {
+    modules: [Pagination],
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: {
+      el: '.about-pagination',
+      clickable: true,
+    },
+    autoHeight: true,
+    speed: 800,
+  });
+
+  new Swiper('.approachSwiper', {
+    modules: [Pagination],
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    }
+  });
+
+  new Swiper('.servicesSwiper', {
+    modules: [Pagination],
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: {
+      el: '.services-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1200: { slidesPerView: 3 },
+    }
+  });
+
+  new Swiper('.testimonialSwiper', {
+    modules: [Pagination],
+    slidesPerView: 1,
+    spaceBetween: 40,
+    pagination: {
+      el: '.testimonial-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+    }
+  });
 }

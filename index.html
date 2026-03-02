@@ -15,375 +15,280 @@
     rel="stylesheet">
   <link rel="stylesheet" href="/src/css/tailwind.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <style>
-    .swiper-slide {
-      height: auto;
-    }
-
-    .swiper-pagination-bullet-active {
-      background: #2563eb !important;
-    }
-  </style>
 </head>
 
 <body
-  class="antialiased font-poppins text-slate-900 bg-slate-50 selection:bg-blue-600 selection:text-white min-h-screen overflow-x-hidden relative">
+  class="relative min-h-screen overflow-x-hidden bg-skin-background font-poppins text-skin-accent antialiased selection:bg-skin-primary selection:text-white">
 
   <!-- HEADER PLACEHOLDER -->
   <div id="header-container"></div>
 
-  <main class="w-full">
+  <main class="w-full overflow-hidden">
     <!-- HERO SECTION START -->
-    <div class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-      <!-- Background Decorative Elements -->
-      <div
-        class="absolute top-0 left-1/2 w-full -translate-x-1/2 overflow-hidden -z-10 pointer-events-none flex justify-center">
-        <div
-          class="w-[800px] h-[500px] bg-blue-400/20 rounded-full blur-[100px] opacity-60 mix-blend-multiply absolute -top-48 -left-24 animate-pulse duration-10000ms">
-        </div>
-        <div
-          class="w-[600px] h-[600px] bg-teal-400/20 rounded-full blur-[100px] opacity-60 mix-blend-multiply absolute top-24 right-0">
-        </div>
+    <div class="relative overflow-hidden">
+      <div class="absolute w-full h-full -z-10">
+        <img src="src/images/Hero-bg.png" alt="Hero-bg" class="w-full h-full object-cover">
       </div>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-        <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-bold mb-8 shadow-sm">
-          <span class="relative flex h-2.5 w-2.5">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
-          </span>
-          Grow Your Practice Today
+      <div class="container-custom relative mt-32 mb-16 lg:mt-48 lg:mb-24">
+        <div class="mb-huge flex justify-center" data-aos="fade-down">
+          <div
+            class="inline-flex items-center gap-small rounded-full border border-skin-background bg-skin-background px-medium py-small text-sm font-bold text-skin-primary shadow-sm">
+            <span class="relative flex h-2.5 w-2.5">
+              <span
+                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-skin-primary/70 opacity-75"></span>
+              <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-skin-primary"></span>
+            </span>
+            Grow Your Practice Today
+          </div>
         </div>
 
-        <h1
-          class="text-5xl md:text-7xl lg:text-[5rem] font-extrabold tracking-tight text-slate-900 mb-8 max-w-5xl mx-auto leading-[1.1]">
-          Accelerate Your Practice's Growth with <br class="hidden md:block" />
-          <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-teal-500">Data-Driven
-            Marketing</span>
-        </h1>
+        <div class="flex flex-col items-center gap-medium mb-huge lg:flex-row">
+          <div class="text-left lg:w-1/2" data-aos="fade-right">
+            <h1 class="mb-huge font-extrabold tracking-tight leading-[1.1]">
+              <span class="bg-linear-to-r from-skin-accent to-skin-primary bg-clip-text text-transparent">Accelerate
+                Your Practice's Growth with</span>
+              <br class="hidden lg:block" />
+              <span class="bg-linear-to-r from-skin-primary to-skin-primary-2 bg-clip-text text-transparent">Data-Driven
+                Marketing</span>
+            </h1>
+            <p class="font-medium leading-relaxed text-skin-accent">
+              We specialize in helping healthcare providers attract high-value patients, build online authority, and
+              scale their practice predictably.
+            </p>
+          </div>
 
-        <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-          We specialize in helping healthcare providers attract high-value patients, build online authority, and scale
-          their practice predictably.
-        </p>
+          <div class="lg:w-1/2" data-aos="fade-left">
+            <img src="src/images/Hero-Img.png" alt="hero" class="h-full w-full rounded-2xl object-cover shadow-2xl">
+          </div>
+        </div>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div class="flex flex-col items-center justify-center gap-medium sm:flex-row">
           <button
-            class="group relative w-full sm:w-auto px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-105 shadow-2xl shadow-blue-600/30">
-            <div
-              class="absolute inset-0 bg-linear-to-r from-blue-600 to-teal-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            </div>
-            <span class="relative flex items-center justify-center gap-2">
-              Get a Free Marketing Audit
-              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
+            class="group relative px-medium sm:px-huge py-small sm:py-medium cursor-pointer overflow-hidden rounded-full bg-skin-primary font-bold text-skin-background shadow-2xl shadow-blue-600/30 transition-all duration-500 ease-in-out hover:scale-105 hover:bg-linear-to-r hover:from-blue-600 hover:to-teal-500 w-auto">
+            <span class="relative flex items-center justify-center gap-small">
+              <h4>Get a Free Marketing Audit</h4>
+              <svg class="hidden h-5 w-5 transition-transform group-hover:translate-x-1 lg:block" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </span>
           </button>
           <button
-            class="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 rounded-full font-bold text-lg border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all flex items-center justify-center gap-2 shadow-sm">
-            <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            class="flex px-medium sm:px-huge py-small sm:py-medium items-center justify-center gap-small rounded-full border-2 border-slate-200 bg-white font-bold text-slate-700 shadow-sm transition-all duration-500 ease-in-out hover:scale-105 w-auto">
+            <svg class="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            See Our Case Studies
+            <h4>See Our Case Studies</h4>
           </button>
-        </div>
-
-        <!-- Stats -->
-        <div
-          class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100 relative">
-          <div class="flex flex-col items-center">
-            <div
-              class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-br from-slate-900 to-slate-600 mb-2">
-              100+</div>
-            <div class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest text-center">Practices
-              Scaled</div>
-          </div>
-          <div class="flex flex-col items-center">
-            <div
-              class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-br from-slate-900 to-slate-600 mb-2">
-              $10M+</div>
-            <div class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest text-center">Client
-              Revenue</div>
-          </div>
-          <div class="flex flex-col items-center">
-            <div
-              class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-br from-slate-900 to-slate-600 mb-2">
-              500k+</div>
-            <div class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest text-center">Patients
-              Acquired</div>
-          </div>
-          <div class="flex flex-col items-center">
-            <div
-              class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-br from-slate-900 to-slate-600 mb-2">
-              98%</div>
-            <div class="text-xs md:text-sm font-bold text-slate-500 uppercase tracking-widest text-center">Client
-              Retention</div>
-          </div>
         </div>
       </div>
     </div>
     <!-- HERO SECTION END -->
 
     <!-- ABOUT SECTION START -->
-    <div id="about" class="py-24 bg-slate-50 relative overflow-hidden">
-      <!-- Decorative -->
-      <div
-        class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[80px] -z-10 translate-x-1/3 -translate-y-1/3">
-      </div>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header -->
-        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-          <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-bold mb-6 shadow-sm">
-            About the Agency
-          </div>
-          <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Who We Are</h2>
-          <p class="text-xl text-slate-600 font-medium leading-relaxed">We are a specialized group of growth engineers,
-            digital strategists, and healthcare enthusiasts dedicated to transforming medical practices into market
-            leaders.</p>
-        </div>
-
-        <!-- Mission & Vision -->
-        <div class="grid md:grid-cols-2 gap-8 mb-24">
-          <div
-            class="bg-white p-10 rounded-4xl shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col justify-center relative overflow-hidden group"
-            data-aos="fade-right">
-            <div
-              class="absolute -right-10 -top-10 w-40 h-40 bg-blue-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700">
-            </div>
-            <div
-              class="w-16 h-16 rounded-2xl bg-blue-600 text-white flex items-center justify-center mb-6 relative z-10 shadow-lg shadow-blue-600/30">
-              <i class="fa-solid fa-rocket text-2xl"></i>
-            </div>
-            <h3 class="text-3xl font-bold text-slate-900 mb-4 relative z-10">Our Mission</h3>
-            <p class="text-lg text-slate-600 font-medium leading-relaxed relative z-10">To empower healthcare providers
-              with predictable, data-driven patient acquisition systems, allowing them to focus on what matters most:
-              delivering exceptional patient care.</p>
-          </div>
-          <div
-            class="bg-slate-900 p-10 rounded-4xl shadow-2xl flex flex-col justify-center relative overflow-hidden group"
-            data-aos="fade-left">
-            <div
-              class="absolute -right-10 -bottom-10 w-40 h-40 bg-teal-500/20 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700">
-            </div>
-            <div
-              class="w-16 h-16 rounded-2xl bg-teal-500 text-white flex items-center justify-center mb-6 relative z-10 shadow-lg shadow-teal-500/30">
-              <i class="fa-solid fa-eye text-2xl"></i>
-            </div>
-            <h3 class="text-3xl font-bold text-white mb-4 relative z-10">Our Vision</h3>
-            <p class="text-lg text-slate-300 font-medium leading-relaxed relative z-10">To become the gold standard in
-              healthcare marketing by continuously pioneering compliant, high-converting digital strategies that
-              redefine practice growth across the nation.</p>
-          </div>
-        </div>
-
-        <!-- Why Specialized Marketing & Experience -->
-        <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
-          <div data-aos="fade-up" data-aos-delay="100">
-            <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Why Healthcare Requires Specialized
-              Marketing</h3>
-            <p class="text-lg text-slate-600 font-medium leading-relaxed mb-6">
-              Marketing a medical practice isn't like selling e-commerce products or SaaS software. The patient journey
-              is deeply personal, heavily regulated, and built entirely on trust.
-            </p>
-            <ul class="space-y-4">
-              <li class="flex items-start gap-4">
-                <div
-                  class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-1">
-                  <i class="fa-solid fa-check text-xs"></i>
-                </div>
-                <p class="text-slate-700 font-semibold">Navigating strict HIPAA compliance and patient privacy
-                  regulations.</p>
-              </li>
-              <li class="flex items-start gap-4">
-                <div
-                  class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-1">
-                  <i class="fa-solid fa-check text-xs"></i>
-                </div>
-                <p class="text-slate-700 font-semibold">Communicating complex medical expertise with clarity and
-                  empathy.</p>
-              </li>
-              <li class="flex items-start gap-4">
-                <div
-                  class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0 mt-1">
-                  <i class="fa-solid fa-check text-xs"></i>
-                </div>
-                <p class="text-slate-700 font-semibold">Building long-term authority in competitive local search
-                  markets.</p>
-              </li>
-            </ul>
-          </div>
-          <div class="relative" data-aos="zoom-in">
-            <div class="aspect-square md:aspect-4/3 rounded-[3rem] overflow-hidden shadow-2xl relative">
-              <img
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Healthcare Marketing Experts" class="w-full h-full object-cover">
-              <div
-                class="absolute inset-0 bg-linear-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-8">
-                <div class="text-white">
-                  <div class="text-4xl font-bold mb-2">15+ Years</div>
-                  <div class="text-lg text-slate-200 font-medium">Combined Experience in Healthcare Marketing</div>
-                </div>
-              </div>
-            </div>
-            <!-- Floating Badge -->
-            <div
-              class="absolute -bottom-8 -left-8 bg-white p-6 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 flex items-center gap-4 animate-bounce duration-5000">
-              <div class="w-12 h-12 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center">
-                <i class="fa-solid fa-chart-line text-xl"></i>
-              </div>
-              <div>
-                <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Average Client Growth</div>
-                <div class="text-2xl font-extrabold text-slate-900">+315%</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- The Problem We Solve Section Start -->
-        <div class="mt-32 mb-32 relative">
-          <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-            <div
-              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 border border-rose-100 text-rose-700 text-sm font-bold mb-6 shadow-sm">
-              The Problem We Solve
-            </div>
-            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Why Patient Acquisition is Harder Than
-              Ever</h2>
-            <p class="text-xl text-slate-600 font-medium leading-relaxed">
-              The modern healthcare consumer is discerning, skeptical, and overwhelmed by choices. Standing out requires
-              a strategy built on trust and compliance.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-8">
-            <!-- Problem 1: Challenges -->
-            <div
-              class="bg-white p-8 rounded-4xl shadow-xl shadow-slate-200/50 border border-slate-100 transition-all hover:-translate-y-2 group"
-              data-aos="fade-up" data-aos-delay="0">
-              <div
-                class="w-14 h-14 rounded-full bg-red-50 text-red-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <i class="fa-solid fa-arrow-trend-down text-xl"></i>
-              </div>
-              <h3 class="text-2xl font-bold text-slate-900 mb-4">Challenges in Patient Acquisition</h3>
-              <p class="text-slate-600 font-medium grow">
-                Rising ad costs, increased local competition, and unpredictable algorithm changes make relying on
-                outdated "word-of-mouth" marketing a risky strategy for growth.
-              </p>
-            </div>
-
-            <!-- Problem 2: Compliance -->
-            <div
-              class="bg-white p-8 rounded-4xl shadow-xl shadow-slate-200/50 border border-slate-100 transition-all hover:-translate-y-2 group"
-              data-aos="fade-up" data-aos-delay="100">
-              <div
-                class="w-14 h-14 rounded-full bg-orange-50 text-orange-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <i class="fa-solid fa-lock text-xl"></i>
-              </div>
-              <h3 class="text-2xl font-bold text-slate-900 mb-4">Compliance & Trust Barriers</h3>
-              <p class="text-slate-600 font-medium grow">
-                A single HIPAA violation in your marketing can cost millions. In addition, patients are skeptical; they
-                need undeniable proof of your expertise before booking an appointment.
-              </p>
-            </div>
-
-            <!-- The Solution: Bridge -->
-            <div
-              class="bg-blue-600 p-8 rounded-4xl shadow-xl shadow-blue-600/30 text-white transition-all hover:-translate-y-2 group relative overflow-hidden"
-              data-aos="fade-up" data-aos-delay="200">
-              <div
-                class="absolute -right-8 -bottom-8 w-32 h-32 bg-white/10 rounded-full group-hover:scale-150 transition-transform duration-500">
-              </div>
-              <div
-                class="w-14 h-14 rounded-full bg-white/20 text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform relative z-10">
-                <i class="fa-solid fa-bridge-water text-xl"></i>
-              </div>
-              <h3 class="text-2xl font-bold text-white mb-4 relative z-10">How We Bridge the Gap</h3>
-              <p class="text-blue-50 font-medium grow relative z-10">
-                We bridge the gap between Strategy, Technology, and Patient Experience. We build systems that turn
-                organic searchers into trusting, lifelong patients—compliantly.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- The Problem We Solve Section End -->
-
-        <!-- Approach / Swiper -->
-        <div class="mt-32" data-aos="fade-up">
-          <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-4xl font-extrabold text-slate-900 mb-6">Our Approach to Ethical & Compliant Growth</h2>
-            <p class="text-xl text-slate-600 font-medium leading-relaxed">A proven, phase-by-phase methodology that
-              scales your practice without compromising patient trust or regulatory standards.</p>
-          </div>
-
-          <!-- Swiper Container -->
-          <div class="swiper approachSwiper pb-16 px-4">
-            <div class="swiper-wrapper">
-              <!-- Slide 1 -->
-              <div class="swiper-slide">
-                <div
-                  class="h-full bg-white p-8 rounded-4xl shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col transition-all hover:-translate-y-2">
-                  <div class="text-5xl font-extrabold text-slate-100 mb-6 absolute top-6 right-8">01</div>
+    <div id="about" class="py-16 lg:py-24 bg-skin-background relative overflow-visible">
+      <div class="container-custom overflow-visible">
+        <!-- Swiper Container -->
+        <div class="swiper aboutSwiper pb-16" data-aos="fade-up">
+          <div class="swiper-wrapper">
+            <!-- Slide 1: Who We Are -->
+            <div class="swiper-slide h-auto">
+              <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[500px]">
+                <div class="order-2 lg:order-1">
                   <div
-                    class="w-14 h-14 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-6 relative z-10">
-                    <i class="fa-solid fa-magnifying-glass-chart text-xl"></i>
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-bold mb-6 shadow-sm">
+                    About the Agency
                   </div>
-                  <h4 class="text-2xl font-bold text-slate-900 mb-4">Discovery & Audit</h4>
-                  <p class="text-slate-600 font-medium grow">We deeply analyze your current market position,
-                    patient demographics, and competitor landscape to identify high-ROI opportunities.</p>
+                  <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 transition-all duration-500">Who We
+                    Are</h2>
+                  <p class="text-xl text-slate-600 font-medium leading-relaxed mb-6">
+                    <span class="bg-linear-to-r from-skin-primary-2 to-skin-primary bg-clip-text text-transparent">We
+                      are a specialized group of growth engineers, digital strategists, and healthcare
+                      enthusiasts.</span>
+                  </p>
+                  <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                    Our team is dedicated to transforming medical practices into market leaders through data-driven
+                    strategies and deeply personal patient connection systems. We don't just "do marketing" — we build
+                    engines for predictable growth.
+                  </p>
                 </div>
-              </div>
-              <!-- Slide 2 -->
-              <div class="swiper-slide">
-                <div
-                  class="h-full bg-white p-8 rounded-4xl shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col transition-all hover:-translate-y-2">
-                  <div class="text-5xl font-extrabold text-slate-100 mb-6 absolute top-6 right-8">02</div>
-                  <div
-                    class="w-14 h-14 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 relative z-10">
-                    <i class="fa-solid fa-shield-halved text-xl"></i>
+                <div class="order-1 lg:order-2 relative">
+                  <div class="aspect-4/3 rounded-4xl overflow-hidden shadow-2xl">
+                    <img
+                      src="https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                      alt="Digital Strategists at Work" class="w-full h-full object-cover">
                   </div>
-                  <h4 class="text-2xl font-bold text-slate-900 mb-4">Compliant Foundation</h4>
-                  <p class="text-slate-600 font-medium grow">Before driving traffic, we ensure your digital assets
-                    (website, forms, tracking) are 100% HIPAA compliant and conversion-optimized.</p>
-                </div>
-              </div>
-              <!-- Slide 3 -->
-              <div class="swiper-slide">
-                <div
-                  class="h-full bg-white p-8 rounded-4xl shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col transition-all hover:-translate-y-2">
-                  <div class="text-5xl font-extrabold text-slate-100 mb-6 absolute top-6 right-8">03</div>
-                  <div
-                    class="w-14 h-14 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center mb-6 relative z-10">
-                    <i class="fa-solid fa-bullhorn text-xl"></i>
-                  </div>
-                  <h4 class="text-2xl font-bold text-slate-900 mb-4">Targeted Acquisition</h4>
-                  <p class="text-slate-600 font-medium grow">We deploy multi-channel campaigns (SEO, PPC, Social)
-                    tailored specifically to attract High-Value Patients seeking your treatments.</p>
-                </div>
-              </div>
-              <!-- Slide 4 -->
-              <div class="swiper-slide">
-                <div
-                  class="h-full bg-white p-8 rounded-4xl shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col transition-all hover:-translate-y-2">
-                  <div class="text-5xl font-extrabold text-slate-100 mb-6 absolute top-6 right-8">04</div>
-                  <div
-                    class="w-14 h-14 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center mb-6 relative z-10">
-                    <i class="fa-solid fa-chart-pie text-xl"></i>
-                  </div>
-                  <h4 class="text-2xl font-bold text-slate-900 mb-4">Scale & Optimize</h4>
-                  <p class="text-slate-600 font-medium grow">Using data-driven insights, we continuously refine ad
-                    spend, enhance conversions, and scale your practice's revenue month over month.</p>
                 </div>
               </div>
             </div>
-            <!-- Pagination -->
-            <div class="swiper-pagination mt-8 relative"></div>
+
+            <!-- Slide 2: Mission & Vision -->
+            <div class="swiper-slide h-auto">
+              <div class="grid md:grid-cols-2 gap-8 items-center min-h-[500px]">
+                <div
+                  class="bg-white p-10 rounded-4xl shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col justify-center relative overflow-visible group">
+                  <div
+                    class="absolute -right-10 -top-10 w-40 h-40 bg-blue-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700">
+                  </div>
+                  <div
+                    class="w-16 h-16 rounded-2xl bg-blue-600 text-white flex items-center justify-center mb-6 relative z-10 shadow-lg shadow-blue-600/30">
+                    <i class="fa-solid fa-rocket text-2xl"></i>
+                  </div>
+                  <h3 class="text-3xl font-bold text-slate-900 mb-4 relative z-10">Our Mission</h3>
+                  <p class="text-lg text-slate-600 font-medium leading-relaxed relative z-10">To empower healthcare
+                    providers with predictable, data-driven patient acquisition systems, allowing them to focus on what
+                    matters most: delivering exceptional patient care.</p>
+                </div>
+                <div
+                  class="bg-slate-900 p-10 rounded-4xl shadow-2xl flex flex-col justify-center relative overflow-visible group">
+                  <div
+                    class="absolute -right-10 -bottom-10 w-40 h-40 bg-teal-500/20 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700">
+                  </div>
+                  <div
+                    class="w-16 h-16 rounded-2xl bg-teal-500 text-white flex items-center justify-center mb-6 relative z-10 shadow-lg shadow-teal-500/30">
+                    <i class="fa-solid fa-eye text-2xl"></i>
+                  </div>
+                  <h3 class="text-3xl font-bold text-white mb-4 relative z-10">Our Vision</h3>
+                  <p class="text-lg text-slate-300 font-medium leading-relaxed relative z-10">To become the gold
+                    standard
+                    in healthcare marketing by continuously pioneering compliant, high-converting digital strategies
+                    that redefine practice growth across the nation.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Our Experience -->
+            <div class="swiper-slide h-auto">
+              <div class="grid lg:grid-cols-2 gap-16 items-center min-h-[500px]">
+                <div class="order-2 lg:order-1 relative">
+                  <div class="aspect-4/3 rounded-4xl overflow-hidden shadow-2xl relative">
+                    <img
+                      src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                      alt="Healthcare Marketing Experts" class="w-full h-full object-cover">
+                    <div
+                      class="absolute inset-0 bg-linear-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-8">
+                      <div class="text-white">
+                        <div class="text-4xl font-bold mb-2">15+ Years</div>
+                        <div class="text-lg text-slate-200 font-medium">Combined Experience in Healthcare Marketing
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Floating Badge -->
+                  <div
+                    class="absolute -bottom-8 -left-8 bg-white p-6 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 flex items-center gap-4 animate-bounce duration-5000">
+                    <div class="w-12 h-12 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center">
+                      <i class="fa-solid fa-chart-line text-xl"></i>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Average Client Growth
+                      </div>
+                      <div class="text-2xl font-extrabold text-slate-900">+315%</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                  <h2 class="text-4xl font-extrabold text-slate-900 mb-6">Our Experience in Healthcare</h2>
+                  <p class="text-xl text-slate-600 font-medium leading-relaxed mb-6">
+                    We've spent over a decade in the trenches of medical marketing, helping hundreds of practices scale
+                    from local clinics to regional powerhouses.
+                  </p>
+                  <ul class="space-y-6">
+                    <li class="flex items-center gap-4">
+                      <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
+                        <i class="fa-solid fa-users text-xl"></i>
+                      </div>
+                      <span class="text-lg font-bold text-slate-700">500+ Practices Managed</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                      <div class="w-12 h-12 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center">
+                        <i class="fa-solid fa-dollar-sign text-xl"></i>
+                      </div>
+                      <span class="text-lg font-bold text-slate-700">$50M+ Ad Spend Optimized</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4: Specialized Marketing -->
+            <div class="swiper-slide h-auto">
+              <div class="grid lg:grid-cols-2 gap-16 items-center min-h-[500px]">
+                <div>
+                  <h2 class="text-4xl font-extrabold text-slate-900 mb-6">Why Specialized Marketing?</h2>
+                  <p class="text-lg text-slate-600 font-medium leading-relaxed mb-8">
+                    Marketing a medical practice isn't like selling e-commerce products. The patient journey is deeply
+                    personal, heavily regulated, and built entirely on trust.
+                  </p>
+                  <div class="space-y-4">
+                    <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                      <div
+                        class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mt-1">
+                        <i class="fa-solid fa-shield-virus"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-bold text-slate-900">HIPAA Compliance</h4>
+                        <p class="text-slate-600">Navigating strict patient privacy regulations with 100% confidence.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                      <div
+                        class="w-10 h-10 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center mt-1">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                      </div>
+                      <div>
+                        <h4 class="font-bold text-slate-900">Empathy-Driven Content</h4>
+                        <p class="text-slate-600">Communicating complex medical expertise with clarity and compassion.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative">
+                  <div class="aspect-video lg:aspect-square rounded-4xl overflow-hidden shadow-2xl">
+                    <img
+                      src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                      alt="Doctor explaining results" class="w-full h-full object-cover">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5: Approach -->
+            <div class="swiper-slide h-auto">
+              <div class="text-center max-w-4xl mx-auto min-h-[500px] flex flex-col justify-center">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-6">Our Approach to Ethical Growth</h2>
+                <p class="text-xl text-slate-600 font-medium leading-relaxed mb-12">
+                  A proven, phase-by-phase methodology that scales your practice without compromising patient trust.
+                </p>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div class="p-6 bg-white rounded-3xl border border-slate-100 shadow-md">
+                    <div class="text-3xl font-extrabold text-blue-100 mb-2">01</div>
+                    <h4 class="font-bold text-slate-900 mb-2">Discovery</h4>
+                    <p class="text-sm text-slate-500">Market audit and patient profiling.</p>
+                  </div>
+                  <div class="p-6 bg-white rounded-3xl border border-slate-100 shadow-md">
+                    <div class="text-3xl font-extrabold text-teal-100 mb-2">02</div>
+                    <h4 class="font-bold text-slate-900 mb-2">Foundations</h4>
+                    <p class="text-sm text-slate-500">HIPAA compliant digital assets.</p>
+                  </div>
+                  <div class="p-6 bg-white rounded-3xl border border-slate-100 shadow-md">
+                    <div class="text-3xl font-extrabold text-indigo-100 mb-2">03</div>
+                    <h4 class="font-bold text-slate-900 mb-2">Acquisition</h4>
+                    <p class="text-sm text-slate-500">Multi-channel targeted campaigns.</p>
+                  </div>
+                  <div class="p-6 bg-white rounded-3xl border border-slate-100 shadow-md">
+                    <div class="text-3xl font-extrabold text-rose-100 mb-2">04</div>
+                    <h4 class="font-bold text-slate-900 mb-2">Scale</h4>
+                    <p class="text-sm text-slate-500">Data-driven optimization and growth.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- Pagination -->
+          <div class="swiper-pagination about-pagination mt-12 relative"></div>
         </div>
 
         <!-- Who We Help Section Start -->
@@ -497,7 +402,7 @@
             <!-- Slide 1: Core Digital Marketing -->
             <div class="swiper-slide h-auto">
               <div
-                class="h-full bg-slate-50 p-8 rounded-4xl shadow-sm border border-slate-100 hover:border-blue-300 hover:shadow-xl transition-all group flex flex-col">
+                class="h-full bg-slate-50 p-8 rounded-4xl shadow-sm border border-slate-100 hover:border-blue-300 hover:shadow-xl transition-all group flex flex-col overflow-visible">
                 <div
                   class="w-16 h-16 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform">
                   <i class="fa-solid fa-bullseye text-2xl"></i>
@@ -524,7 +429,7 @@
             <!-- Slide 2: Web & Technology Solutions -->
             <div class="swiper-slide h-auto">
               <div
-                class="h-full bg-slate-50 p-8 rounded-4xl shadow-sm border border-slate-100 hover:border-teal-300 hover:shadow-xl transition-all group flex flex-col">
+                class="h-full bg-slate-50 p-8 rounded-4xl shadow-sm border border-slate-100 hover:border-teal-300 hover:shadow-xl transition-all group flex flex-col overflow-visible">
                 <div
                   class="w-16 h-16 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform">
                   <i class="fa-solid fa-code text-2xl"></i>
@@ -549,7 +454,7 @@
             <!-- Slide 3: Branding & Growth Strategy -->
             <div class="swiper-slide h-auto">
               <div
-                class="h-full bg-slate-50 p-8 rounded-4xl shadow-sm border border-slate-100 hover:border-purple-300 hover:shadow-xl transition-all group flex flex-col">
+                class="h-full bg-slate-50 p-8 rounded-4xl shadow-sm border border-slate-100 hover:border-purple-300 hover:shadow-xl transition-all group flex flex-col overflow-visible">
                 <div
                   class="w-16 h-16 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform">
                   <i class="fa-solid fa-chess-knight text-2xl"></i>
@@ -573,7 +478,7 @@
             <!-- Slide 4: Creative & Media Services -->
             <div class="swiper-slide h-auto">
               <div
-                class="h-full bg-slate-50 p-8 rounded-4xl shadow-sm border border-slate-100 hover:border-rose-300 hover:shadow-xl transition-all group flex flex-col">
+                class="h-full bg-slate-50 p-8 rounded-4xl shadow-sm border border-slate-100 hover:border-rose-300 hover:shadow-xl transition-all group flex flex-col overflow-visible">
                 <div
                   class="w-16 h-16 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform">
                   <i class="fa-solid fa-palette text-2xl"></i>
@@ -693,7 +598,7 @@
     <!-- 1. STRATEGIC SEO FRAMEWORK SECTION END -->
 
     <!-- 2. INNOVATION & TECHNOLOGY SECTION START -->
-    <div id="innovation" class="py-24 bg-slate-900 relative overflow-hidden text-center sm:text-left">
+    <div id="innovation" class="py-24 bg-slate-900 relative overflow-visible text-center sm:text-left">
       <!-- Decorative Background Elements -->
       <div class="absolute inset-0 pointer-events-none opacity-40">
         <div
@@ -890,7 +795,7 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Case Study 1 -->
           <div
-            class="group rounded-4xl overflow-hidden bg-white shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-transform duration-300"
+            class="group rounded-4xl overflow-visible bg-white shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-transform duration-300"
             data-aos="zoom-in" data-aos-delay="0">
             <div class="relative h-64 overflow-hidden">
               <img
@@ -916,7 +821,7 @@
           </div>
           <!-- Case Study 2 -->
           <div
-            class="group rounded-4xl overflow-hidden bg-white shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-transform duration-300"
+            class="group rounded-4xl overflow-visible bg-white shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-transform duration-300"
             data-aos="zoom-in" data-aos-delay="100">
             <div class="relative h-64 overflow-hidden">
               <img
@@ -942,7 +847,7 @@
           </div>
           <!-- Case Study 3 -->
           <div
-            class="group rounded-4xl overflow-hidden bg-white shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-transform duration-300"
+            class="group rounded-4xl overflow-visible bg-white shadow-xl shadow-slate-200/50 hover:-translate-y-2 transition-transform duration-300"
             data-aos="zoom-in" data-aos-delay="200">
             <div class="relative h-64 overflow-hidden">
               <img
@@ -1138,57 +1043,6 @@
   <!-- FOOTER PLACEHOLDER -->
   <div id="footer-container"></div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Initialize AOS
-      if (typeof AOS !== 'undefined') {
-        AOS.init({ once: true, offset: 50, duration: 800 });
-      }
-
-      // Initialize Swiper
-      if (typeof Swiper !== 'undefined') {
-        new Swiper('.approachSwiper', {
-          slidesPerView: 1,
-          spaceBetween: 30,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          breakpoints: {
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }
-        });
-
-        new Swiper('.servicesSwiper', {
-          slidesPerView: 1,
-          spaceBetween: 30,
-          pagination: {
-            el: '.services-pagination',
-            clickable: true,
-          },
-          breakpoints: {
-            768: { slidesPerView: 2 },
-            1200: { slidesPerView: 3 },
-          }
-        });
-
-        new Swiper('.testimonialSwiper', {
-          slidesPerView: 1,
-          spaceBetween: 40,
-          pagination: {
-            el: '.testimonial-pagination',
-            clickable: true,
-          },
-          breakpoints: {
-            768: { slidesPerView: 2 },
-          }
-        });
-      }
-    });
-  </script>
   <script type="module" src="/src/main.js"></script>
 </body>
 
