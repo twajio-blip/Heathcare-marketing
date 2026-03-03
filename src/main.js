@@ -1,8 +1,9 @@
 import '/src/css/style.css';
 import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -186,14 +187,18 @@ function initThirdPartyLibraries() {
 
   // Initialize Swipers
   new Swiper('.aboutSwiper', {
-    modules: [Pagination],
+    modules: [Pagination, Autoplay, Navigation],
     slidesPerView: 1,
     spaceBetween: 30,
+    loop: true,
     pagination: {
       el: '.about-pagination',
       clickable: true,
     },
-    autoHeight: true,
+    navigation: {
+      nextEl: '.about-next',
+      prevEl: '.about-prev',
+    },
     speed: 800,
   });
 

@@ -282,6 +282,22 @@ html {
 }
 
 /* ================================
+       NAV LINK HOVER EFFECT
+       ================================ */
+.nav-link-hover {
+  @apply relative;
+}
+
+.nav-link-hover::after {
+  content: '';
+  @apply absolute bottom-0 right-0 w-0 h-[2px] bg-skin-primary-2 transition-all duration-300 ease-in-out;
+}
+
+.nav-link-hover:hover::after {
+  @apply w-full left-0;
+}
+
+/* ================================
        Tap-to-hover simulation on touch screens
        ================================ */
 @media (hover: none) and (pointer: coarse) {
