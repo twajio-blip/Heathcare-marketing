@@ -191,6 +191,11 @@ function initThirdPartyLibraries() {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: '.about-pagination',
       clickable: true,
@@ -206,6 +211,7 @@ function initThirdPartyLibraries() {
     modules: [Pagination],
     slidesPerView: 1,
     spaceBetween: 30,
+    loop: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -217,12 +223,17 @@ function initThirdPartyLibraries() {
   });
 
   new Swiper('.servicesSwiper', {
-    modules: [Pagination],
+    modules: [Pagination, Navigation],
     slidesPerView: 1,
     spaceBetween: 30,
+    loop: true,
     pagination: {
       el: '.services-pagination',
       clickable: true,
+    },
+    navigation: {
+      nextEl: '.services-next',
+      prevEl: '.services-prev',
     },
     breakpoints: {
       768: { slidesPerView: 2 },
@@ -234,6 +245,7 @@ function initThirdPartyLibraries() {
     modules: [Pagination],
     slidesPerView: 1,
     spaceBetween: 40,
+    loop: true,
     pagination: {
       el: '.testimonial-pagination',
       clickable: true,
