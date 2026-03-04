@@ -243,3 +243,46 @@ function initThirdPartyLibraries() {
     }
   });
 }
+
+function initWhoWeHelpTabs() {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  if (!tabBtns.length || !tabContents.length) return;
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active from all tabs
+      tabBtns.forEach(b => {
+        b.classList.remove('bg-skin-primary', 'text-white', 'border-skin-primary', 'shadow-md');
+        b.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+      });
+      // Hide all content areas
+      tabContents.forEach(c => {
+        c.classList.add('hidden', 'opacity-0');
+        c.classList.remove('flex', 'opacity-100', 'animate-fade-in-up');
+      });
+
+      // Add active state to clicked tab
+      btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+      btn.classList.add('bg-skin-primary', 'text-white', 'border-skin-primary', 'shadow-md');
+
+      // Show target content area
+      const targetId = btn.getAttribute('data-target');
+      const targetContent = document.getElementById(targetId);
+      if (targetContent) {
+        targetContent.classList.remove('hidden');
+        targetContent.classList.add('flex');
+
+        // Small delay to trigger CSS transition for opacity
+        setTimeout(() => {
+          targetContent.classList.remove('opacity-0');
+          targetContent.classList.add('opacity-100', 'animate-fade-in-up');
+        }, 50);
+      }
+    });
+  });
+}
+
+// Initialize tabs when DOM is ready
+document.addEventListener('DOMContentLoaded', initWhoWeHelpTabs);
