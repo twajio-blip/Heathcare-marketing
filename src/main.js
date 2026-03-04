@@ -255,7 +255,7 @@ function initWhoWeHelpTabs() {
       // Remove active from all tabs
       tabBtns.forEach(b => {
         b.classList.remove('bg-skin-primary', 'text-white', 'border-skin-primary', 'shadow-md');
-        b.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+        b.classList.add('bg-white', 'text-skin-accent', 'border-skin-accent/20');
       });
       // Hide all content areas
       tabContents.forEach(c => {
@@ -264,7 +264,7 @@ function initWhoWeHelpTabs() {
       });
 
       // Add active state to clicked tab
-      btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+      btn.classList.remove('bg-white', 'text-skin-accent', 'border-skin-accent/20');
       btn.classList.add('bg-skin-primary', 'text-white', 'border-skin-primary', 'shadow-md');
 
       // Show target content area
