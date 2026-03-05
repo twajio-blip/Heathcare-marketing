@@ -192,10 +192,10 @@ function initThirdPartyLibraries() {
     spaceBetween: 30,
     loop: true,
     centeredSlides: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
     pagination: {
       el: '.about-pagination',
       clickable: true,
@@ -266,8 +266,8 @@ function initWhoWeHelpTabs() {
     btn.addEventListener('click', () => {
       // Remove active from all tabs
       tabBtns.forEach(b => {
-        b.classList.remove('bg-skin-primary', 'text-white', 'border-skin-primary', 'shadow-md');
-        b.classList.add('bg-white', 'text-skin-accent', 'border-skin-accent/20');
+        b.classList.remove('bg-skin-primary', 'text-white', 'shadow-md', 'shadow-skin-primary/30', 'active');
+        b.classList.add('bg-white/50', 'backdrop-blur-sm', 'text-slate-600');
       });
       // Hide all content areas
       tabContents.forEach(c => {
@@ -276,8 +276,8 @@ function initWhoWeHelpTabs() {
       });
 
       // Add active state to clicked tab
-      btn.classList.remove('bg-white', 'text-skin-accent', 'border-skin-accent/20');
-      btn.classList.add('bg-skin-primary', 'text-white', 'border-skin-primary', 'shadow-md');
+      btn.classList.remove('bg-white/50', 'backdrop-blur-sm', 'text-slate-600');
+      btn.classList.add('active', 'bg-skin-primary', 'text-white', 'shadow-md', 'shadow-skin-primary/30');
 
       // Show target content area
       const targetId = btn.getAttribute('data-target');
