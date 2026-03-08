@@ -31,6 +31,7 @@ async function loadComponents() {
     initProgressBar();
     initMobileServicesMenu();
     initThirdPartyLibraries();
+    initCounters();
   } catch (err) {
     console.error('Failed to load components', err);
   }
@@ -242,16 +243,13 @@ function initThirdPartyLibraries() {
   });
 
   new Swiper('.testimonialSwiper', {
-    modules: [Pagination],
     slidesPerView: 1,
-    spaceBetween: 40,
+    spaceBetween: 30,
     loop: true,
-    pagination: {
-      el: '.testimonial-pagination',
-      clickable: true,
-    },
+    slideToClickedSlide: true,
     breakpoints: {
-      768: { slidesPerView: 2 },
+      768: { slidesPerView: 2, centeredSlides: false },
+      1024: { slidesPerView: 3, centeredSlides: true }
     }
   });
 }
@@ -298,3 +296,47 @@ function initWhoWeHelpTabs() {
 
 // Initialize tabs when DOM is ready
 document.addEventListener('DOMContentLoaded', initWhoWeHelpTabs);
+
+function initCounters() {
+  const counters = document.querySelectorAll('.stat-number');
+  if (!counters.length) return;
+
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  counters.forEach(counter => observer.observe(counter));
+}
+
+function animateCounter(counter) {
+  const target = +counter.getAttribute('data-target');
+  const duration = 2000; // 2 seconds
+  let startTimestamp = null;
+
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+
+    // Ease out quart easing formula for a smooth deceleration
+    const easeProgress = 1 - Math.pow(1 - progress, 4);
+
+    counter.innerText = Math.floor(easeProgress * target);
+
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  window.requestAnimationFrame(step);
+}
