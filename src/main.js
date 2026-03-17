@@ -29,7 +29,7 @@ async function loadComponents() {
     // Initialize scripts that depend on the injected DOM
     initNavbarScroll();
     initProgressBar();
-    initMobileServicesMenu();
+    initMobileMenus();
     initThirdPartyLibraries();
     initCounters();
   } catch (err) {
@@ -143,9 +143,18 @@ function initProgressBar() {
       document.body.style.overflow = isOpen ? '' : 'hidden';
     };
 
-    mobileMenuBtn.addEventListener('click', toggleMenu);
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
     if (mobileMenuClose) mobileMenuClose.addEventListener('click', toggleMenu);
-    mobileMenuOverlay.addEventListener('click', toggleMenu);
+
+    document.addEventListener('click', (e) => {
+      const isOpen = mobileMenuItems.classList.contains('left-0');
+      if (isOpen && !mobileMenuItems.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        toggleMenu();
+      }
+    });
 
     // Close menu when a link inside is clicked
     const mobileLinks = mobileMenuItems.querySelectorAll('a');
@@ -159,48 +168,56 @@ function initProgressBar() {
   }
 }
 
-function initMobileServicesMenu() {
-  const toggle = document.getElementById('mobile-services-toggle');
-  const menu = document.getElementById('mobile-services-menu');
-  const chevron = document.getElementById('mobile-services-chevron');
+function initMobileMenus() {
+  const setupToggle = (toggleId, menuId, chevronId) => {
+    const toggle = document.getElementById(toggleId);
+    const menu = document.getElementById(menuId);
+    const chevron = document.getElementById(chevronId);
 
-  if (toggle && menu && chevron) {
-    toggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      const isHidden = menu.classList.contains('hidden');
+    if (toggle && menu && chevron) {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isHidden = menu.classList.contains('hidden');
 
-      if (isHidden) {
-        menu.classList.remove('hidden');
-        menu.classList.add('flex');
-        chevron.classList.add('rotate-180');
-      } else {
-        menu.classList.add('hidden');
-        menu.classList.remove('flex');
-        chevron.classList.remove('rotate-180');
-      }
-    });
-  }
+        if (isHidden) {
+          menu.classList.remove('hidden');
+          menu.classList.add('flex');
+          chevron.classList.add('rotate-180');
+        } else {
+          menu.classList.add('hidden');
+          menu.classList.remove('flex');
+          chevron.classList.remove('rotate-180');
+        }
+      });
+    }
+  };
+
+  setupToggle('mobile-services-toggle', 'mobile-services-menu', 'mobile-services-chevron');
+  setupToggle('mobile-about-toggle', 'mobile-about-menu', 'mobile-about-chevron');
 }
 
 function initThirdPartyLibraries() {
   // Initialize AOS
   AOS.init({ once: true, offset: 50, duration: 800 });
 
-  // Initialize Swipers
   new Swiper('.aboutSwiper', {
     modules: [Pagination, Autoplay, Navigation],
     slidesPerView: 1,
-    spaceBetween: 30,
+    spaceBetween: 40,
     loop: true,
     centeredSlides: true,
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+    watchSlidesProgress: true, // Helps sync active states
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: '.about-pagination',
       clickable: true,
+      // This ensures the "Real Index" is used for the bullets
+      bulletActiveClass: 'swiper-pagination-bullet-active',
     },
+
     navigation: {
       nextEl: '.about-next',
       prevEl: '.about-prev',
@@ -225,20 +242,36 @@ function initThirdPartyLibraries() {
 
   new Swiper('.servicesSwiper', {
     modules: [Pagination, Navigation],
-    slidesPerView: 1,
-    spaceBetween: 30,
+    slidesPerView: 1, // Default for mobile
+    spaceBetween: 20,
     loop: true,
+
     pagination: {
       el: '.services-pagination',
       clickable: true,
     },
+
     navigation: {
       nextEl: '.services-next',
       prevEl: '.services-prev',
     },
+
+    // Breakpoints must be in ascending order (Smallest -> Largest)
     breakpoints: {
-      768: { slidesPerView: 2 },
-      1200: { slidesPerView: 3 },
+      // When window width is >= 540px
+      540: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // When window width is >= 768px (Standard Tablet)
+      720: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      // When window width is >= 1200px (Desktop)
+      1140: {
+        slidesPerView: 3,
+      }
     }
   });
 
@@ -248,7 +281,7 @@ function initThirdPartyLibraries() {
     loop: true,
     slideToClickedSlide: true,
     breakpoints: {
-      768: { slidesPerView: 2, centeredSlides: false },
+      640: { slidesPerView: 2, centeredSlides: false },
       1024: { slidesPerView: 3, centeredSlides: true }
     }
   });

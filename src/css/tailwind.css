@@ -92,7 +92,10 @@
   --text-size-heading: 32px;
   --text-size-sub-heading: 16px;
   --text-size-badge: 22px;
-
+  --text-size-xsmall:12px;
+  --text-size-small: 14px;
+  --text-size-medium: 18px;
+  --text-size-large: 20px;
   /* -------------------------
      Fonts
   ------------------------- */

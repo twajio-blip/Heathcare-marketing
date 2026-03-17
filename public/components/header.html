@@ -1,6 +1,6 @@
 <!-- NAVBAR START -->
 <nav class="absolute top-0 left-0 z-50 w-full shadow-lg bg-skin-background/70 backdrop-blur-sm" id="navbar">
-    <div class="container-custom flex flex-col origin-top transition-all duration-300">
+    <div class="container-custom p-0! flex flex-col origin-top transition-all duration-300">
         <div id="nav-primary" class="hidden lg:flex items-stretch justify-between">
             <div class="flex items-center w-25 h-25 my-medium">
                 <img src="./images/Legacy_Health_Growth-removebg.png" alt="OmniCare-logo">
@@ -70,45 +70,180 @@
                     <div id="mobile-menu-overlay" class="fixed inset-0 z-40 bg-black/50 hidden lg:hidden"></div>
 
                     <div id="mobile-menu-items"
-                        class="fixed top-0 -left-full z-50 flex h-screen w-60 flex-col gap-medium overflow-y-auto bg-skin-primary-2 p-large pt-25 shadow-md transition-all duration-300 items-left lg:static lg:z-auto lg:flex lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:gap-medium xl:gap-huge lg:overflow-y-visible lg:bg-transparent lg:p-0 lg:pt-0 lg:shadow-none">
+                        class="fixed top-0 -left-full z-50 flex h-screen w-60 flex-col gap-0 overflow-y-auto bg-skin-accent p-large pt-5 shadow-md transition-all duration-300 items-left lg:static lg:z-auto lg:flex lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:gap-medium xl:gap-huge lg:overflow-y-visible lg:bg-transparent lg:p-0 lg:pt-0 lg:shadow-none">
                         <!-- Mobile Menu Close Button -->
                         <button id="mobile-menu-close"
                             class="absolute top-large right-large z-20 transition-colors hover:text-skin-primary-2 focus:outline-none lg:hidden text-2xl text-skin-secondary-2">
                             <i class="fa-solid fa-xmark"></i>
                         </button>
-                        <a href="#index.html"
-                            class="nav-link-hover relative z-10 font-semibold transition-colors text-size-sub-heading text-skin-secondary-2 hover:text-skin-primary-2">Home</a>
-                        <a href="#about"
-                            class="nav-link-hover relative z-10 font-semibold transition-colors text-size-sub-heading text-skin-secondary-2 hover:text-skin-primary-2">About
-                            Us</a>
-                        <a href="#testimonials"
-                            class="nav-link-hover relative z-10 font-semibold transition-colors text-size-sub-heading text-skin-secondary-2 hover:text-skin-primary-2">Who
-                            we help</a>
-                        <!-- Desktop Service Dropdown -->
-                        <div class="group relative hidden h-full cursor-pointer items-center lg:flex">
+                        <div class="w-18 h-18 items-center lg:hidden md:w-23 md:h-23 mb-medium">
+                            <img src="./images/image-removebg-white.png" alt="OmniCare-logo"
+                                class="h-full object-contain">
+                        </div>
+                        <a href="index.html"
+                            class="group relative z-10 font-black transition-all text-xsmall md:text-small uppercase tracking-widest text-skin-secondary-2 hover:text-skin-primary-2">
+
+                            <div
+                                class="flex items-center gap-small p-2 lg:p-0 rounded-xl transition-all duration-300 group-hover:bg-skin-primary/50 lg:group-hover:bg-transparent">
+
+                                <div
+                                    class="flex lg:hidden items-center justify-center w-9 h-9 rounded-lg bg-skin-primary/10 text-skin-primary transition-transform duration-300 group-hover:scale-110 lg:w-auto lg:h-auto lg:bg-transparent lg:p-0">
+                                    <svg class="w-6 h-6 lg:w-5 lg:h-5" viewBox="0 0 40 40" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 10V28H30" stroke="currentColor" stroke-width="4"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M18 14H24M21 11V17" stroke="#14b8a6" stroke-width="3.5"
+                                            stroke-linecap="round" />
+                                        <path d="M26 24L30 28L26 32" stroke="currentColor" stroke-width="4"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+
+                                <span class="relative">
+                                    Home
+                                    <span
+                                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-skin-primary transition-all duration-300 group-hover:w-full hidden lg:block"></span>
+                                </span>
+
+                            </div>
+                        </a>
+                        <!-- Desktop About Us Dropdown -->
+                        <div class="group/about relative hidden h-full cursor-pointer items-center lg:flex">
                             <a
-                                class="nav-link-hover relative z-10 flex items-center gap-small font-semibold transition-colors text-size-sub-heading text-skin-secondary-2 hover:text-skin-primary-2">
-                                Service
-                                <i
-                                    class="fa-solid fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                                class="group relative z-10 font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2 hover:text-skin-primary-2">
+                                <div
+                                    class="flex items-center gap-small p-2 lg:p-0 rounded-xl transition-all duration-300 group-hover:bg-skin-primary/5 lg:group-hover:bg-transparent">
+                                    <div
+                                        class="flex lg:hidden items-center justify-center w-9 h-9 rounded-lg bg-skin-primary/10 text-skin-primary transition-transform duration-300 group-hover:scale-110 lg:w-auto lg:h-auto lg:bg-transparent lg:p-0">
+                                        <i class="fa-solid fa-circle-info text-lg lg:text-base"></i>
+                                    </div>
+                                    <span class="relative flex items-center gap-1">
+                                        About Us
+                                        <i
+                                            class="fa-solid fa-chevron-down text-sm transition-transform duration-300 group-hover/about:rotate-180"></i>
+                                        <span
+                                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-skin-primary transition-all duration-300 group-hover:w-full hidden lg:block"></span>
+                                    </span>
+                                </div>
                             </a>
 
                             <div
-                                class="absolute top-full left-0 z-50 hidden w-64 translate-y-small rounded-xl border-t-2 border-skin-primary bg-white py-small opacity-0 shadow-xl transition-all duration-300 invisible group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 lg:block">
+                                class="absolute top-full left-0 z-50 hidden w-64 translate-y-small rounded-xl border-t-2 border-skin-primary bg-white py-small opacity-0 shadow-xl transition-all duration-300 invisible group-hover/about:visible group-hover/about:translate-y-0 group-hover/about:opacity-100 lg:block">
+                                <a href="about.html"
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    About Us
+                                </a>
+                                <a href="technology.html"
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    Our Innovation & Technology
+                                </a>
+                                <a href="process.html"
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    Our Process
+                                </a>
+                                <a href="work.html"
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    Our Work
+                                </a>
+                                <a href="about.html#impact"
+                                    class="block px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    Results & Impact
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Mobile About Us Sub-menu -->
+                        <div class="w-full lg:hidden">
+                            <button id="mobile-about-toggle"
+                                class="group relative z-10 flex w-full font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2">
+                                <div
+                                    class="flex w-full items-center gap-small p-2 rounded-xl transition-all duration-300 text-left">
+                                    <div
+                                        class="flex items-center justify-center w-9 h-9 rounded-lg bg-skin-primary/10 text-skin-primary transition-transform duration-300 shrink-0">
+                                        <i class="fa-solid fa-circle-info text-lg"></i>
+                                    </div>
+                                    <span class="relative flex flex-1 items-center justify-between">
+                                        About Us
+                                        <i id="mobile-about-chevron"
+                                            class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                                    </span>
+                                </div>
+                            </button>
+                            <div id="mobile-about-menu"
+                                class="mt-small hidden flex-col overflow-hidden rounded-lg transition-all duration-300">
+                                <a href="about.html"
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    About Us
+                                </a>
+                                <a href="technology.html"
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    Our Innovation & Technology
+                                </a>
+                                <a href="process.html"
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    Our Process
+                                </a>
+                                <a href="work.html"
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    Our Work
+                                </a>
+                                <a href="about.html#impact"
+                                    class="px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    Results & Impact
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#testimonials"
+                            class="group relative z-10 font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2 hover:text-skin-primary-2">
+                            <div
+                                class="flex items-center gap-small p-2 lg:p-0 rounded-xl transition-all duration-300 group-hover:bg-skin-primary/5 lg:group-hover:bg-transparent">
+                                <div
+                                    class="flex lg:hidden items-center justify-center w-9 h-9 rounded-lg bg-skin-primary/10 text-skin-primary transition-transform duration-300 group-hover:scale-110 lg:w-auto lg:h-auto lg:bg-transparent lg:p-0">
+                                    <i class="fa-solid fa-users text-lg lg:text-base"></i>
+                                </div>
+                                <span class="relative">
+                                    Who we help
+                                    <span
+                                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-skin-primary transition-all duration-300 group-hover:w-full hidden lg:block"></span>
+                                </span>
+                            </div>
+                        </a>
+                        <!-- Desktop Service Dropdown -->
+                        <div class="group/dropdown relative hidden h-full cursor-pointer items-center lg:flex">
+                            <a
+                                class="group relative z-10 font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2 hover:text-skin-primary-2">
+                                <div
+                                    class="flex items-center gap-small p-2 lg:p-0 rounded-xl transition-all duration-300 group-hover:bg-skin-primary/5 lg:group-hover:bg-transparent">
+                                    <div
+                                        class="flex lg:hidden items-center justify-center w-9 h-9 rounded-lg bg-skin-primary/10 text-skin-primary transition-transform duration-300 group-hover:scale-110 lg:w-auto lg:h-auto lg:bg-transparent lg:p-0">
+                                        <i class="fa-solid fa-stethoscope text-lg lg:text-base"></i>
+                                    </div>
+                                    <span class="relative flex items-center gap-1">
+                                        Service
+                                        <i
+                                            class="fa-solid fa-chevron-down text-sm transition-transform duration-300 group-hover/dropdown:rotate-180"></i>
+                                        <span
+                                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-skin-primary transition-all duration-300 group-hover:w-full hidden lg:block"></span>
+                                    </span>
+                                </div>
+                            </a>
+
+                            <div
+                                class="absolute top-full left-0 z-50 hidden w-64 translate-y-small rounded-xl border-t-2 border-skin-primary bg-white py-small opacity-0 shadow-xl transition-all duration-300 invisible group-hover/dropdown:visible group-hover/dropdown:translate-y-0 group-hover/dropdown:opacity-100 lg:block">
                                 <a href="#services"
-                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary">
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
                                     Core Digital Marketing
                                 </a>
                                 <a href="#services"
-                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary">
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
                                     Web & Technology Solutions
                                 </a>
                                 <a href="#services"
-                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary">
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
                                     Branding & Growth Strategy
                                 </a>
                                 <a href="#services"
-                                    class="block px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary">
+                                    class="block px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
                                     Creative & Media Services
                                 </a>
                             </div>
@@ -117,36 +252,70 @@
                         <!-- Mobile Service Sub-menu (Only visible on mobile) -->
                         <div class="w-full lg:hidden">
                             <button id="mobile-services-toggle"
-                                class="relative z-10 flex w-full items-center justify-start gap-small font-semibold transition-colors text-size-sub-heading text-skin-secondary-2 hover:text-skin-primary-2">
-                                Service
-                                <i id="mobile-services-chevron"
-                                    class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                                class="group relative z-10 flex w-full font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2">
+                                <div
+                                    class="flex w-full items-center gap-small p-2 rounded-xl transition-all duration-300 text-left">
+                                    <div
+                                        class="flex items-center justify-center w-9 h-9 rounded-lg bg-skin-primary/10 text-skin-primary transition-transform duration-300 shrink-0">
+                                        <i class="fa-solid fa-stethoscope text-lg"></i>
+                                    </div>
+                                    <span class="relative flex flex-1 items-center justify-between">
+                                        Service
+                                        <i id="mobile-services-chevron"
+                                            class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                                    </span>
+                                </div>
                             </button>
                             <div id="mobile-services-menu"
-                                class="mt-small hidden flex-col overflow-hidden rounded-lg bg-skin-primary-2/20 transition-all duration-300">
+                                class="mt-small hidden flex-col overflow-hidden rounded-lg transition-all duration-300">
                                 <a href="#services"
-                                    class="border-b border-white/5 px-large py-small font-medium transition-colors text-skin-secondary-2 hover:bg-white/10">
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
                                     Core Digital Marketing
                                 </a>
                                 <a href="#services"
-                                    class="border-b border-white/5 px-large py-small font-medium transition-colors text-skin-secondary-2 hover:bg-white/10">
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
                                     Web & Technology Solutions
                                 </a>
                                 <a href="#services"
-                                    class="border-b border-white/5 px-large py-small font-medium transition-colors text-skin-secondary-2 hover:bg-white/10">
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
                                     Branding & Growth Strategy
                                 </a>
                                 <a href="#services"
-                                    class="px-large py-small font-medium transition-colors text-skin-secondary-2 hover:bg-white/10">
+                                    class="px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
                                     Creative & Media Services
                                 </a>
                             </div>
                         </div>
                         <a href="#testimonials"
-                            class="nav-link-hover relative z-10 font-semibold transition-colors text-size-sub-heading text-skin-secondary-2 hover:text-skin-primary-2">Login/SignUp</a>
-                        <a href="#testimonials"
-                            class="nav-link-hover relative z-10 font-semibold transition-colors text-size-sub-heading text-skin-secondary-2 hover:text-skin-primary-2">Download
-                            App</a>
+                            class="group relative z-10 font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2 hover:text-skin-primary-2">
+                            <div
+                                class="flex items-center gap-small p-2 lg:p-0 rounded-xl transition-all duration-300 group-hover:bg-skin-primary/5 lg:group-hover:bg-transparent">
+                                <div
+                                    class="flex lg:hidden items-center justify-center w-9 h-9 rounded-lg bg-skin-primary/10 text-skin-primary transition-transform duration-300 group-hover:scale-110 lg:w-auto lg:h-auto lg:bg-transparent lg:p-0">
+                                    <i class="fa-solid fa-right-to-bracket text-lg lg:text-base"></i>
+                                </div>
+                                <span class="relative">
+                                    Login/SignUp
+                                    <span
+                                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-skin-primary transition-all duration-300 group-hover:w-full hidden lg:block"></span>
+                                </span>
+                            </div>
+                        </a>
+                        <a href="#contact"
+                            class="group relative z-10 font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2 hover:text-skin-primary-2">
+                            <div
+                                class="flex items-center gap-small p-2 lg:p-0 rounded-xl transition-all duration-300 group-hover:bg-skin-primary/5 lg:group-hover:bg-transparent">
+                                <div
+                                    class="flex lg:hidden items-center justify-center w-9 h-9 rounded-lg bg-skin-primary/10 text-skin-primary transition-transform duration-300 group-hover:scale-110 lg:w-auto lg:h-auto lg:bg-transparent lg:p-0">
+                                    <i class="fa-solid fa-address-book text-lg lg:text-base"></i>
+                                </div>
+                                <span class="relative">
+                                    Contact Us
+                                    <span
+                                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-skin-primary transition-all duration-300 group-hover:w-full hidden lg:block"></span>
+                                </span>
+                            </div>
+                        </a>
                         <div id="secodary-btn" class="right-0 ml-small hidden items-center">
                             <button class="btn-secondary">Book Appointment</button>
                         </div>

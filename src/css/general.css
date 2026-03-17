@@ -16,6 +16,25 @@
     @apply animate-leftSlide;
   }
 
+  @keyframes gradient {
+    0% {
+      background-position: 0% 30%;
+    }
+
+    50% {
+      background-position: 100% 30%;
+    }
+
+    100% {
+      background-position: 0% 30%;
+    }
+  }
+
+  .animate-gradient {
+    animation: gradient 6s linear infinite;
+    will-change: background-position;
+  }
+
   /* Body */
   body {
     @apply bg-white overflow-x-hidden;
@@ -23,7 +42,7 @@
 
   /* Custom Utilities */
   .container-custom {
-    @apply w-full max-w-7xl mx-auto px-medium sm:px-large lg:px-8;
+    @apply w-full max-w-7xl mx-auto px-medium sm:px-large lg:px-huge py-16 lg:py-24;
   }
 
   /* ---------- Headings ---------- */
@@ -76,7 +95,7 @@
 
   /* Primary Button - Premium Diagonal Shutter */
   .btn-primary {
-    @apply relative inline-block overflow-hidden text-skin-primary font-bold px-medium py-medium rounded-2xl uppercase transition-all duration-500 ease-in-out cursor-pointer border border-skin-primary;
+    @apply relative inline-block overflow-hidden text-skin-primary font-bold px-small md:px-medium py-small md:py-medium rounded-2xl uppercase transition-all duration-500 ease-in-out cursor-pointer border border-skin-primary text-sm md:text-base;
   }
 
   .btn-primary::before {
@@ -107,11 +126,11 @@
   }
 
   #progress {
-    @apply hidden bg-skin-primary fixed bottom-5 right-2 h-18 w-18 place-items-center rounded-full shadow-lg cursor-pointer z-9999 hover:scale-110 hover:shadow-2xl transition-transform duration-200;
+    @apply hidden bg-skin-primary fixed bottom-5 right-2 h-12 md:h-18 w-12 md:w-18 place-items-center rounded-full shadow-lg cursor-pointer z-9999 hover:scale-110 hover:shadow-2xl transition-all duration-200;
   }
 
   #progress-value {
-    @apply h-[calc(100%-15px)] w-[calc(100%-15px)] bg-white rounded-full grid place-items-center text-[35px] text-skin-secondary;
+    @apply h-[calc(100%-15px)] w-[calc(100%-15px)] bg-white rounded-full grid place-items-center text-[25px] md:text-[35px] text-skin-secondary;
   }
 
   /* Cart Button */
@@ -317,17 +336,15 @@ html {
   background: var(--color-skin-primary) !important;
 }
 
-/* Testimonial Middle Card Effect */
-@media (min-width: 1024px) {
   .testimonialSwiper {
-    padding-top: 2rem !important; /* give space for scale */
     padding-bottom: 2rem !important;
   }
-  
+/* Testimonial Middle Card Effect */
+@media (min-width: 1024px) {
   .testimonialSwiper .swiper-slide {
     transition: transform 0.4s ease, opacity 0.4s ease;
     transform: scale(0.85); /* Side cards smaller */
-    opacity: 0.5;
+    opacity: 0.7;
   }
   
   .testimonialSwiper .swiper-slide-active {
@@ -338,4 +355,33 @@ html {
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     border-color: transparent;
   }
+}
+
+/* 1. Style for all bullets (Inactive) */
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #94a3b8; /* slate-400 */
+  opacity: 0.6;
+  border-radius: 99px; /* Keeps them circular */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth expansion */
+}
+
+/* 2. Style for the Active bullet (The Long Pill) */
+.swiper-pagination-bullet-active {
+  width: 28px !important; /* This makes it "long" */
+  background-color: #0d9488 !important; /* teal-600 */
+  opacity: 1;
+  border-radius: 99px !important; /* Keeps the ends rounded */
+}
+
+/* Services Swiper – equal-height cards */
+/* The wrapper stretches all slides to match the tallest one */
+.servicesSwiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+/* Each slide is height: auto so it fills the stretched wrapper */
+.servicesSwiper .swiper-slide {
+  height: auto;
 }
