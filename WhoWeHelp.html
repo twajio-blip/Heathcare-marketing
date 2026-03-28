@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Who We Help - Legacy Health Growth</title>
+    <meta name="description"
+        content="We partner with forward-thinking healthcare organizations ready to scale their impact and patient volume through clinical-grade marketing." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body
+    class="relative min-h-screen overflow-x-hidden bg-white font-poppins text-skin-accent antialiased selection:bg-skin-primary selection:text-white">
+
+    <!-- HEADER PLACEHOLDER -->
+    <div id="header-container"></div>
+
+    <main class="w-full overflow-hidden">
+    <!-- 3. Who We Help Section Start -->
+    <section class="relative overflow-hidden">
+      <div class="absolute w-full h-full -z-10">
+        <img src="./images/who-we-help-bg.png" alt="Hero-bg" class="w-full h-full" />
+      </div>
+      <div id="who-we-help" class="container-custom mt-20 pt-32 lg:pt-48">
+        <div class="text-center max-w-4xl mx-auto mb-huge px-medium" data-aos="fade-up">
+
+          <!-- Badge -->
+          <div
+            class="inline-flex items-center gap-small px-medium py-small rounded-full bg-skin-background border border-skin-primary/20 text-xs font-black uppercase tracking-[0.2em] mb-6 shadow-sm shadow-skin-primary/10">
+            <span class="w-2 h-2 rounded-full bg-skin-primary animate-pulse"></span>
+            <span class="text-skin-primary">Our Ideal Partners</span>
+          </div>
+          <!-- Heading -->
+          <h2 class="font-black text-skin-accent tracking-tight leading-[1.1] mb-medium">
+            Who
+            <span
+              class="bg-linear-to-r from-skin-primary via-indigo-500 to-skin-accent bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">
+              We Help
+            </span>
+          </h2>
+
+          <!-- Description -->
+          <p class="text-skin-accent/60 font-medium leading-relaxed max-w-2xl mx-auto ">
+            We partner with
+            <span class="text-skin-primary font-semibold">forward-thinking</span>
+            healthcare organizations ready to scale their impact and patient
+            volume through clinical-grade marketing.
+          </p>
+          <!-- Divider -->
+          <div class="mt-medium flex justify-center">
+            <div class="w-16 h-1 rounded-full bg-linear-to-r from-skin-primary/40 to-skin-accent/40"></div>
+          </div>
+        </div>
+
+        <!-- Tabs Container -->
+        <div class="flex flex-wrap justify-center gap-small md:gap-medium my-medium" data-aos="fade-up"
+          data-aos-delay="100">
+          <!-- Hospitals (Active) -->
+          <button
+            class="tab-btn active relative group bg-skin-primary text-white px-medium py-small rounded-full font-bold text-xs md:text-size-small shadow-md shadow-skin-primary/30 transition-transform duration-300 hover:scale-105 hover:bg-white hover:text-skin-primary hover:shadow-md"
+            data-target="tab-hospitals">
+            <span class="relative z-10">Hospitals</span>
+          </button>
+
+          <!-- Other Tabs -->
+          <button
+            class="tab-btn relative group bg-white/50 backdrop-blur-sm text-slate-600 border border-slate-200 px-medium py-small rounded-full font-bold text-xs md:text-size-small hover:bg-white hover:text-skin-primary hover:shadow-md transition-all duration-300 hover:scale-105"
+            data-target="tab-clinics">
+            Clinics & Multi-Specialty
+          </button>
+
+          <button
+            class="tab-btn relative group bg-white/50 backdrop-blur-sm text-slate-600 border border-slate-200 px-medium py-small rounded-full font-bold text-xs md:text-size-small hover:bg-white hover:text-skin-primary hover:shadow-md transition-all duration-300 hover:scale-105"
+            data-target="tab-pharmacies">
+            Pharmacies
+          </button>
+
+          <button
+            class="tab-btn relative group bg-white/50 backdrop-blur-sm text-slate-600 border border-slate-200 px-medium py-small rounded-full font-bold text-xs md:text-size-small hover:bg-white hover:text-skin-primary hover:shadow-md transition-all duration-300 hover:scale-105"
+            data-target="tab-startups">
+            Healthcare Startups
+          </button>
+
+          <button
+            class="tab-btn relative group bg-white/50 backdrop-blur-sm text-slate-600 border border-slate-200 px-medium py-small rounded-full font-bold text-xs md:text-size-small hover:bg-white hover:text-skin-primary hover:shadow-md transition-all duration-300 hover:scale-105"
+            data-target="tab-diagnostic">
+            Diagnostic Centers
+          </button>
+
+          <button
+            class="tab-btn relative group bg-white/50 backdrop-blur-sm text-slate-600 border border-slate-200 px-medium py-small rounded-full font-bold text-xs md:text-size-small hover:bg-white hover:text-skin-primary hover:shadow-md transition-all duration-300 hover:scale-105"
+            data-target="tab-telehealth">
+            Telehealth
+          </button>
+
+          <button
+            class="tab-btn relative group bg-white/50 backdrop-blur-sm text-slate-600 border border-slate-200 px-medium py-small rounded-full font-bold text-xs md:text-size-small hover:bg-white hover:text-skin-primary hover:shadow-md transition-all duration-300 hover:scale-105"
+            data-target="tab-device">
+            Medical Device & Tech
+          </button>
+        </div>
+
+        <!-- Tab Content Area -->
+        <div class="relative min-h-[400px]" data-aos="fade-up" data-aos-delay="200">
+          <!-- Tab 1: Hospitals -->
+          <div id="tab-hospitals"
+            class="tab-content flex flex-col lg:flex-row items-center gap-huge transition-opacity duration-500 opacity-100 animate-fade-in-up">
+            <!-- Left Content -->
+            <div class="lg:w-1/2">
+              <!-- Heading -->
+              <div class="mb-medium">
+                <h2 class="font-black text-skin-accent leading-tight">
+                  Scale your hospital network with
+                  <span class="text-skin-primary">precision marketing.</span>
+                </h2>
+              </div>
+              <!-- Description -->
+              <p class="text-skin-accent/80 font-medium mb-medium leading-relaxed max-w-xl">
+                Drive high-value service line growth and improve patient
+                retention across your entire health system using
+                clinical-grade data.
+              </p>
+              <!-- Features List -->
+              <ul class="space-y-small mb-medium">
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Increase patient volume
+                    for
+                    profitable
+                    service lines.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Enhance brand reputation
+                    and
+                    community
+                    trust.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Streamline patient
+                    scheduling and
+                    intake
+                    flows.</span>
+                </li>
+              </ul>
+              <!-- Button -->
+              <button
+                class="btn-primary mt-small hover:shadow-lg hover:shadow-blue-600/20 transition-all active:scale-95">
+                Discover Solutions
+              </button>
+            </div>
+
+            <!-- Right Image -->
+            <div class="hidden md:block lg:w-1/2 w-full relative">
+              <!-- Image Card -->
+              <div
+                class="rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-100 aspect-4/3 relative group border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80"
+                  alt="Hospitals"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                <div class="absolute inset-0 bg-linear-to-t from-slate-900/30 to-transparent pointer-events-none"></div>
+              </div>
+
+              <!-- Stat Card -->
+              <div
+                class="hidden sm:block absolute -bottom-medium -left-medium bg-white/90 backdrop-blur-xl p-medium rounded-2xl shadow-2xl border border-white z-10 animate-bounce hover:scale-105 transition-transform duration-500">
+                <div class="flex items-center gap-small">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-linear-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white shadow-lg shadow-teal-500/30">
+                    <i class="fa-solid fa-chart-line text-size-medium"></i>
+                  </div>
+                  <div>
+                    <p class="text-size-xsmall text-slate-500 font-black uppercase tracking-widest leading-none mb-1">
+                      Patient Volume
+                    </p>
+                    <p class="text-size-badge font-black text-slate-900 leading-none">
+                      +45%
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Clinics -->
+          <div id="tab-clinics"
+            class="tab-content hidden flex-col lg:flex-row items-center gap-huge transition-opacity duration-500 opacity-0">
+            <!-- Left Content -->
+            <div class="lg:w-1/2">
+              <!-- Heading -->
+              <div class="mb-medium">
+                <h2 class="font-black text-skin-accent leading-tight">
+                  Dominate your local market and
+                  <span class="text-skin-primary">fill your waiting rooms.</span>
+                </h2>
+              </div>
+
+              <!-- Description -->
+              <p class="text-skin-accent/80 font-medium mb-medium leading-relaxed max-w-xl">
+                Targeted digital strategies specifically crafted to attract
+                new patients and build a loyal patient base for your clinic.
+              </p>
+
+              <!-- Features List -->
+              <ul class="space-y-small mb-medium">
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Rank #1 in local search
+                    results
+                    (Local
+                    SEO).</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Generate high-quality
+                    leads
+                    through
+                    targeted ads.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Automate patient
+                    follow-ups and
+                    review generation.</span>
+                </li>
+              </ul>
+
+              <!-- Button -->
+              <button
+                class="btn-primary mt-small hover:shadow-lg hover:shadow-blue-600/20 transition-all active:scale-95">
+                Discover Solutions
+              </button>
+            </div>
+
+            <!-- Right Image -->
+            <div class="hidden md:block lg:w-1/2 w-full relative">
+              <!-- Image Card -->
+              <div
+                class="rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-100 aspect-4/3 relative group border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1538108149393-cebb47ac1953?auto=format&fit=crop&w=1000&q=80"
+                  alt="Clinics"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                <div class="absolute inset-0 bg-linear-to-t from-slate-900/30 to-transparent pointer-events-none"></div>
+              </div>
+
+              <!-- Stat Card -->
+              <div
+                class="hidden sm:block absolute -bottom-medium -left-medium bg-white/90 backdrop-blur-xl p-medium rounded-2xl shadow-2xl border border-white z-10 animate-bounce hover:scale-105 transition-transform duration-500">
+                <div class="flex items-center gap-small">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-linear-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                    <i class="fa-solid fa-user-plus text-size-medium"></i>
+                  </div>
+                  <div>
+                    <p class="text-size-xsmall text-slate-500 font-black uppercase tracking-widest leading-none mb-1">
+                      New Patients
+                    </p>
+                    <p class="text-size-badge font-black text-slate-900 leading-none">
+                      2.4x
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Pharmacies -->
+          <div id="tab-pharmacies"
+            class="tab-content hidden flex-col lg:flex-row items-center gap-huge transition-opacity duration-500 opacity-0">
+            <!-- Left Content -->
+            <div class="lg:w-1/2">
+              <!-- Heading -->
+              <div class="mb-medium">
+                <h2 class="font-black text-skin-accent leading-tight">
+                  Expand your pharmacy's reach and
+                  <span class="text-skin-primary">digital footprint.</span>
+                </h2>
+              </div>
+
+              <!-- Description -->
+              <p class="text-skin-accent/80 font-medium mb-medium leading-relaxed max-w-xl">
+                Promote your unique services, prescription delivery, and
+                wellness products to a broader online audience near you.
+              </p>
+
+              <!-- Features List -->
+              <ul class="space-y-small mb-medium">
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Promote specialty
+                    pharmacy
+                    services
+                    directly to
+                    patients.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Drive in-store foot
+                    traffic with
+                    hyper-local ads.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Boost online traffic for
+                    health
+                    and
+                    wellness
+                    products.</span>
+                </li>
+              </ul>
+
+              <!-- Button -->
+              <button
+                class="btn-primary mt-small hover:shadow-lg hover:shadow-blue-600/20 transition-all active:scale-95">
+                Discover Solutions
+              </button>
+            </div>
+
+            <!-- Right Image -->
+            <div class="hidden md:block lg:w-1/2 w-full relative">
+              <!-- Image Card -->
+              <div
+                class="rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-100 aspect-4/3 relative group border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=1000&q=80"
+                  alt="Pharmacies"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                <div class="absolute inset-0 bg-linear-to-t from-slate-900/30 to-transparent pointer-events-none"></div>
+              </div>
+
+              <!-- Stat Card -->
+              <div
+                class="hidden sm:block absolute -bottom-medium -left-medium bg-white/90 backdrop-blur-xl p-medium rounded-2xl shadow-2xl border border-white z-10 animate-bounce hover:scale-105 transition-transform duration-500">
+                <div class="flex items-center gap-small">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-linear-to-br from-indigo-400 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-prescription-bottle-medical text-size-medium"></i>
+                  </div>
+                  <div>
+                    <p class="text-size-xsmall text-slate-500 font-black uppercase tracking-widest leading-none mb-1">
+                      Prescriptions
+                    </p>
+                    <p class="text-size-badge font-black text-slate-900 leading-none">
+                      +32%
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: Healthcare Startups -->
+          <div id="tab-startups"
+            class="tab-content hidden flex-col lg:flex-row items-center gap-huge transition-opacity duration-500 opacity-0">
+            <!-- Left Content -->
+            <div class="lg:w-1/2">
+              <!-- Heading -->
+              <div class="mb-medium">
+                <h2 class="font-black text-skin-accent leading-tight">
+                  Accelerate user acquisition for your
+                  <span class="text-skin-primary">healthtech startup.</span>
+                </h2>
+              </div>
+
+              <!-- Description -->
+              <p class="text-skin-accent/80 font-medium mb-medium leading-relaxed max-w-xl">
+                Lean, aggressive growth strategies to help you scale fast,
+                secure funding, and capture market share quickly.
+              </p>
+
+              <!-- Features List -->
+              <ul class="space-y-small mb-medium">
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Rapidly scale B2B or B2C
+                    user
+                    acquisition.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Build a disruptive and
+                    authoritative brand
+                    identity.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Optimize conversion rates
+                    across
+                    all
+                    digital
+                    funnels.</span>
+                </li>
+              </ul>
+
+              <!-- Button -->
+              <button
+                class="btn-primary mt-small hover:shadow-lg hover:shadow-blue-600/20 transition-all active:scale-95">
+                Discover Solutions
+              </button>
+            </div>
+
+            <!-- Right Image -->
+            <div class="hidden md:block lg:w-1/2 w-full relative">
+              <!-- Image Card -->
+              <div
+                class="rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-100 aspect-4/3 relative group border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1000&q=80"
+                  alt="Healthcare Startups"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                <div class="absolute inset-0 bg-linear-to-t from-slate-900/30 to-transparent pointer-events-none"></div>
+              </div>
+
+              <!-- Stat Card -->
+              <div
+                class="hidden sm:block absolute -bottom-medium -left-medium bg-white/90 backdrop-blur-xl p-medium rounded-2xl shadow-2xl border border-white z-10 animate-bounce hover:scale-105 transition-transform duration-500">
+                <div class="flex items-center gap-small">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-linear-to-br from-fuchsia-400 to-fuchsia-600 flex items-center justify-center text-white shadow-lg shadow-fuchsia-500/30">
+                    <i class="fa-solid fa-rocket text-size-medium"></i>
+                  </div>
+                  <div>
+                    <p class="text-size-xsmall text-slate-500 font-black uppercase tracking-widest leading-none mb-1">
+                      User Growth
+                    </p>
+                    <p class="text-size-badge font-black text-slate-900 leading-none">
+                      10x
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 5: Diagnostic Centers -->
+          <div id="tab-diagnostic"
+            class="tab-content hidden flex-col lg:flex-row items-center gap-huge transition-opacity duration-500 opacity-0">
+            <!-- Left Content -->
+            <div class="lg:w-1/2">
+              <!-- Heading -->
+              <div class="mb-medium">
+                <h2 class="font-black text-skin-accent leading-tight">
+                  Increase booking volume for your
+                  <span class="text-skin-primary">essential diagnostic services.</span>
+                </h2>
+              </div>
+
+              <!-- Description -->
+              <p class="text-skin-accent/80 font-medium mb-medium leading-relaxed max-w-xl">
+                Position your center as the preferred, trusted choice for both
+                referring physicians and direct patients in your region.
+              </p>
+
+              <!-- Features List -->
+              <ul class="space-y-small mb-medium">
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Increase
+                    direct-to-patient online
+                    appointments.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Build stronger physician
+                    referral
+                    networks.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Highlight advanced
+                    technology and
+                    fast
+                    turnaround
+                    times.</span>
+                </li>
+              </ul>
+
+              <!-- Button -->
+              <button
+                class="btn-primary mt-small hover:shadow-lg hover:shadow-blue-600/20 transition-all active:scale-95">
+                Discover Solutions
+              </button>
+            </div>
+
+            <!-- Right Image -->
+            <div class="hidden md:block lg:w-1/2 w-full relative">
+              <!-- Image Card -->
+              <div
+                class="rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-100 aspect-4/3 relative group border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1000&q=80"
+                  alt="Diagnostic Centers"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                <div class="absolute inset-0 bg-linear-to-t from-slate-900/30 to-transparent pointer-events-none"></div>
+              </div>
+
+              <!-- Stat Card -->
+              <div
+                class="hidden sm:block absolute -bottom-medium -left-medium bg-white/90 backdrop-blur-xl p-medium rounded-2xl shadow-2xl border border-white z-10 animate-bounce hover:scale-105 transition-transform duration-500">
+                <div class="flex items-center gap-small">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-linear-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white shadow-lg shadow-amber-500/30">
+                    <i class="fa-solid fa-calendar-check text-size-medium"></i>
+                  </div>
+                  <div>
+                    <p class="text-size-xsmall text-slate-500 font-black uppercase tracking-widest leading-none mb-1">
+                      Bookings
+                    </p>
+                    <p class="text-size-badge font-black text-slate-900 leading-none">
+                      +65%
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 6: Telehealth Providers -->
+          <div id="tab-telehealth"
+            class="tab-content hidden flex-col lg:flex-row items-center gap-huge transition-opacity duration-500 opacity-0">
+            <!-- Left Content -->
+            <div class="lg:w-1/2">
+              <!-- Heading -->
+              <div class="mb-medium">
+                <h2 class="font-black text-skin-accent leading-tight">
+                  Unbound growth for your
+                  <span class="text-skin-primary">virtual care platform.</span>
+                </h2>
+              </div>
+
+              <!-- Description -->
+              <p class="text-skin-accent/80 font-medium mb-medium leading-relaxed max-w-xl">
+                Target patients actively seeking immediate, convenient virtual
+                care options across any geographic region.
+              </p>
+
+              <!-- Features List -->
+              <ul class="space-y-small mb-medium">
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Capture high-intent
+                    search traffic
+                    for
+                    telemedicine.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Reduce customer
+                    acquisition cost
+                    (CAC)
+                    rapidly.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Promote 24/7 access and
+                    specialized
+                    virtual care
+                    domains.</span>
+                </li>
+              </ul>
+
+              <!-- Button -->
+              <button
+                class="btn-primary mt-small hover:shadow-lg hover:shadow-blue-600/20 transition-all active:scale-95">
+                Discover Solutions
+              </button>
+            </div>
+
+            <!-- Right Image -->
+            <div class="hidden md:block lg:w-1/2 w-full relative">
+              <!-- Image Card -->
+              <div
+                class="rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-100 aspect-4/3 relative group border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80"
+                  alt="Telehealth Providers"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                <div class="absolute inset-0 bg-linear-to-t from-slate-900/30 to-transparent pointer-events-none"></div>
+              </div>
+
+              <!-- Stat Card -->
+              <div
+                class="hidden sm:block absolute -bottom-medium -left-medium bg-white/90 backdrop-blur-xl p-medium rounded-2xl shadow-2xl border border-white z-10 animate-bounce hover:scale-105 transition-transform duration-500">
+                <div class="flex items-center gap-small">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-linear-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white shadow-lg shadow-emerald-500/30">
+                    <i class="fa-solid fa-video text-size-medium"></i>
+                  </div>
+                  <div>
+                    <p class="text-size-xsmall text-slate-500 font-black uppercase tracking-widest leading-none mb-1">
+                      Consults
+                    </p>
+                    <p class="text-size-badge font-black text-slate-900 leading-none">
+                      +80%
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 7: Medical Device -->
+          <div id="tab-device"
+            class="tab-content hidden flex-col lg:flex-row items-center gap-huge transition-opacity duration-500 opacity-0">
+            <!-- Left Content -->
+            <div class="lg:w-1/2">
+              <!-- Heading -->
+              <div class="mb-medium">
+                <h2 class="font-black text-skin-accent leading-tight">
+                  Connect your innovations with the
+                  <span class="text-skin-primary">right decision-makers.</span>
+                </h2>
+              </div>
+
+              <!-- Description -->
+              <p class="text-skin-accent/80 font-medium mb-medium leading-relaxed max-w-xl">
+                B2B marketing strategies designed specifically for complex
+                sales cycles in the modern healthcare industry.
+              </p>
+
+              <!-- Features List -->
+              <ul class="space-y-small mb-medium">
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Generate highly qualified
+                    leads
+                    from
+                    hospitals and
+                    clinics.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Showcase product efficacy
+                    through
+                    thought
+                    leadership
+                    content.</span>
+                </li>
+                <li class="flex items-center gap-medium group">
+                  <div
+                    class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <span class="text-skin-accent font-bold text-size-small lg:text-size-medium">Navigate complex B2B
+                    healthcare
+                    buying
+                    cycles
+                    effectively.</span>
+                </li>
+              </ul>
+
+              <!-- Button -->
+              <button
+                class="btn-primary mt-small hover:shadow-lg hover:shadow-blue-600/20 transition-all active:scale-95">
+                Discover Solutions
+              </button>
+            </div>
+
+            <!-- Right Image -->
+            <div class="hidden md:block lg:w-1/2 w-full relative">
+              <!-- Image Card -->
+              <div
+                class="rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-100 aspect-4/3 relative group border border-slate-200/50">
+                <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1000&q=80"
+                  alt="Medical Device"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                <div class="absolute inset-0 bg-linear-to-t from-slate-900/30 to-transparent pointer-events-none"></div>
+              </div>
+
+              <!-- Stat Card -->
+              <div
+                class="hidden sm:block absolute -bottom-medium -left-medium bg-white/90 backdrop-blur-xl p-medium rounded-2xl shadow-2xl border border-white z-10 animate-bounce hover:scale-105 transition-transform duration-500">
+                <div class="flex items-center gap-small">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-linear-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-purple-500/30">
+                    <i class="fa-solid fa-bullseye text-size-medium"></i>
+                  </div>
+                  <div>
+                    <p class="text-size-xsmall text-slate-500 font-black uppercase tracking-widest leading-none mb-1">
+                      Lead Quality
+                    </p>
+                    <p class="text-size-badge font-black text-slate-900 leading-none">
+                      Top 1%
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 3. Who We Help Section END -->
+    </main>
+
+
+    <!-- FOOTER PLACEHOLDER -->
+    <div id="footer-container"></div>
+
+    <!-- Progress Bar -->
+    <div id="progress">
+        <span id="progress-value">
+            <i class="fa-solid fa-arrow-up text-skin-primary"></i>
+        </span>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
