@@ -65,6 +65,16 @@ function initNavbarScroll() {
 
       navSecondaryWrapper.classList.toggle('lg:mt-25', !isSticky);
 
+      if (navSecondaryContainer) {
+        if (isSticky) {
+          navSecondaryContainer.classList.remove('py-large', 'lg:py-large', 'md:py-huge');
+          navSecondaryContainer.classList.add('py-small', 'lg:py-small', 'md:py-small');
+        } else {
+          navSecondaryContainer.classList.remove('py-small', 'lg:py-small', 'md:py-small');
+          navSecondaryContainer.classList.add('py-large', 'lg:py-large', 'md:py-huge');
+        }
+      }
+
 
       // Animate nav-secondary-wrapper sliding in from top on each sticky transition
       if (isSticky && !wasSticky) {
