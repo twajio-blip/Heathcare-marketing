@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
-    base: '/', // Vercel prefers the root base
+    base: './', // Updated for GitHub Pages (relative paths)
     plugins: [
         tailwindcss(),
     ],
