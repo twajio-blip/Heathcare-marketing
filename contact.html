@@ -25,21 +25,23 @@
     <!-- HEADER PLACEHOLDER -->
     <div id="header-container"></div>
 
-    <main class="w-full overflow-hidden">
+    <main class="w-full overflow-hidden pt-16 lg:pt-32">
         <!-- Hero Section -->
-        <div class="relative overflow-hidden pt-32 lg:pt-48 pb-20 bg-linear-to-b from-skin-accent/5 to-white">
+        <div class="relative overflow-hidden bg-linear-to-b from-skin-accent/5 to-white">
             <div class="absolute top-0 right-0 -m-32 w-96 h-96 bg-skin-primary/10 rounded-full blur-3xl opacity-60">
             </div>
             <div class="absolute bottom-0 left-0 -m-32 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl opacity-60"></div>
 
             <div class="container-custom relative text-center z-10" data-aos="fade-up">
-                <span
-                    class="inline-block px-medium py-small text-size-xsmall font-black tracking-[0.2em] uppercase text-skin-primary bg-skin-primary/10 border border-skin-primary/20 rounded-full mb-6">
-                    Get In Touch
-                </span>
-                <h1 class="font-black text-skin-accent text-5xl md:text-6xl leading-tight mb-6">
-                    Let's Talk <span
-                        class="bg-linear-to-r from-skin-primary via-indigo-500 to-skin-accent animate-gradient bg-clip-text text-transparent">Growth</span>
+                <nav class="flex items-center justify-center gap-2 mb-6" aria-label="Breadcrumb">
+                    <a href="index.html"
+                        class="text-xs font-black uppercase tracking-widest text-skin-accent/40 hover:text-skin-primary transition-colors duration-300">Home</a>
+                    <span class="text-xs text-skin-accent/20"><i
+                            class="fa-solid fa-chevron-right text-[10px]"></i></span>
+                    <span class="text-xs font-black uppercase tracking-widest text-skin-primary">Contact Us</span>
+                </nav>
+                <h1 class="animate-gradient">
+                    Let's Talk Growth
                 </h1>
                 <p class="text-skin-accent/60 font-medium max-w-2xl mx-auto leading-relaxed text-lg">
                     Ready to scale your patient acquisition? Reach out to our team of growth engineers and clinical
@@ -50,7 +52,7 @@
 
         <!-- Contact Section -->
         <section class="relative bg-white pb-huge">
-            <div class="container-custom">
+            <div class="container-custom pt-0!">
                 <div class="flex flex-col lg:flex-row gap-huge">
 
                     <!-- Left Column: Contact Info -->
@@ -220,7 +222,7 @@
         </section>
 
         <!-- FAQ Mini Section (Optional but adds value) -->
-        <section class="bg-slate-50 py-huge border-t border-slate-200">
+        <section class="bg-slate-50 border-t border-slate-200">
             <div class="container-custom">
                 <div class="text-center max-w-3xl mx-auto mb-10">
                     <h2 class="text-2xl font-black text-skin-accent mb-4">What To Expect</h2>

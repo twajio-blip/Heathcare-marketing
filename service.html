@@ -25,18 +25,19 @@
     <!-- HEADER PLACEHOLDER -->
     <div id="header-container"></div>
 
-    <main class="w-full overflow-hidden">
+    <main class="w-full overflow-hidden pt-16 lg:pt-32">
         <!-- Hero Section -->
-        <div class="relative overflow-hidden mt-16 lg:mt-32 bg-linear-to-b from-skin-accent/5 to-white">
-
+        <div class="relative overflow-hidden bg-linear-to-b from-skin-accent/5 to-white">
             <div class="container-custom relative text-center z-10" data-aos="fade-up">
-                <span
-                    class="inline-block px-medium py-small text-size-xsmall font-black tracking-[0.2em] uppercase text-skin-primary bg-skin-primary/10 border border-skin-primary/20 rounded-full mb-large">
-                    Our Expertise
-                </span>
-                <h1 class="font-black text-skin-accent leading-tight mb-large">
-                    Our <span
-                        class="bg-linear-to-r from-skin-primary via-indigo-500 to-skin-accent animate-gradient bg-clip-text text-transparent">Services</span>
+                <nav class="flex items-center justify-center gap-2 mb-6" aria-label="Breadcrumb">
+                    <a href="index.html"
+                        class="text-xs font-black uppercase tracking-widest text-skin-accent/40 hover:text-skin-primary transition-colors duration-300">Home</a>
+                    <span class="text-xs text-skin-accent/20"><i
+                            class="fa-solid fa-chevron-right text-[10px]"></i></span>
+                    <span class="text-xs font-black uppercase tracking-widest text-skin-primary">Our Services</span>
+                </nav>
+                <h1 class="animate-gradient">
+                    Our Services
                 </h1>
                 <p class="text-skin-accent/60 font-medium max-w-2xl mx-auto leading-relaxed">
                     End-to-end digital marketing solutions engineered to accelerate patient acquisition and practice
@@ -46,15 +47,14 @@
         </div>
 
         <!-- Services Loop Section -->
-        <section id="services" class="relative pb-huge overflow-hidden bg-white">
+        <section id="services" class="relative overflow-hidden bg-white">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none opacity-50">
                 <div class="absolute top-[5%] -left-20 w-96 h-96 bg-teal-50 rounded-full blur-3xl"></div>
                 <div class="absolute top-[35%] -right-20 w-96 h-96 bg-indigo-50 rounded-full blur-3xl"></div>
                 <div class="absolute top-[65%] -left-20 w-96 h-96 bg-violet-50 rounded-full blur-3xl"></div>
             </div>
 
-            <div class="container-custom relative z-10">
-
+            <div class="container-custom pt-0! relative z-10">
                 <div class="flex flex-col lg:flex-row items-center gap-huge mb-huge">
                     <div class="lg:w-1/2" data-aos="fade-right">
                         <div class="mb-medium group/header w-fit">
@@ -431,39 +431,67 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="relative container-custom">
-            <div class="bg-skin-accent rounded-[3rem] relative overflow-hidden shadow-2xl shrink-0 group max-w-5xl mx-auto text-center"
-                data-aos="zoom-in">
-                <!-- Background Decoration -->
-                <div
-                    class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551076805-e18690c5e561?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay transition-transform duration-1000 group-hover:scale-105">
-                </div>
-
-                <div
-                    class="absolute top-0 right-0 w-64 h-64 bg-skin-primary/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2">
-                </div>
-
-                <div class="relative z-10 flex flex-col items-center justify-center">
-                    <span
-                        class="inline-block p-small bg-white/10 rounded-full border border-white/20 text-white text-size-xsmall font-bold uppercase tracking-widest shadow-lg backdrop-blur-sm mb-large">
-                        Ready to grow?
-                    </span>
-                    <h2 class="font-black text-white leading-tight mb-huge">
-                        Get Your Free <span
-                            class="bg-linear-to-r from-skin-primary to-teal-400 bg-clip-text text-transparent">Marketing
-                            Audit</span>
+        <section class="relative">
+            <div class="absolute w-full h-full -z-10">
+                <img src="./images/cta-bg.png" alt="cta-bg" class="w-full h-full object-cover" />
+            </div>
+            <div class="container-custom relative overflow-hidden">
+                <!-- CTA Content Container -->
+                <div class="relative z-10 mx-auto text-center">
+                    <h2 class="font-black text-skin-accent mb-medium tracking-tighter leading-[1.1]" data-aos="fade-up"
+                        data-aos-delay="100">
+                        Let's Grow Your <br class="hidden md:block" />
+                        <span
+                            class="bg-linear-to-r from-skin-primary via-indigo-600 to-skin-primary bg-size-[200%_auto] animate-gradient text-transparent bg-clip-text">
+                            Healthcare Brand
+                        </span>
                     </h2>
-                    <p class="text-white/80 font-medium max-w-xl mx-auto mb-huge">
-                        Speak with our healthcare growth specialists and discover exactly how many new patients you're
-                        missing out on.
+
+                    <p class="text-slate-600 mb-medium font-medium mx-auto leading-relaxed" data-aos="fade-up"
+                        data-aos-delay="200">
+                        Join hundreds of healthcare providers who trust
+                        <span class="text-slate-900 font-bold">Legacy Health Growth</span>
+                        to drive predictable patient acquisition and clinical-grade market
+                        dominance.
                     </p>
-                    <a href="contact.html"
-                        class="btn-primary hover:bg-white hover:text-skin-accent hover:border-white hover:shadow-2xl shadow-xl transition-all duration-300">
-                        Schedule Consultation
-                    </a>
+
+                    <div class="flex flex-col sm:flex-row gap-large justify-center items-center" data-aos="fade-up"
+                        data-aos-delay="300">
+                        <!-- CTA Button Group -->
+                        <div class="flex flex-col sm:flex-row gap-large justify-center items-center" data-aos="fade-up"
+                            data-aos-delay="300">
+                            <!-- Primary CTA: Strategy Call -->
+                            <button
+                                class="group relative w-auto flex items-center justify-center gap-small px-medium md:px-huge py-medium cursor-pointer overflow-hidden rounded-full bg-skin-primary font-black uppercase tracking-widest text-white shadow-xl shadow-skin-primary/20 transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-skin-primary/60">
+                                <div
+                                    class="absolute inset-0 bg-linear-to-r from-skin-primary to-skin-primary-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                </div>
+
+                                <span class="relative z-10 text-xs md:text-sm">Book a Strategy Call</span>
+
+                                <svg class="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </button>
+
+                            <!-- Secondary CTA: Free Audit -->
+                            <button
+                                class="group relative w-auto flex items-center justify-center gap-small px-small md:px-large py-small cursor-pointer rounded-full border-2 border-slate-200 bg-white/50 backdrop-blur-md font-black uppercase tracking-widest text-slate-800 shadow-sm transition-all duration-300 hover:scale-105 hover:border-slate-300 hover:bg-white active:scale-95 focus:outline-none focus:ring-2 focus:ring-slate-300">
+                                <div
+                                    class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-700 transition-all duration-300 group-hover:bg-skin-primary group-hover:text-white group-hover:scale-110">
+                                    <svg class="h-5 w-5 transition-transform duration-300 group-hover:rotate-6"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+
+                                <span class="text-xs md:text-sm">Request Free Audit</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

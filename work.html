@@ -25,24 +25,24 @@
     <!-- HEADER PLACEHOLDER -->
     <div id="header-container"></div>
 
-    <main class="w-full overflow-hidden">
+    <main class="w-full overflow-hidden pt-16 lg:pt-32">
         <!-- Hero Section -->
-        <section class="relative pt-32 pb-16 lg:pt-48 lg:pb-24 bg-skin-accent/5 overflow-hidden">
+        <section class="relative bg-skin-accent/5 overflow-hidden">
             <div class="absolute inset-0 pointer-events-none opacity-20">
                 <div class="absolute top-10 right-10 w-96 h-96 bg-skin-primary/10 rounded-full blur-3xl"></div>
                 <div class="absolute bottom-10 left-10 w-96 h-96 bg-skin-primary-2/10 rounded-full blur-3xl"></div>
             </div>
 
             <div class="container-custom relative text-center" data-aos="fade-up">
-                <span
-                    class="inline-block px-4 py-1 text-[11px] font-black tracking-[0.28em] uppercase text-skin-primary bg-skin-primary/10 border border-skin-primary/20 rounded-full mb-6">
-                    Proof of Excellence
-                </span>
-                <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-tight mb-6">
-                    Proven Results for <br>
-                    <span
-                        class="bg-linear-to-r from-skin-primary via-indigo-500 to-skin-accent animate-gradient bg-clip-text text-transparent">Premier
-                        Practices</span>
+                <nav class="flex items-center justify-center gap-2 mb-6" aria-label="Breadcrumb">
+                    <a href="index.html"
+                        class="text-xs font-black uppercase tracking-widest text-skin-accent/40 hover:text-skin-primary transition-colors duration-300">Home</a>
+                    <span class="text-xs text-skin-accent/20"><i
+                            class="fa-solid fa-chevron-right text-[10px]"></i></span>
+                    <span class="text-xs font-black uppercase tracking-widest text-skin-primary">Our Work</span>
+                </nav>
+                <h1 class="animate-gradient">
+                    Proven Results for Premier Practices
                 </h1>
                 <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
                     We don't just deliver clicks; we deliver clinical-grade growth. Explore how we’ve transformed
@@ -72,7 +72,7 @@
         </section>
 
         <!-- Impact Statistics -->
-        <section class="py-16 bg-white relative">
+        <section class="bg-white relative">
             <div class="container-custom">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-medium lg:gap-huge">
                     <div class="text-center" data-aos="fade-up">
@@ -104,8 +104,8 @@
         </section>
 
         <!-- Detailed Case Studies -->
-        <section class="py-16 lg:py-24 bg-slate-50/50">
-            <div class="container-custom space-y-huge lg:space-y-32">
+        <section class="bg-slate-50/50">
+            <div class="container-custom space-y-huge lg:space-y-huge">
 
                 <!-- Case Study 1: Multi-Specialty Hospital -->
                 <div class="grid lg:grid-cols-2 gap-large lg:gap-huge items-center" data-aos="fade-up">
@@ -167,8 +167,7 @@
                 <div class="grid lg:grid-cols-2 gap-large lg:gap-huge items-center" data-aos="fade-up">
                     <div>
                         <div class="relative rounded-4xl overflow-hidden shadow-2xl group">
-                            <img src="https://images.unsplash.com/photo-1538108149393-cebb47ac1953?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                                alt="Dental group success"
+                            <img src="./images/ReducingAcquisitionCosts.jfif" alt="Dental group success"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                         </div>
                     </div>
@@ -277,7 +276,7 @@
         </section>
 
         <!-- Specialized Expertise Grid -->
-        <section class="py-16 lg:py-24 bg-white">
+        <section class="bg-white">
             <div class="container-custom">
                 <div class="text-center mb-huge" data-aos="fade-up">
                     <h2 class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">Expertise in Every <span
@@ -339,21 +338,67 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="py-16 lg:py-24 bg-skin-primary">
-            <div class="container-custom text-center">
-                <h2 class="text-3xl lg:text-5xl font-black text-white mb-8">Ready to Be Our Next <span
-                        class="opacity-80">Success Story?</span></h2>
-                <p class="text-white/80 font-medium max-w-2xl mx-auto mb-12"> Join hundreds of leading practices that
-                    scaled with clinical precision. Let's build your growth roadmap today. </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <a href="index.html#contact"
-                        class="btn-secondary px-huge py-large rounded-full font-bold shadow-2xl hover:scale-105 transition-transform">Start
-                        Your Audit</a>
-                    <a href="tel:+8801718-868394"
-                        class="inline-flex items-center justify-center gap-3 px-huge py-large rounded-full border-2 border-white/20 text-white font-bold hover:bg-white/10 hover:border-white transition-all">
-                        <i class="fa-solid fa-phone"></i>
-                        Speak with an Expert
-                    </a>
+        <section class="relative">
+            <div class="absolute w-full h-full -z-10">
+                <img src="./images/cta-bg.png" alt="cta-bg" class="w-full h-full object-cover" />
+            </div>
+            <div class="container-custom relative overflow-hidden">
+                <!-- CTA Content Container -->
+                <div class="relative z-10 mx-auto text-center">
+                    <h2 class="font-black text-skin-accent mb-medium tracking-tighter leading-[1.1]" data-aos="fade-up"
+                        data-aos-delay="100">
+                        Let's Grow Your <br class="hidden md:block" />
+                        <span
+                            class="bg-linear-to-r from-skin-primary via-indigo-600 to-skin-primary bg-size-[200%_auto] animate-gradient text-transparent bg-clip-text">
+                            Healthcare Brand
+                        </span>
+                    </h2>
+
+                    <p class="text-slate-600 mb-medium font-medium mx-auto leading-relaxed" data-aos="fade-up"
+                        data-aos-delay="200">
+                        Join hundreds of healthcare providers who trust
+                        <span class="text-slate-900 font-bold">Legacy Health Growth</span>
+                        to drive predictable patient acquisition and clinical-grade market
+                        dominance.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-large justify-center items-center" data-aos="fade-up"
+                        data-aos-delay="300">
+                        <!-- CTA Button Group -->
+                        <div class="flex flex-col sm:flex-row gap-large justify-center items-center" data-aos="fade-up"
+                            data-aos-delay="300">
+                            <!-- Primary CTA: Strategy Call -->
+                            <button
+                                class="group relative w-auto flex items-center justify-center gap-small px-medium md:px-huge py-medium cursor-pointer overflow-hidden rounded-full bg-skin-primary font-black uppercase tracking-widest text-white shadow-xl shadow-skin-primary/20 transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-skin-primary/60">
+                                <div
+                                    class="absolute inset-0 bg-linear-to-r from-skin-primary to-skin-primary-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                </div>
+
+                                <span class="relative z-10 text-xs md:text-sm">Book a Strategy Call</span>
+
+                                <svg class="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </button>
+
+                            <!-- Secondary CTA: Free Audit -->
+                            <button
+                                class="group relative w-auto flex items-center justify-center gap-small px-small md:px-large py-small cursor-pointer rounded-full border-2 border-slate-200 bg-white/50 backdrop-blur-md font-black uppercase tracking-widest text-slate-800 shadow-sm transition-all duration-300 hover:scale-105 hover:border-slate-300 hover:bg-white active:scale-95 focus:outline-none focus:ring-2 focus:ring-slate-300">
+                                <div
+                                    class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-700 transition-all duration-300 group-hover:bg-skin-primary group-hover:text-white group-hover:scale-110">
+                                    <svg class="h-5 w-5 transition-transform duration-300 group-hover:rotate-6"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+
+                                <span class="text-xs md:text-sm">Request Free Audit</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

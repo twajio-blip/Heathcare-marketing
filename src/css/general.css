@@ -31,8 +31,9 @@
   }
 
   .animate-gradient {
-    animation: gradient 6s linear infinite;
+    animation: gradient 4s linear infinite;
     will-change: background-position;
+    @apply font-black bg-linear-to-r from-skin-primary-2 to-skin-primary bg-size-[200%_auto] bg-clip-text text-transparent leading-tight mb-large;
   }
 
   /* Body */
@@ -336,19 +337,22 @@ html {
   background: var(--color-skin-primary) !important;
 }
 
-  .testimonialSwiper {
-    padding-bottom: 2rem !important;
-  }
+.testimonialSwiper {
+  padding-bottom: 2rem !important;
+}
+
 /* Testimonial Middle Card Effect */
 @media (min-width: 1024px) {
   .testimonialSwiper .swiper-slide {
     transition: transform 0.4s ease, opacity 0.4s ease;
-    transform: scale(0.85); /* Side cards smaller */
+    transform: scale(0.85);
+    /* Side cards smaller */
     opacity: 0.7;
   }
-  
+
   .testimonialSwiper .swiper-slide-active {
-    transform: scale(1.05); /* Middle card bigger */
+    transform: scale(1.05);
+    /* Middle card bigger */
     opacity: 1;
     z-index: 10;
     position: relative;
@@ -361,18 +365,24 @@ html {
 .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
-  background-color: #94a3b8; /* slate-400 */
+  background-color: #94a3b8;
+  /* slate-400 */
   opacity: 0.6;
-  border-radius: 99px; /* Keeps them circular */
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth expansion */
+  border-radius: 99px;
+  /* Keeps them circular */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Smooth expansion */
 }
 
 /* 2. Style for the Active bullet (The Long Pill) */
 .swiper-pagination-bullet-active {
-  width: 28px !important; /* This makes it "long" */
-  background-color: #0d9488 !important; /* teal-600 */
+  width: 28px !important;
+  /* This makes it "long" */
+  background-color: #0d9488 !important;
+  /* teal-600 */
   opacity: 1;
-  border-radius: 99px !important; /* Keeps the ends rounded */
+  border-radius: 99px !important;
+  /* Keeps the ends rounded */
 }
 
 /* Services Swiper – equal-height cards */
