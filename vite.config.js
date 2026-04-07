@@ -18,7 +18,7 @@ export default defineConfig({
                 service: resolve(__dirname, 'service.html'),
                 process: resolve(__dirname, 'process.html'),
                 work: resolve(__dirname, 'work.html'),
-                whowehelp: resolve(__dirname, 'WhoWeHelp.html'),
+                whowehelp: resolve(__dirname, 'whowehelp.html'),
                 technology: resolve(__dirname, 'technology.html'),
                 login: resolve(__dirname, 'login.html'),
                 signup: resolve(__dirname, 'signup.html'),

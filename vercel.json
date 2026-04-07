@@ -1,3 +1,17 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/service", "destination": "/service.html" },
+    { "source": "/process", "destination": "/process.html" },
+    { "source": "/work", "destination": "/work.html" },
+    { "source": "/whowehelp", "destination": "/whowehelp.html" },
+    { "source": "/technology", "destination": "/technology.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/signup", "destination": "/signup.html" },
+    { "source": "/dental-marketing", "destination": "/dental-marketing.html" },
+    { "source": "/hospital-growth", "destination": "/hospital-growth.html" },
+    { "source": "/telehealth-scaling", "destination": "/telehealth-scaling.html" }
+  ]
 }

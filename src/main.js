@@ -11,7 +11,7 @@ import 'aos/dist/aos.css';
 async function loadComponents() {
   try {
     // Fetch and inject Header
-    const headerRes = await fetch('./components/header.html');
+    const headerRes = await fetch('/components/header.html');
     if (headerRes.ok) {
       const headerHTML = await headerRes.text();
       const headerContainer = document.getElementById('header-container');
@@ -19,7 +19,7 @@ async function loadComponents() {
     }
 
     // Fetch and inject Footer
-    const footerRes = await fetch('./components/footer.html');
+    const footerRes = await fetch('/components/footer.html');
     if (footerRes.ok) {
       const footerHTML = await footerRes.text();
       const footerContainer = document.getElementById('footer-container');
