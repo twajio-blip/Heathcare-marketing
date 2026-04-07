@@ -6,10 +6,12 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
+    base: '/', // Vercel prefers the root base
     plugins: [
         tailwindcss(),
     ],
     build: {
+        outDir: 'dist',
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
