@@ -1,3 +1,4 @@
+import { loadComponents } from './header&footer.js';
 import '/src/css/style.css';
 import Swiper from 'swiper';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
@@ -7,118 +8,11 @@ import 'swiper/css/navigation';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-// Component Loader
-async function loadComponents() {
-  try {
-    // Fetch and inject Header
-    const headerRes = await fetch('./components/header.html');
-    if (headerRes.ok) {
-      const headerHTML = await headerRes.text();
-      const headerContainer = document.getElementById('header-container');
-      if (headerContainer) headerContainer.innerHTML = headerHTML;
-    }
-
-    // Fetch and inject Footer
-    const footerRes = await fetch('./components/footer.html');
-    if (footerRes.ok) {
-      const footerHTML = await footerRes.text();
-      const footerContainer = document.getElementById('footer-container');
-      if (footerContainer) footerContainer.innerHTML = footerHTML;
-    }
-
-    // Initialize scripts that depend on the injected DOM
-    initNavbarScroll();
-    initProgressBar();
-    initMobileMenus();
-    initThirdPartyLibraries();
-    initCounters();
-  } catch (err) {
-    console.error('Failed to load components', err);
-  }
-}
-
-// Add scroll listener for Navbar background
-function initNavbarScroll() {
-  const navbar = document.getElementById('navbar');
-  const navPrimary = document.getElementById('nav-primary');
-  const navSecondaryContainer = document.getElementById('nav-secondary-container');
-  const navSecondaryWrapper = document.getElementById('nav-secondary-wrapper');
-  const navSecondaryBg = document.getElementById('nav-secondary-bg');
-  const navSecondaryLogo = document.getElementById('nav-secondary-logo');
-  const navSecondary = document.getElementById('nav-secondary');
-  const secodaryBtn = document.getElementById('secodary-btn');
-
-  if (!navbar || !navSecondary || !navSecondaryWrapper) return;
-
-  let wasSticky = false;
-
-  window.addEventListener('scroll', () => {
-    const isSticky = window.scrollY > 250;
-
-    // 1. Basic Navbar State
-    navbar.classList.toggle('fixed', isSticky);
-    navbar.classList.toggle('absolute', !isSticky);
-    navbar.classList.toggle('bg-white', isSticky);
-    navbar.classList.toggle('bg-skin-background/70', !isSticky);
-    navbar.classList.toggle('shadow-xl', isSticky);
-
-    // 2. primary nav visibility
-    if (navPrimary) {
-      navPrimary.style.display = isSticky ? 'none' : '';
-    }
-
-    if (navSecondaryWrapper) {
-      navSecondaryWrapper.classList.toggle('lg:mt-25', !isSticky);
-      
-      // Animate sliding in when entering sticky state
-      if (isSticky && !wasSticky) {
-        navSecondaryWrapper.classList.remove('animate-slide-down');
-        void navSecondaryWrapper.offsetWidth; // force reflow
-        navSecondaryWrapper.classList.add('animate-slide-down');
-      } else if (!isSticky) {
-        navSecondaryWrapper.classList.remove('animate-slide-down');
-      }
-    }
-
-    // 3. Components inside secondary nav
-    if (navSecondaryContainer) {
-      if (isSticky) {
-        navSecondaryContainer.classList.remove('py-large', 'lg:py-large', 'md:py-huge');
-        navSecondaryContainer.classList.add('py-small', 'lg:py-small', 'md:py-small');
-      } else {
-        navSecondaryContainer.classList.remove('py-small', 'lg:py-small', 'md:py-small');
-        navSecondaryContainer.classList.add('py-large', 'lg:py-large', 'md:py-huge');
-      }
-    }
-
-    if (navSecondaryBg) {
-      const bgClasses = ['lg:w-[75%]', 'xl:w-[70%]'];
-      bgClasses.forEach(cls => {
-        if (isSticky) {
-          navSecondaryBg.classList.remove(cls);
-        } else {
-          navSecondaryBg.classList.add(cls);
-        }
-      });
-      navSecondaryBg.style.clipPath = isSticky ? 'none' : '';
-    }
-
-    if (navSecondaryLogo) {
-      navSecondaryLogo.style.display = isSticky ? 'flex' : '';
-    }
-    
-    if (secodaryBtn) {
-      secodaryBtn.classList.toggle('lg:flex', isSticky);
-    }
-
-    wasSticky = isSticky;
-  });
-}
 
 // Run loader when DOM is ready
 document.addEventListener('DOMContentLoaded', loadComponents);
 
-function initProgressBar() {
+export function initProgressBar() {
   const scrollProgress = document.getElementById("progress");
   if (!scrollProgress) return;
 
@@ -184,7 +78,7 @@ function initProgressBar() {
   }
 }
 
-function initMobileMenus() {
+export function initMobileMenus() {
   const setupToggle = (toggleId, menuId, chevronId) => {
     const toggle = document.getElementById(toggleId);
     const menu = document.getElementById(menuId);
@@ -213,128 +107,140 @@ function initMobileMenus() {
   setupToggle('mobile-whowehelp-toggle', 'mobile-whowehelp-menu', 'mobile-whowehelp-chevron');
 }
 
-function initThirdPartyLibraries() {
+export function initThirdPartyLibraries() {
   // Initialize AOS
   AOS.init({ once: true, offset: 50, duration: 800 });
 
-  new Swiper('.aboutSwiper', {
-    modules: [Pagination, Autoplay, Navigation],
-    slidesPerView: 1,
-    spaceBetween: 40,
-    loop: true,
-    centeredSlides: true,
-    watchSlidesProgress: true, // Helps sync active states
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: '.about-pagination',
-      clickable: true,
-      // This ensures the "Real Index" is used for the bullets
-      bulletActiveClass: 'swiper-pagination-bullet-active',
-    },
-
-    navigation: {
-      nextEl: '.about-next',
-      prevEl: '.about-prev',
-    },
-    speed: 800,
-  });
-
-  new Swiper('.approachSwiper', {
-    modules: [Pagination],
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
-    }
-  });
-
-  new Swiper('.servicesSwiper', {
-    modules: [Pagination, Navigation],
-    slidesPerView: 1, // Default for mobile
-    spaceBetween: 20,
-    loop: true,
-
-    pagination: {
-      el: '.services-pagination',
-      clickable: true,
-    },
-
-    navigation: {
-      nextEl: '.services-next',
-      prevEl: '.services-prev',
-    },
-
-    // Breakpoints must be in ascending order (Smallest -> Largest)
-    breakpoints: {
-      // When window width is >= 540px
-      540: {
-        slidesPerView: 2,
-        spaceBetween: 20,
+  if (document.querySelector('.aboutSwiper')) {
+    new Swiper('.aboutSwiper', {
+      modules: [Pagination, Autoplay, Navigation],
+      slidesPerView: 1,
+      spaceBetween: 40,
+      loop: true,
+      centeredSlides: true,
+      watchSlidesProgress: true, // Helps sync active states
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
       },
-      // When window width is >= 768px (Standard Tablet)
-      720: {
-        slidesPerView: 2,
-        spaceBetween: 30,
+      pagination: {
+        el: '.about-pagination',
+        clickable: true,
+        // This ensures the "Real Index" is used for the bullets
+        bulletActiveClass: 'swiper-pagination-bullet-active',
       },
-      // When window width is >= 1200px (Desktop)
-      1140: {
-        slidesPerView: 3,
+
+      navigation: {
+        nextEl: '.about-next',
+        prevEl: '.about-prev',
+      },
+      speed: 800,
+    });
+  }
+
+  if (document.querySelector('.approachSwiper')) {
+    new Swiper('.approachSwiper', {
+      modules: [Pagination],
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
       }
-    }
-  });
+    });
+  }
 
-  new Swiper('.testimonialSwiper', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    slideToClickedSlide: true,
-    breakpoints: {
-      640: { slidesPerView: 2, centeredSlides: false },
-      1024: { slidesPerView: 3, centeredSlides: true }
-    }
-  });
+  if (document.querySelector('.servicesSwiper')) {
+    new Swiper('.servicesSwiper', {
+      modules: [Pagination, Navigation],
+      slidesPerView: 1, // Default for mobile
+      spaceBetween: 20,
+      loop: true,
+
+      pagination: {
+        el: '.services-pagination',
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: '.services-next',
+        prevEl: '.services-prev',
+      },
+
+      // Breakpoints must be in ascending order (Smallest -> Largest)
+      breakpoints: {
+        // When window width is >= 540px
+        540: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        // When window width is >= 768px (Standard Tablet)
+        720: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        // When window width is >= 1200px (Desktop)
+        1140: {
+          slidesPerView: 3,
+        }
+      }
+    });
+  }
+
+  if (document.querySelector('.testimonialSwiper')) {
+    new Swiper('.testimonialSwiper', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      slideToClickedSlide: true,
+      breakpoints: {
+        640: { slidesPerView: 2, centeredSlides: false },
+        1024: { slidesPerView: 3, centeredSlides: true }
+      }
+    });
+  }
 }
 
-function initWhoWeHelpTabs() {
+export function initWhoWeHelpTabs() {
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.tab-content');
 
-  if (!tabBtns.length || !tabContents.length) return;
+  // 1. Silent Guard: If these don't exist, stop immediately without error
+  if (tabBtns.length === 0 || tabContents.length === 0) {
+    return;
+  }
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Remove active from all tabs
+      // 2. Clear previous states
       tabBtns.forEach(b => {
         b.classList.remove('bg-skin-primary', 'text-white', 'shadow-md', 'shadow-skin-primary/30', 'active');
         b.classList.add('bg-white/50', 'backdrop-blur-sm', 'text-slate-600');
       });
-      // Hide all content areas
+
       tabContents.forEach(c => {
         c.classList.add('hidden', 'opacity-0');
         c.classList.remove('flex', 'opacity-100', 'animate-fade-in-up');
       });
 
-      // Add active state to clicked tab
+      // 3. Set Active Tab
       btn.classList.remove('bg-white/50', 'backdrop-blur-sm', 'text-slate-600');
       btn.classList.add('active', 'bg-skin-primary', 'text-white', 'shadow-md', 'shadow-skin-primary/30');
 
-      // Show target content area
+      // 4. Show Content with Safe Check
       const targetId = btn.getAttribute('data-target');
+      if (!targetId) return; // Error handling for missing attribute
+
       const targetContent = document.getElementById(targetId);
       if (targetContent) {
         targetContent.classList.remove('hidden');
         targetContent.classList.add('flex');
 
-        // Small delay to trigger CSS transition for opacity
         setTimeout(() => {
           targetContent.classList.remove('opacity-0');
           targetContent.classList.add('opacity-100', 'animate-fade-in-up');
@@ -344,10 +250,9 @@ function initWhoWeHelpTabs() {
   });
 }
 
-// Initialize tabs when DOM is ready
-document.addEventListener('DOMContentLoaded', initWhoWeHelpTabs);
+// Tab initialization will be handled by loadComponents in header&footer.js
 
-function initCounters() {
+export function initCounters() {
   const counters = document.querySelectorAll('.stat-number');
   if (!counters.length) return;
 
