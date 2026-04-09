@@ -55,55 +55,61 @@ function initNavbarScroll() {
   window.addEventListener('scroll', () => {
     const isSticky = window.scrollY > 250;
 
+    // 1. Basic Navbar State
     navbar.classList.toggle('fixed', isSticky);
-    // navbar.classList.toggle('bg-skin-primary', isSticky);
-    navbar.classList.toggle('backdrop-blur-sm', !isSticky);
-    // navPrimary display none on sticky
-    navPrimary.style.display = isSticky ? 'none' : '';
+    navbar.classList.toggle('absolute', !isSticky);
+    navbar.classList.toggle('bg-white', isSticky);
+    navbar.classList.toggle('bg-skin-background/70', !isSticky);
+    navbar.classList.toggle('shadow-xl', isSticky);
+
+    // 2. primary nav visibility
+    if (navPrimary) {
+      navPrimary.style.display = isSticky ? 'none' : '';
+    }
 
     if (navSecondaryWrapper) {
-
       navSecondaryWrapper.classList.toggle('lg:mt-25', !isSticky);
-
-      if (navSecondaryContainer) {
-        if (isSticky) {
-          navSecondaryContainer.classList.remove('py-large', 'lg:py-large', 'md:py-huge');
-          navSecondaryContainer.classList.add('py-small', 'lg:py-small', 'md:py-small');
-        } else {
-          navSecondaryContainer.classList.remove('py-small', 'lg:py-small', 'md:py-small');
-          navSecondaryContainer.classList.add('py-large', 'lg:py-large', 'md:py-huge');
-        }
-      }
-
-
-      // Animate nav-secondary-wrapper sliding in from top on each sticky transition
+      
+      // Animate sliding in when entering sticky state
       if (isSticky && !wasSticky) {
         navSecondaryWrapper.classList.remove('animate-slide-down');
-        void navSecondaryWrapper.offsetWidth; // force reflow to reset animation
+        void navSecondaryWrapper.offsetWidth; // force reflow
         navSecondaryWrapper.classList.add('animate-slide-down');
       } else if (!isSticky) {
         navSecondaryWrapper.classList.remove('animate-slide-down');
       }
     }
 
-    if (navSecondaryBg) {
-      ['lg:w-[75%]', 'xl:w-[65%]'].forEach(cls =>
-        navSecondaryBg.classList.toggle(cls, !isSticky)
-      );
-      // Let CSS handle clip-path when not sticky (uses lg: responsive classes)
+    // 3. Components inside secondary nav
+    if (navSecondaryContainer) {
       if (isSticky) {
-        // This removes the polygon completely
-        navSecondaryBg.style.clipPath = 'none';
+        navSecondaryContainer.classList.remove('py-large', 'lg:py-large', 'md:py-huge');
+        navSecondaryContainer.classList.add('py-small', 'lg:py-small', 'md:py-small');
       } else {
-        // This allows the Tailwind 'lg:[clip-path:...]' class to take over again
-        navSecondaryBg.style.clipPath = '';
+        navSecondaryContainer.classList.remove('py-small', 'lg:py-small', 'md:py-small');
+        navSecondaryContainer.classList.add('py-large', 'lg:py-large', 'md:py-huge');
       }
+    }
+
+    if (navSecondaryBg) {
+      const bgClasses = ['lg:w-[75%]', 'xl:w-[70%]'];
+      bgClasses.forEach(cls => {
+        if (isSticky) {
+          navSecondaryBg.classList.remove(cls);
+        } else {
+          navSecondaryBg.classList.add(cls);
+        }
+      });
+      navSecondaryBg.style.clipPath = isSticky ? 'none' : '';
     }
 
     if (navSecondaryLogo) {
       navSecondaryLogo.style.display = isSticky ? 'flex' : '';
     }
-    secodaryBtn.classList.toggle('lg:flex', isSticky);
+    
+    if (secodaryBtn) {
+      secodaryBtn.classList.toggle('lg:flex', isSticky);
+    }
 
     wasSticky = isSticky;
   });
