@@ -204,6 +204,7 @@ function initMobileMenus() {
 
   setupToggle('mobile-services-toggle', 'mobile-services-menu', 'mobile-services-chevron');
   setupToggle('mobile-about-toggle', 'mobile-about-menu', 'mobile-about-chevron');
+  setupToggle('mobile-whowehelp-toggle', 'mobile-whowehelp-menu', 'mobile-whowehelp-chevron');
 }
 
 function initThirdPartyLibraries() {

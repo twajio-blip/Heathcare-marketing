@@ -46,7 +46,7 @@
         <div id="nav-secondary-wrapper" class="absolute left-0 right-0 z-10 w-full lg:mt-25 drop-shadow-xl">
             <!-- Full-width Background -->
             <div id="nav-secondary-bg"
-                class="absolute right-0 top-0 h-full w-full bg-skin-primary lg:w-[75%] xl:w-[65%] lg:[clip-path:polygon(0_0,100%_0,100%_100%,35px_100%)]">
+                class="absolute right-0 top-0 h-full w-full bg-skin-primary lg:w-[75%] xl:w-[70%] lg:[clip-path:polygon(0_0,100%_0,100%_100%,35px_100%)]">
             </div>
 
             <!-- Inner Container for Content Alignment -->
@@ -188,21 +188,116 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="./whowehelp.html"
-                            class="group relative z-10 font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2 hover:text-skin-primary-2">
-                            <div
-                                class="flex items-center gap-small p-2 lg:p-0 rounded-xl transition-all duration-300 group-hover:bg-skin-primary/5 lg:group-hover:bg-transparent">
+                        <!-- Desktop Who We Help Dropdown -->
+                        <div class="group/whowehelp relative hidden h-full cursor-pointer items-center lg:flex">
+                            <a href="./whowehelp.html"
+                                class="group relative z-10 font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2 hover:text-skin-primary-2">
                                 <div
-                                    class="flex lg:hidden items-center justify-center w-9 h-9 rounded-lg bg-skin-primary/10 text-skin-primary transition-transform duration-300 group-hover:scale-110 lg:w-auto lg:h-auto lg:bg-transparent lg:p-0">
-                                    <i class="fa-solid fa-users text-lg lg:text-base"></i>
+                                    class="flex items-center gap-small p-2 lg:p-0 rounded-xl transition-all duration-300 group-hover:bg-skin-primary/5 lg:group-hover:bg-transparent">
+                                    <div
+                                        class="flex lg:hidden items-center justify-center w-9 h-9 rounded-lg bg-skin-primary/10 text-skin-primary transition-transform duration-300 group-hover:scale-110 lg:w-auto lg:h-auto lg:bg-transparent lg:p-0">
+                                        <i class="fa-solid fa-users text-lg lg:text-base"></i>
+                                    </div>
+                                    <span class="relative flex items-center gap-1">
+                                        Who we help
+                                        <i
+                                            class="fa-solid fa-chevron-down text-sm transition-transform duration-300 group-hover/whowehelp:rotate-180"></i>
+                                        <span
+                                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-skin-primary transition-all duration-300 group-hover:w-full hidden lg:block"></span>
+                                    </span>
                                 </div>
-                                <span class="relative">
-                                    Who we help
-                                    <span
-                                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-skin-primary transition-all duration-300 group-hover:w-full hidden lg:block"></span>
-                                </span>
+                            </a>
+
+                            <div
+                                class="absolute top-full left-0 z-50 hidden w-64 translate-y-small rounded-xl border-t-2 border-skin-primary bg-white py-small opacity-0 shadow-xl transition-all duration-300 invisible group-hover/whowehelp:visible group-hover/whowehelp:translate-y-0 group-hover/whowehelp:opacity-100 lg:block">
+                                <a href="./whowehelp.html"
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    Overview
+                                </a>
+                                <a href="./hospital-growth.html"
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    Hospital Growth
+                                </a>
+                                <a href="./dental-marketing.html"
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    Dental Marketing
+                                </a>
+                                <a href="./pharmacies.html"
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    Pharmacy Growth
+                                </a>
+                                <a href="./healthtech-scaling.html"
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    Startup Scaling
+                                </a>
+                                <a href="./DiagnosticCenters.html"
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    Diagnostic Growth
+                                </a>
+                                <a href="./telehealth-scaling.html"
+                                    class="block border-b border-skin-accent/10 px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    Telehealth Scaling
+                                </a>
+                                <a href="./medical-device.html"
+                                    class="block px-large py-small font-medium transition-colors text-skin-accent hover:bg-skin-accent/10 hover:text-skin-primary-2">
+                                    Med-Tech Solutions
+                                </a>
                             </div>
-                        </a>
+                        </div>
+
+                        <!-- Mobile Who We Help Sub-menu -->
+                        <div class="w-full lg:hidden">
+                            <button id="mobile-whowehelp-toggle"
+                                class="group relative z-10 flex w-full font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2">
+                                <div
+                                    class="flex w-full items-center gap-small p-2 rounded-xl transition-all duration-300 text-left">
+                                    <div
+                                        class="flex items-center justify-center w-9 h-9 rounded-lg bg-skin-primary/10 text-skin-primary transition-transform duration-300 shrink-0">
+                                        <i class="fa-solid fa-users text-lg"></i>
+                                    </div>
+                                    <span class="relative flex flex-1 items-center justify-between">
+                                        Who we help
+                                        <i id="mobile-whowehelp-chevron"
+                                            class="fa-solid fa-chevron-down text-sm transition-transform duration-300"></i>
+                                    </span>
+                                </div>
+                            </button>
+                            <div id="mobile-whowehelp-menu"
+                                class="mt-small hidden flex-col overflow-hidden rounded-lg transition-all duration-300">
+                                <a href="./whowehelp.html"
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    Overview
+                                </a>
+                                <a href="./hospital-growth.html"
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    Hospital Growth
+                                </a>
+                                <a href="./dental-marketing.html"
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    Dental Marketing
+                                </a>
+                                <a href="./pharmacies.html"
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    Pharmacy Growth
+                                </a>
+                                <a href="./healthtech-scaling.html"
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    Startup Scaling
+                                </a>
+                                <a href="./DiagnosticCenters.html"
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    Diagnostic Growth
+                                </a>
+                                <a href="./telehealth-scaling.html"
+                                    class="border-b border-white/5 px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    Telehealth Scaling
+                                </a>
+                                <a href="./medical-device.html"
+                                    class="px-large py-small text-sm font-medium transition-colors text-skin-secondary-2">
+                                    Med-Tech Solutions
+                                </a>
+                            </div>
+                        </div>
                         <!-- Service Link -->
                         <a href="./service.html"
                             class="group relative z-10 font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2 hover:text-skin-primary-2">
@@ -234,6 +329,21 @@
                                 </span>
                             </div>
                         </a>
+                        <a href="./faq.html"
+                            class="group relative z-10 font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2 hover:text-skin-primary-2">
+                            <div
+                                class="flex items-center gap-small p-2 lg:p-0 rounded-xl transition-all duration-300 group-hover:bg-skin-primary/5 lg:group-hover:bg-transparent">
+                                <div
+                                    class="flex lg:hidden items-center justify-center w-9 h-9 rounded-lg bg-skin-primary/10 text-skin-primary transition-transform duration-300 group-hover:scale-110 lg:w-auto lg:h-auto lg:bg-transparent lg:p-0">
+                                    <i class="fa-solid fa-circle-question text-lg lg:text-base"></i>
+                                </div>
+                                <span class="relative">
+                                    FAQ
+                                    <span
+                                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-skin-primary transition-all duration-300 group-hover:w-full hidden lg:block"></span>
+                                </span>
+                            </div>
+                        </a>
                         <a href="./contact.html"
                             class="group relative z-10 font-black transition-all text-xs md:text-sm uppercase tracking-widest text-skin-secondary-2 hover:text-skin-primary-2">
                             <div
@@ -249,9 +359,9 @@
                                 </span>
                             </div>
                         </a>
-                        <div id="secodary-btn" class="right-0 ml-small hidden items-center">
+                        <a href="./login.html" id="secodary-btn" class="right-0 ml-small hidden items-center">
                             <button class="btn-secondary">Book Appointment</button>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
