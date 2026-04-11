@@ -53,10 +53,14 @@
   --spacing-section-x-tab: 20px;
   --spacing-section-x-mobile: 20px;
 
-  --spacing-small: 0.5rem; /* 8px */
-  --spacing-medium: 1rem; /* 16px */
-  --spacing-large: 1.5rem; /* 24px */
-  --spacing-huge: 2rem; /* 32px */
+  --spacing-small: 0.5rem;
+  /* 8px */
+  --spacing-medium: 1rem;
+  /* 16px */
+  --spacing-large: 1.5rem;
+  /* 24px */
+  --spacing-huge: 2rem;
+  /* 32px */
 
   /* -------------------------
      Rounded
@@ -92,7 +96,7 @@
   --text-size-heading: 32px;
   --text-size-sub-heading: 16px;
   --text-size-badge: 22px;
-  --text-size-xsmall:12px;
+  --text-size-xsmall: 12px;
   --text-size-small: 14px;
   --text-size-medium: 18px;
   --text-size-large: 20px;

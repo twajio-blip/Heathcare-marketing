@@ -17,13 +17,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="icon" type="image/png" href="./images/Legacy_Health_Growth-removebg.png">
     <link rel="apple-touch-icon" href="./images/Legacy_Health_Growth-removebg.png">
+
+    <style>
+        @keyframes navSlideDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0%);
+            }
+        }
+
+        /* Applied to navSecondaryWrapper when sticky (it has real height, so -100% = off-screen above) */
+        .nav-wrapper-slide-in {
+            animation: navSlideDown 400ms ease-out forwards;
+        }
+    </style>
 </head>
 
 <body
     class="relative min-h-screen overflow-x-hidden bg-skin-background font-poppins text-skin-accent antialiased selection:bg-skin-primary selection:text-white">
     <!-- HEADER PLACEHOLDER -->
+
     <nav class="absolute top-0 left-0 z-50 w-full shadow-lg bg-skin-background/70 backdrop-blur-sm" id="navbar">
-        <div class="container-custom p-0! flex flex-col origin-top transition-all duration-300">
+        <div class="container-custom py-0! flex flex-col origin-top transition-all duration-300">
             <div id="nav-primary" class="hidden lg:flex items-stretch justify-between">
                 <div class="flex items-center w-25 h-25 my-medium">
                     <img src="./images/Legacy_Health_Growth-removebg.png" alt="OmniCare-logo">
@@ -65,7 +83,7 @@
                 </div>
 
             </div>
-            <!-- Full-width Wrapper for Secondary Nav -->
+            <!-- Secondary Nav -->
             <div id="nav-secondary-wrapper" class="absolute left-0 right-0 z-10 w-full lg:mt-25 drop-shadow-xl">
                 <!-- Full-width Background -->
                 <div id="nav-secondary-bg"
@@ -389,6 +407,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </nav>
 
     <main class="w-full overflow-hidden pt-16 lg:pt-32">
@@ -397,15 +416,7 @@
 
     <!-- FOOTER PLACEHOLDER -->
     <div id="footer-container"></div>
-    <script>
-        import {
-            initProgressBar,
-            initMobileMenus,
-            initThirdPartyLibraries,
-            initCounters,
-            initWhoWeHelpTabs
-        } from './main.js';
-
+    <script type="module">
         // Component Loader
         export async function loadComponents() {
             try {
@@ -457,27 +468,12 @@
 
                 // 1. Basic Navbar State
                 navbar.classList.toggle('fixed', isSticky);
-                navbar.classList.toggle('absolute', !isSticky);
                 navbar.classList.toggle('bg-white', isSticky);
-                navbar.classList.toggle('bg-skin-background/70', !isSticky);
                 navbar.classList.toggle('shadow-xl', isSticky);
 
                 // 2. primary nav visibility
                 if (navPrimary) {
                     navPrimary.style.display = isSticky ? 'none' : '';
-                }
-
-                if (navSecondaryWrapper) {
-                    navSecondaryWrapper.classList.toggle('lg:mt-25', !isSticky);
-
-                    // Animate sliding in when entering sticky state
-                    if (isSticky && !wasSticky) {
-                        navSecondaryWrapper.classList.remove('animate-slide-down');
-                        void navSecondaryWrapper.offsetWidth; // force reflow
-                        navSecondaryWrapper.classList.add('animate-slide-down');
-                    } else if (!isSticky) {
-                        navSecondaryWrapper.classList.remove('animate-slide-down');
-                    }
                 }
 
                 // 3. Components inside secondary nav
@@ -511,9 +507,27 @@
                     secodaryBtn.classList.toggle('lg:flex', isSticky);
                 }
 
+                // Handle wrapper margin for non-sticky layout
+                if (navSecondaryWrapper) {
+                    navSecondaryWrapper.classList.toggle('lg:mt-25', !isSticky);
+                }
+
+                // Slide-in animation: target navSecondaryWrapper (has real height, so -100% = off-screen above)
+                // #navbar itself is 0-height when sticky, so translateY(-100%) on it = translateY(0) = no movement
+                if (isSticky && !wasSticky) {
+                    navSecondaryWrapper.classList.remove('nav-wrapper-slide-in');
+                    void navSecondaryWrapper.offsetHeight; // force reflow to restart animation
+                    navSecondaryWrapper.classList.add('nav-wrapper-slide-in');
+                } else if (!isSticky) {
+                    navSecondaryWrapper.classList.remove('nav-wrapper-slide-in');
+                }
+
                 wasSticky = isSticky;
             });
         }
+
+        // Call the function to initialize everything
+        loadComponents();
     </script>
 </body>
 

@@ -57,27 +57,14 @@ function initNavbarScroll() {
 
         // 1. Basic Navbar State
         navbar.classList.toggle('fixed', isSticky);
-        navbar.classList.toggle('absolute', !isSticky);
+        // navbar.classList.toggle('absolute', !isSticky);
         navbar.classList.toggle('bg-white', isSticky);
-        navbar.classList.toggle('bg-skin-background/70', !isSticky);
+        // navbar.classList.toggle('bg-skin-background/70', !isSticky);
         navbar.classList.toggle('shadow-xl', isSticky);
 
         // 2. primary nav visibility
         if (navPrimary) {
             navPrimary.style.display = isSticky ? 'none' : '';
-        }
-
-        if (navSecondaryWrapper) {
-            navSecondaryWrapper.classList.toggle('lg:mt-25', !isSticky);
-
-            // Animate sliding in when entering sticky state
-            if (isSticky && !wasSticky) {
-                navSecondaryWrapper.classList.remove('animate-slide-down');
-                void navSecondaryWrapper.offsetWidth; // force reflow
-                navSecondaryWrapper.classList.add('animate-slide-down');
-            } else if (!isSticky) {
-                navSecondaryWrapper.classList.remove('animate-slide-down');
-            }
         }
 
         // 3. Components inside secondary nav
@@ -109,6 +96,20 @@ function initNavbarScroll() {
 
         if (secodaryBtn) {
             secodaryBtn.classList.toggle('lg:flex', isSticky);
+        }
+        // Handle wrapper margin for non-sticky layout
+        if (navSecondaryWrapper) {
+            navSecondaryWrapper.classList.toggle('lg:mt-25', !isSticky);
+
+            // Slide-in animation: target navSecondaryWrapper (has real height, so -100% = off-screen above)
+            // #navbar itself is 0-height when sticky, so translateY(-100%) on it = translateY(0) = no movement
+            if (isSticky && !wasSticky) {
+                navSecondaryWrapper.classList.remove('nav-wrapper-slide-in');
+                void navSecondaryWrapper.offsetHeight; // force reflow to restart animation
+                navSecondaryWrapper.classList.add('nav-wrapper-slide-in');
+            } else if (!isSticky) {
+                navSecondaryWrapper.classList.remove('nav-wrapper-slide-in');
+            }
         }
 
         wasSticky = isSticky;

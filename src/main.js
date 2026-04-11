@@ -102,9 +102,9 @@ export function initMobileMenus() {
     }
   };
 
-  setupToggle('mobile-services-toggle', 'mobile-services-menu', 'mobile-services-chevron');
   setupToggle('mobile-about-toggle', 'mobile-about-menu', 'mobile-about-chevron');
   setupToggle('mobile-whowehelp-toggle', 'mobile-whowehelp-menu', 'mobile-whowehelp-chevron');
+  setupToggle('mobile-resources-toggle', 'mobile-resources-menu', 'mobile-resources-chevron');
 }
 
 export function initThirdPartyLibraries() {
