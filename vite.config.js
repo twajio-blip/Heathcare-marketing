@@ -32,6 +32,8 @@ export default defineConfig({
                 'healthtech-scaling': resolve(__dirname, 'healthtech-scaling.html'),
                 'medical-device': resolve(__dirname, 'medical-device.html'),
                 pharmacies: resolve(__dirname, 'pharmacies.html'),
+                blog: resolve(__dirname, 'blog.html'),
+                brands: resolve(__dirname, 'brands.html'),
                 'test-page': resolve(__dirname, 'test.html'),
             },
         },
