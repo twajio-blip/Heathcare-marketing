@@ -8,6 +8,39 @@ import 'swiper/css/navigation';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+const helperData = [
+  {
+    id: "tab-hospitals",
+    title: "Hospitals",
+    heading: "Scale your hospital network with",
+    highlight: "precision marketing.",
+    desc: "Drive high-value service line growth and improve patient retention using clinical-grade data.",
+    features: ["Increase patient volume", "Enhance brand reputation", "Streamline scheduling"],
+    btnText: "Explore Hospital Growth",
+    link: "./hospital-growth.html",
+    img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80",
+    statLabel: "Patient Volume",
+    statValue: "+45%",
+    color: "from-teal-400 to-teal-600",
+    icon: "fa-chart-line"
+  },
+  {
+    id: "tab-clinics",
+    title: "Dental Practices",
+    heading: "Dominate the local pack and",
+    highlight: "fill your dental chairs.",
+    desc: "Targeted digital strategies specifically crafted to attract new patients to your clinic.",
+    features: ["Rank #1 in local search", "Generate high-quality leads", "Automate follow-ups"],
+    btnText: "Explore Dental Marketing",
+    link: "./dental-marketing.html",
+    img: "https://images.unsplash.com/photo-1538108149393-cebb47ac1953?auto=format&fit=crop&w=1000&q=80",
+    statLabel: "New Patients",
+    statValue: "2.4x",
+    color: "from-blue-400 to-blue-600",
+    icon: "fa-user-plus"
+  }
+];
+
 
 // Run loader when DOM is ready
 document.addEventListener('DOMContentLoaded', loadComponents);
@@ -117,11 +150,8 @@ export function initThirdPartyLibraries() {
       slidesPerView: 1,
       spaceBetween: 40,
       loop: true,
-      centeredSlides: true,
-      watchSlidesProgress: true, // Helps sync active states
       autoplay: {
         delay: 3000,
-        disableOnInteraction: false,
       },
       pagination: {
         el: '.about-pagination',
@@ -151,43 +181,6 @@ export function initThirdPartyLibraries() {
       breakpoints: {
         768: { slidesPerView: 2 },
         1024: { slidesPerView: 3 },
-      }
-    });
-  }
-
-  if (document.querySelector('.servicesSwiper')) {
-    new Swiper('.servicesSwiper', {
-      modules: [Pagination, Navigation],
-      slidesPerView: 1, // Default for mobile
-      spaceBetween: 20,
-      loop: true,
-
-      pagination: {
-        el: '.services-pagination',
-        clickable: true,
-      },
-
-      navigation: {
-        nextEl: '.services-next',
-        prevEl: '.services-prev',
-      },
-
-      // Breakpoints must be in ascending order (Smallest -> Largest)
-      breakpoints: {
-        // When window width is >= 540px
-        540: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        // When window width is >= 768px (Standard Tablet)
-        720: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        // When window width is >= 1200px (Desktop)
-        1140: {
-          slidesPerView: 3,
-        }
       }
     });
   }
@@ -249,6 +242,36 @@ export function initWhoWeHelpTabs() {
     });
   });
 }
+
+export function renderTabs() {
+  const menuRoot = document.getElementById('tabs-menu');
+  const contentRoot = document.getElementById('tabs-content-root');
+
+  helperData.forEach((item, index) => {
+    const isActive = index === 0; // The first item is active by default
+
+    // 1. Generate the Button HTML
+    const btnHtml = `
+      <button class="tab-btn group ${isActive ? 'active bg-skin-primary text-white' : 'bg-white/50 text-slate-600'}" 
+              data-target="${item.id}">
+        ${item.title}
+      </button>`;
+    menuRoot.insertAdjacentHTML('beforeend', btnHtml);
+
+    // 2. Generate the Content HTML (Using your specific design)
+    const contentHtml = `
+      <div id="${item.id}" class="tab-content ${isActive ? 'flex opacity-100' : 'hidden opacity-0'}">
+        <h2>${item.heading} <span>${item.highlight}</span></h2>
+        <ul>
+          ${item.features.map(f => `<li>${f}</li>`).join('')} 
+        </ul>
+        <img src="${item.img}" />
+      </div>`;
+    contentRoot.insertAdjacentHTML('beforeend', contentHtml);
+  });
+}
+renderTabs();
+
 
 // Tab initialization will be handled by loadComponents in header&footer.js
 

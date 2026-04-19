@@ -12,26 +12,19 @@
      Colors
   ------------------------- */
   --color-skin-primary: #2563eb;
-  /* #10B981 (Emerald 500) - Fresh modern green */
   --color-skin-primary-2: #14b8a6;
-  /* #059669 (Emerald 600) - Strong 2nd Primary */
-  --color-skin-secondary: #1e40af;
-  /* #0F172A (Slate 900) - Modern dark modern navy */
-  --color-skin-accent: #0f172a;
-  /* #38BDF8 (Sky 400) - Modern accent */
+  --color-skin-secondary: #7c3aed;
   --color-skin-accent-dark: #0284C7;
-  /* #0284C7 (Sky 600) - Darker accent */
-  --color-skin-secondary-1: #000000;
-  /* #E2E8F0 (Slate 200) */
+  --color-skin-secondary-1: #27272a;
   --color-skin-secondary-2: #F8FAFC;
-  /* #F8FAFC (Slate 50) */
-  /* #f2f4f5 */
-  --color-skin-secondary-3: oklch(1 0 0);
-  /* #ffffff */
-  --color-skin-neutral: oklch(0.9761 0 0);
-  /* #f7f7f7 */
+  --color-skin-secondary-3: oklch(1 0 0);/* #ffffff */
+  --color-skin-neutral: oklch(0.9761 0 0); /* #f7f7f7 */
   --color-skin-background: #f8fafc;
-  /* #ffffff */
+  /* text-color */
+  --color-skin-accent: #27272a;
+  --color-skin-accent-2: #52525b;
+  --color-skin-accent-3: #ffffff;
+  --color-skin-accent-4: #3949AB;
 
 
   /* Breakpoints */
@@ -91,20 +84,35 @@
   --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
 
   /* -------------------------
-     Text Sizes
-  ------------------------- */
-  --text-size-heading: 32px;
-  --text-size-sub-heading: 16px;
-  --text-size-badge: 22px;
-  --text-size-xsmall: 12px;
-  --text-size-small: 14px;
-  --text-size-medium: 18px;
-  --text-size-large: 20px;
-  /* -------------------------
      Fonts
   ------------------------- */
   --font-poppins: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-quicksand: "Quicksand", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+@utility text-size-primary {
+  @apply font-poppins font-bold leading-[1.2];
+  font-size: clamp(2.5rem, 1.5vw + 2rem, 3rem);
+}
+
+@utility text-size-secondary {
+  @apply font-quicksand font-bold leading-tight;
+  font-size: clamp(1.5rem, 1vw + 1.25rem, 2rem);
+}
+
+@utility text-size-body {
+  @apply font-poppins font-medium leading-relaxed;
+  font-size: clamp(1rem, 0.25vw + 0.95rem, 1.125rem);
+}
+
+@utility text-size-accent {
+  @apply font-quicksand font-semibold uppercase tracking-wider;
+  font-size: clamp(0.75rem, 0.1vw + 0.7rem, 0.875rem);
+}
+
+
+@theme {
 
   /* -------------------------
      Animations
