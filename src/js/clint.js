@@ -99,6 +99,7 @@ export function initTestimonialSwiper() {
         slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
+        slideToClickedSlide: true,
         autoplay: {
             delay: 40000,
             disableOnInteraction: false,

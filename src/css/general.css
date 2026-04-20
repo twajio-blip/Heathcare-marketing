@@ -300,10 +300,6 @@ html {
   background: var(--color-skin-primary) !important;
 }
 
-.testimonialSwiper {
-  padding-bottom: 2rem !important;
-}
-
 /* Testimonial Middle Card Effect */
 @media (min-width: 1024px) {
   .testimonialSwiper .swiper-slide {
@@ -361,7 +357,7 @@ html {
 
 /* Testimonial Centered Focus Effect */
 .testimonialSwiper .swiper-slide {
-  @apply opacity-80 scale-95 transition-all duration-700;
+  @apply opacity-80 transition-all duration-700;
 }
 
 .testimonialSwiper .swiper-slide-active {
