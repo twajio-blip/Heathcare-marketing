@@ -70,16 +70,16 @@ export function renderSeoCards() {
                     <div class="mb-medium flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-skin-primary/10 to-skin-primary-2/10 text-skin-primary">
                         <i class="fa-solid ${item.icon} text-size-badge"></i>
                     </div>
-                    <h4 class="text-size-body text-skin-accent">${item.title}</h4>
+                    <h4 class="text-size-header text-skin-accent">${item.title}</h4>
                 </div>
 
                 <!-- Hover Content -->
                 <div class="absolute inset-0 z-10 flex flex-col items-center justify-center bg-linear-to-br from-skin-primary to-skin-primary-2 p-large text-center translate-y-0 opacity-100 md:translate-y-full md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 ease-out">
-                    <h3 class="text-size-body text-skin-accent-3">${item.title}</h3>
-                    <p class="mt-medium mb-large text-size-accent leading-relaxed text-skin-accent-3">
+                    <h3 class="text-size-header text-skin-accent-3">${item.title}</h3>
+                    <p class="mt-medium mb-large text-size-body leading-relaxed text-skin-accent-3">
                         ${item.desc}
                     </p>
-                    <a href="#" class="rounded-full bg-white/20 px-medium py-small text-size-small font-semibold text-white backdrop-blur-md transition hover:bg-white hover:text-skin-primary">
+                    <a href="#" class="text-size-body rounded-full bg-white/20 px-medium py-small text-size-small font-semibold text-white backdrop-blur-md transition hover:bg-white hover:text-skin-primary">
                         Book appointment →
                     </a>
                 </div>

@@ -185,18 +185,6 @@ export function initThirdPartyLibraries() {
     });
   }
 
-  if (document.querySelector('.testimonialSwiper')) {
-    new Swiper('.testimonialSwiper', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      slideToClickedSlide: true,
-      breakpoints: {
-        640: { slidesPerView: 2, centeredSlides: false },
-        1024: { slidesPerView: 3, centeredSlides: true }
-      }
-    });
-  }
 }
 
 export function initWhoWeHelpTabs() {

@@ -91,24 +91,34 @@
 
 }
 
-@utility text-size-primary {
+@utility text-size-title {
   @apply font-poppins font-bold leading-[1.2];
-  font-size: clamp(2.5rem, 1.5vw + 2rem, 3rem);
+  /* Mobile: 32px (2rem) | PC: 42px (2.625rem) */
+  font-size: clamp(2rem, 3vw + 1rem, 2.625rem);
 }
 
-@utility text-size-secondary {
+@utility text-size-header {
   @apply font-quicksand font-bold leading-tight;
-  font-size: clamp(1.5rem, 1vw + 1.25rem, 2rem);
+  /* Mobile: 20px (1.25rem) | PC: 24px (1.5rem) */
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 1.5rem);
+}
+
+@utility text-size-sub-header {
+  @apply font-quicksand font-bold leading-tight;
+  /* Mobile: 16px (1rem) | PC: 20px (1.25rem) */
+  font-size: clamp(1rem, 1vw + 0.8rem, 1.25rem);
 }
 
 @utility text-size-body {
   @apply font-poppins font-medium leading-relaxed;
-  font-size: clamp(1rem, 0.25vw + 0.95rem, 1.125rem);
+  /* Mobile: 13px (0.8125rem) | PC: 16px (1rem) */
+  font-size: clamp(0.8125rem, 0.6vw + 0.7rem, 1rem);
 }
 
 @utility text-size-accent {
   @apply font-quicksand font-semibold uppercase tracking-wider;
-  font-size: clamp(0.75rem, 0.1vw + 0.7rem, 0.875rem);
+  /* Mobile: 12px (0.75rem) | PC: 14px (0.875rem) */
+  font-size: clamp(0.75rem, 0.4vw + 0.65rem, 0.875rem);
 }
 
 

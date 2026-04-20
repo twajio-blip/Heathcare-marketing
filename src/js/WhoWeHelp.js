@@ -158,7 +158,7 @@ export function renderTabs() {
     // 1. Generate the Button HTML
     const btnHtml = `
       <button class="tab-btn group ${isActive ? 'active' : ''}" data-target="${item.id}">
-        <span class="relative z-10">${item.title}</span>
+        <span class="relative z-10 font-bold">${item.title}</span>
       </button>`;
     menuRoot.insertAdjacentHTML('beforeend', btnHtml);
 
@@ -169,7 +169,7 @@ export function renderTabs() {
         <!-- Left Content -->
         <div class="lg:w-1/2">
           <div class="mb-medium">
-            <h2 class="text-size-secondary text-skin-accent leading-tight">
+            <h2 class="text-size-header text-skin-accent leading-tight">
               ${item.heading}
               <span class="bg-linear-to-r from-skin-primary to-skin-secondary bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">${item.highlight}</span>
             </h2>
@@ -183,11 +183,11 @@ export function renderTabs() {
                 <div class="w-8 h-8 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center shrink-0 group-hover:bg-skin-primary group-hover:text-white transition-colors duration-300">
                   <i class="fa-solid fa-check text-xs"></i>
                 </div>
-                <span class="text-skin-accent text-size-accent font-black">${f}</span>
+                <span class="text-skin-accent text-size-body font-black">${f}</span>
               </li>
             `).join('')}
           </ul>
-          <a href="${item.link}" class="text-size-accent font-bold btn-primary mt-small hover:shadow-lg hover:shadow-blue-600/20 transition-all active:scale-95">
+          <a href="${item.link}" class="text-size-sub-header font-bold btn-primary mt-small hover:shadow-lg hover:shadow-blue-600/20 transition-all active:scale-95">
             ${item.btnText}
           </a>
         </div>

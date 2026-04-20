@@ -76,7 +76,7 @@ export function renderProcess() {
 
               <!-- Content -->
               <div class="md:w-5/12 text-center ${isEven ? 'md:text-left md:pl-12 group-hover:translate-x-2' : 'md:text-right md:pr-12 group-hover:-translate-x-2'} transition-all duration-500">
-                <h3 class="text-size-body text-skin-accent mb-small tracking-tight">${item.title}</h3>
+                <h3 class="text-size-header text-skin-accent mb-small tracking-tight">${item.title}</h3>
                 <p class="text-skin-accent-2 text-size-body font-medium leading-relaxed">
                   ${item.description}
                 </p>

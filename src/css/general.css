@@ -348,13 +348,37 @@ html {
   /* Keeps the ends rounded */
 }
 
-/* Services Swiper – equal-height cards */
-/* The wrapper stretches all slides to match the tallest one */
-.servicesSwiper .swiper-wrapper {
-  align-items: stretch;
+/* servicesSwiper & testimonialSwiper – equal-height cards */
+.servicesSwiper .swiper-wrapper,
+.testimonialSwiper .swiper-wrapper {
+  @apply items-stretch;
 }
 
-/* Each slide is height: auto so it fills the stretched wrapper */
-.servicesSwiper .swiper-slide {
-  height: auto;
+.servicesSwiper .swiper-slide,
+.testimonialSwiper .swiper-slide {
+  @apply h-auto transition-all duration-700;
+}
+
+/* Testimonial Centered Focus Effect */
+.testimonialSwiper .swiper-slide {
+  @apply opacity-80 scale-95 transition-all duration-700;
+}
+
+.testimonialSwiper .swiper-slide-active {
+  @apply opacity-100 scale-105;
+}
+
+/* Testimonial Swiper Custom Styles */
+.testimonial-pagination.swiper-pagination-bullets {
+  @apply flex items-center justify-center gap-2 mt-0!;
+  position: static;
+  width: auto;
+}
+
+.testimonial-pagination .swiper-pagination-bullet {
+  @apply w-2.5 h-2.5 bg-slate-200 opacity-100 transition-all duration-300 rounded-full cursor-pointer;
+}
+
+.testimonial-pagination .swiper-pagination-bullet-active {
+  @apply w-8 bg-skin-primary rounded-full;
 }
