@@ -221,23 +221,37 @@ export function initWhoWeHelpTabs() {
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.tab-content');
 
-  if (tabBtns.length === 0 || tabContents.length === 0) return;
+  // 1. Silent Guard: If these don't exist, stop immediately without error
+  if (tabBtns.length === 0 || tabContents.length === 0) {
+    return;
+  }
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
+      // 2. Clear previous states
+      tabBtns.forEach(b => {
+        b.classList.remove('bg-skin-primary', 'text-white', 'shadow-md', 'shadow-skin-primary/30', 'active');
+        b.classList.add('bg-white/50', 'backdrop-blur-sm', 'text-slate-600');
+      });
+
       tabContents.forEach(c => {
         c.classList.add('hidden', 'opacity-0');
         c.classList.remove('flex', 'opacity-100', 'animate-fade-in-up');
       });
 
-      btn.classList.add('active');
-      const targetId = btn.getAttribute('data-target');
-      const targetContent = document.getElementById(targetId);
+      // 3. Set Active Tab
+      btn.classList.remove('bg-white/50', 'backdrop-blur-sm', 'text-slate-600');
+      btn.classList.add('active', 'bg-skin-primary', 'text-white', 'shadow-md', 'shadow-skin-primary/30');
 
+      // 4. Show Content with Safe Check
+      const targetId = btn.getAttribute('data-target');
+      if (!targetId) return; // Error handling for missing attribute
+
+      const targetContent = document.getElementById(targetId);
       if (targetContent) {
         targetContent.classList.remove('hidden');
         targetContent.classList.add('flex');
+
         setTimeout(() => {
           targetContent.classList.remove('opacity-0');
           targetContent.classList.add('opacity-100', 'animate-fade-in-up');

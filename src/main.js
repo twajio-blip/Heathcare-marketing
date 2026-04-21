@@ -8,38 +8,6 @@ import 'swiper/css/navigation';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const helperData = [
-  {
-    id: "tab-hospitals",
-    title: "Hospitals",
-    heading: "Scale your hospital network with",
-    highlight: "precision marketing.",
-    desc: "Drive high-value service line growth and improve patient retention using clinical-grade data.",
-    features: ["Increase patient volume", "Enhance brand reputation", "Streamline scheduling"],
-    btnText: "Explore Hospital Growth",
-    link: "./hospital-growth.html",
-    img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80",
-    statLabel: "Patient Volume",
-    statValue: "+45%",
-    color: "from-teal-400 to-teal-600",
-    icon: "fa-chart-line"
-  },
-  {
-    id: "tab-clinics",
-    title: "Dental Practices",
-    heading: "Dominate the local pack and",
-    highlight: "fill your dental chairs.",
-    desc: "Targeted digital strategies specifically crafted to attract new patients to your clinic.",
-    features: ["Rank #1 in local search", "Generate high-quality leads", "Automate follow-ups"],
-    btnText: "Explore Dental Marketing",
-    link: "./dental-marketing.html",
-    img: "https://images.unsplash.com/photo-1538108149393-cebb47ac1953?auto=format&fit=crop&w=1000&q=80",
-    statLabel: "New Patients",
-    statValue: "2.4x",
-    color: "from-blue-400 to-blue-600",
-    icon: "fa-user-plus"
-  }
-];
 
 
 // Run loader when DOM is ready
@@ -187,81 +155,6 @@ export function initThirdPartyLibraries() {
 
 }
 
-export function initWhoWeHelpTabs() {
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const tabContents = document.querySelectorAll('.tab-content');
-
-  // 1. Silent Guard: If these don't exist, stop immediately without error
-  if (tabBtns.length === 0 || tabContents.length === 0) {
-    return;
-  }
-
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // 2. Clear previous states
-      tabBtns.forEach(b => {
-        b.classList.remove('bg-skin-primary', 'text-white', 'shadow-md', 'shadow-skin-primary/30', 'active');
-        b.classList.add('bg-white/50', 'backdrop-blur-sm', 'text-slate-600');
-      });
-
-      tabContents.forEach(c => {
-        c.classList.add('hidden', 'opacity-0');
-        c.classList.remove('flex', 'opacity-100', 'animate-fade-in-up');
-      });
-
-      // 3. Set Active Tab
-      btn.classList.remove('bg-white/50', 'backdrop-blur-sm', 'text-slate-600');
-      btn.classList.add('active', 'bg-skin-primary', 'text-white', 'shadow-md', 'shadow-skin-primary/30');
-
-      // 4. Show Content with Safe Check
-      const targetId = btn.getAttribute('data-target');
-      if (!targetId) return; // Error handling for missing attribute
-
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) {
-        targetContent.classList.remove('hidden');
-        targetContent.classList.add('flex');
-
-        setTimeout(() => {
-          targetContent.classList.remove('opacity-0');
-          targetContent.classList.add('opacity-100', 'animate-fade-in-up');
-        }, 50);
-      }
-    });
-  });
-}
-
-export function renderTabs() {
-  const menuRoot = document.getElementById('tabs-menu');
-  const contentRoot = document.getElementById('tabs-content-root');
-
-  helperData.forEach((item, index) => {
-    const isActive = index === 0; // The first item is active by default
-
-    // 1. Generate the Button HTML
-    const btnHtml = `
-      <button class="tab-btn group ${isActive ? 'active bg-skin-primary text-white' : 'bg-white/50 text-slate-600'}" 
-              data-target="${item.id}">
-        ${item.title}
-      </button>`;
-    menuRoot.insertAdjacentHTML('beforeend', btnHtml);
-
-    // 2. Generate the Content HTML (Using your specific design)
-    const contentHtml = `
-      <div id="${item.id}" class="tab-content ${isActive ? 'flex opacity-100' : 'hidden opacity-0'}">
-        <h2>${item.heading} <span>${item.highlight}</span></h2>
-        <ul>
-          ${item.features.map(f => `<li>${f}</li>`).join('')} 
-        </ul>
-        <img src="${item.img}" />
-      </div>`;
-    contentRoot.insertAdjacentHTML('beforeend', contentHtml);
-  });
-}
-renderTabs();
-
-
-// Tab initialization will be handled by loadComponents in header&footer.js
 
 export function initCounters() {
   const counters = document.querySelectorAll('.stat-number');

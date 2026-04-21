@@ -2,9 +2,9 @@ import {
     initProgressBar,
     initMobileMenus,
     initThirdPartyLibraries,
-    initCounters,
-    initWhoWeHelpTabs
+    initCounters
 } from './main.js';
+import { initWhoWeHelpTabs } from './js/WhoWeHelp.js';
 
 // Component Loader
 export async function loadComponents() {
