@@ -1,27 +1,18 @@
 <!-- NAVBAR START -->
 <style>
-    @keyframes navFadeIn {
+    @keyframes navSlideDown {
         from {
-            opacity: 0;
+            transform: translateY(-100%);
         }
+
         to {
-            opacity: 1;
+            transform: translateY(0%);
         }
     }
 
-    /* Applied to navSecondaryWrapper when it becomes sticky */
+    /* Applied to navSecondaryWrapper when sticky */
     .nav-wrapper-slide-in {
-        animation: navFadeIn 400ms ease-out forwards;
-    }
-
-    /* Smart Header Hide/Show on scroll */
-    #navbar {
-        transition: opacity 0.35s ease, background-color 0.3s ease;
-    }
-
-    .nav-hidden {
-        opacity: 0;
-        pointer-events: none;
+        animation: navSlideDown 400ms ease-out forwards;
     }
 </style>
 
