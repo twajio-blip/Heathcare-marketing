@@ -82,7 +82,7 @@ export function renderServices() {
           </ul>
 
           <div class="mt-medium relative z-10 overflow-hidden h-14 w-full opacity-0 translate-y-full transition-all duration-700 ease-out group-hover:opacity-100 group-hover:translate-y-0">
-            <a href="${service.link}" class="w-full h-full bg-skin-accent text-white rounded-2xl font-bold text-size-body flex items-center justify-center gap-small p-small transition-all duration-500 ease-out hover:bg-skin-primary shadow-xl">
+            <a href="${service.link}" class="w-full h-full bg-skin-accent text-white rounded-2xl font-bold text-size-body flex items-center justify-center gap-small p-small transition-all duration-500 ease-out hover:bg-skin-primary">
               Learn More
               <i class="hidden md:block fa-solid fa-chevron-right text-size-xsmall group-hover:translate-x-1 transition-transform"></i>
             </a>

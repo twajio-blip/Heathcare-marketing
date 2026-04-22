@@ -12,7 +12,7 @@
   /* -------------------------
      Colors
   ------------------------- */
-  --color-skin-primary: #2563eb;
+  --color-skin-primary: #2b46b1;
   --color-skin-primary-2: #14b8a6;
   --color-skin-secondary: #7c3aed;
   --color-skin-accent-dark: #0284C7;
@@ -25,7 +25,7 @@
   --color-skin-background: #f8fafc;
   /* text-color */
   --color-skin-accent: #27272a;
-  --color-skin-accent-2: #52525b;
+  --color-skin-accent-2: #3b3b40;
   --color-skin-accent-3: #ffffff;
   --color-skin-accent-4: #3949AB;
 
@@ -124,321 +124,24 @@
   font-size: clamp(0.75rem, 0.4vw + 0.65rem, 0.875rem);
 }
 
+/* Navigation Bar Animations */
+@keyframes navFadeIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.nav-wrapper-fade-in {
+  animation: navFadeIn 0.4s ease-out forwards;
+}
 
 @theme {
-
-  /* -------------------------
-     Animations
-  ------------------------- */
-
-  /* Ken Burns Scale Down */
-  --animate-ken-burns-scale-down: ken-burns-scale-down 8s ease-in-out;
-
-  @keyframes ken-burns-scale-down {
-    0% {
-      transform: scale(1);
-    }
-
-    100% {
-      transform: scale(0.9);
-    }
-  }
-
-  /* Ken Burns Scale Up */
-  --animate-ken-burns-scale-up: ken-burns-scale-up 8s ease-in-out forwards;
-
-  @keyframes ken-burns-scale-up {
-    0% {
-      transform: scale(0.9);
-    }
-
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  /* Product Ken Burns */
-  --animate-product-ken-burns-scale-up: product-ken-burns-scale-up 3s ease-in-out forwards;
-
-  @keyframes product-ken-burns-scale-up {
-    0% {
-      transform: scale(1);
-    }
-
-    100% {
-      transform: scale(1.1);
-    }
-  }
-
-  /* Rotate */
-  --animate-rotate: rotate 12s linear infinite;
-
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  /* Roll */
-  --animate-roll: roll 1.5s ease-in-out infinite;
-
-  @keyframes roll {
-    0% {
-      transform: translateX(0) rotate(0deg);
-    }
-
-    25% {
-      transform: translateX(10px) rotate(10deg);
-    }
-
-    50% {
-      transform: translateX(-10px) rotate(-10deg);
-    }
-
-    75% {
-      transform: translateX(10px) rotate(10deg);
-    }
-
-    100% {
-      transform: translateX(0) rotate(0deg);
-    }
-  }
-
-  /* Fade Slide */
-  --animate-fadeSlide: fadeSlide 1s cubic-bezier(0.5, 1, 0.7, 1) forwards;
-
-  @keyframes fadeSlide {
-    0% {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  /* Width Slide */
-  --animate-widthSlide: widthSlide 1s cubic-bezier(0.5, 1, 0.7, 1) forwards;
-
-  @keyframes widthSlide {
-    0% {
-      width: 0;
-    }
-
-    100% {
-      width: 100%;
-    }
-  }
-
-  /* Left Slide */
-  --animate-leftSlide: leftSlide 0.7s cubic-bezier(0.5, 1, 0.7, 1) forwards;
-
-  @keyframes leftSlide {
-    0% {
-      left: 0;
-    }
-
-    100% {
-      left: 100%;
-    }
-  }
-
-  /* Slide In Out */
-  --animate-slide-in-out: slide-in-out 700ms forwards ease-out;
-
-  @keyframes slide-in-out {
-    0% {
-      transform: translateX(-100%);
-    }
-
-    50% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(100%);
-    }
-  }
-
-  /* Slide Down */
-  --animate-slide-down: slide-down 500ms forwards ease-out;
-
-  @keyframes slide-down {
-    0% {
-      transform: translateY(-100%);
-    }
-
-    100% {
-      transform: translateY(0%);
-    }
-  }
-
-  /* Slide Up */
-  --animate-slide-up: slide-up 700ms forwards ease-out;
-
-  @keyframes slide-up {
-    0% {
-      transform: translateY(50%);
-    }
-
-    100% {
-      transform: translateY(0%);
-    }
-  }
-
-  /* Slide Scale */
-  --animate-slide-scale: slide-scale 700ms forwards ease-out;
-
-  @keyframes slide-scale {
-    0% {
-      transform: scale(0.7);
-    }
-
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  /* Slide Rotate */
-  --animate-slide-rotate: slide-rotate 700ms forwards ease-out;
-
-  @keyframes slide-rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(90deg);
-    }
-  }
-
-  /* Letter flip in */
-  --animate-letter-flip-in: letter-flip-in 0.6s forwards ease-out;
-
-  @keyframes letter-flip-in {
-    from {
-      transform: rotateX(90deg);
-      opacity: 0;
-    }
-
-    to {
-      transform: rotateX(0deg);
-      opacity: 1;
-    }
-  }
-
-  /* Letter flip out */
-  --animate-letter-flip-out: letter-flip-out 0.4s forwards ease-in;
-
-  @keyframes letter-flip-out {
-    from {
-      transform: rotateX(0deg);
-      opacity: 1;
-    }
-
-    to {
-      transform: rotateX(90deg);
-      opacity: 0;
-    }
-  }
-
-  /* billboard */
-  --animate-shutters: shutters 2s ease-in-out reverse;
-
-  @keyframes shutters {
-    0% {
-      clip-path: polygon(0% 0%,
-          10% 0%,
-          10% 100%,
-          10% 100%,
-          10% 0%,
-          20% 0%,
-          20% 100%,
-          20% 100%,
-          20% 0%,
-          30% 0%,
-          30% 100%,
-          30% 100%,
-          30% 0%,
-          40% 0%,
-          40% 100%,
-          40% 100%,
-          40% 0%,
-          50% 0%,
-          50% 100%,
-          50% 100%,
-          50% 0%,
-          60% 0%,
-          60% 100%,
-          60% 100%,
-          60% 0%,
-          70% 0%,
-          70% 100%,
-          70% 100%,
-          70% 0%,
-          80% 0%,
-          80% 100%,
-          80% 100%,
-          80% 0%,
-          90% 0%,
-          90% 100%,
-          90% 100%,
-          90% 0%,
-          100% 0%,
-          100% 100%,
-          0% 100%);
-    }
-
-    100% {
-      clip-path: polygon(10% 0%,
-          10% 0%,
-          10% 100%,
-          20% 100%,
-          20% 0%,
-          20% 0%,
-          20% 100%,
-          30% 100%,
-          30% 0%,
-          30% 0%,
-          30% 100%,
-          40% 100%,
-          40% 0%,
-          40% 0%,
-          40% 100%,
-          50% 100%,
-          50% 0%,
-          50% 0%,
-          50% 100%,
-          60% 100%,
-          60% 0%,
-          60% 0%,
-          60% 100%,
-          70% 100%,
-          70% 0%,
-          70% 0%,
-          70% 100%,
-          80% 100%,
-          80% 0%,
-          80% 0%,
-          80% 100%,
-          90% 100%,
-          90% 0%,
-          90% 0%,
-          90% 100%,
-          100% 100%,
-          100% 0%,
-          100% 0%,
-          100% 100%,
-          10% 100%);
-    }
-  }
-
   /* Blink */
   --animate-blink: blink 1s ease-in-out infinite;
 
@@ -454,6 +157,7 @@
     }
   }
 }
+
 
 @import "./general.css";
 /* 

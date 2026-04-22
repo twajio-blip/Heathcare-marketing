@@ -27,45 +27,38 @@
 
   <main class="w-full overflow-hidden pt-16 lg:pt-20">
     <!-- 1. HERO SECTION START -->
-    <section class="relative overflow-hidden">
-      <div class="absolute w-full h-full -z-10">
-        <img src="./images/Hero-bg.png" alt="Hero-bg" class="w-full h-full object-cover" />
+    <section class="relative overflow-hidden h-screen flex items-center">
+      <div class="hidden md:block absolute w-full h-full -z-10">
+        <img src="./images/hero-bg-1.png" alt="Hero-bg" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute md:hidden w-full h-full -z-10">
+        <img src="./images/hero-bg-2.png" alt="Hero-bg" class="w-full h-full object-cover" />
       </div>
       <div class="container-custom relative">
         <div class="flex flex-col items-center gap-huge mb-huge lg:flex-row lg:gap-20">
           <div class="text-left lg:w-1/2" data-aos="fade-right">
-            <h1 class="text-size-title font-black tracking-tight leading-[1.1] mb-huge">
+            <h1 class="text-size-title font-black tracking-tight leading-[1.1] mb-huge ">
               <span class="text-skin-accent">Accelerate Your Practice's Growth with</span>
-              <span
-                class="bg-linear-to-r from-skin-primary via-indigo-400 to-skin-accent bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">
+              <span class="from-skin-primary via-skin-secondary to-skin-accent animate-gradient">
                 Data-Driven Marketing
               </span>
             </h1>
 
-            <p class="text-size-body leading-relaxed text-skin-accent-2 max-w-xl">
+            <p class="hidden lg:block text-size-body leading-relaxed text-skin-accent-2 max-w-xl">
               We specialize in helping healthcare providers attract
               <span class="text-skin-primary font-extrabold">high-value patients</span>, build online authority, and
               scale predictably.
             </p>
           </div>
-          <div class="lg:w-1/2 relative" data-aos="fade-left">
-            <div
-              class="absolute -inset-4 bg-linear-to-tr from-skin-primary/20 to-skin-accent/20 rounded-3xl blur-2xl -z-10 opacity-50">
-            </div>
-            <img src="./images/Hero-Img.png" alt="Hero"
-              class="h-full w-full rounded-3xl object-cover shadow-2xl animate-float" />
-          </div>
         </div>
-        <div class="flex flex-row items-center justify-center gap-medium w-full">
+        <div class="flex lg:flex-row flex-col items-center justify-center gap-medium w-full lg:w-[50%] mt-30 md:mt-0">
           <a href="./contact.html"
             class="group relative w-auto inline-flex items-center justify-center gap-small px-medium md:px-large py-medium cursor-pointer overflow-hidden rounded-full bg-blue-600 font-bold text-white shadow-xl shadow-blue-600/20 transition-all duration-300 hover:scale-105 active:scale-95">
 
             <div
               class="absolute inset-0 bg-linear-to-r from-blue-600 to-indigo-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
             </div>
-
-            <span class="md:hidden text-size-sub-header relative z-10 whitespace-nowrap">Free Audit</span>
-            <span class="hidden md:block text-size-sub-header relative z-10 whitespace-nowrap">Get a Free Marketing
+            <span class="text-size-sub-header relative z-10 whitespace-nowrap">Get a Free Marketing
               Audit</span>
 
             <svg
@@ -84,8 +77,7 @@
               </svg>
             </div>
             <span class="text-size-sub-header whitespace-nowrap">
-              <span class="md:hidden">Case Studies</span>
-              <span class="hidden md:block">See Our Case Studies</span>
+              View Our Case Studies
             </span>
           </a>
         </div>
@@ -94,12 +86,11 @@
     <!-- 1. HERO SECTION END -->
 
     <!-- 2. About us Section Start -->
-    <section id="about" class="relative overflow-hidden">
+    <section id="about" class="container-custom relative overflow-visible!">
       <!-- Section Header -->
-      <div class="container-custom text-center mb-medium lg:mb-huge" data-aos="fade-up">
+      <div class="text-center mb-medium lg:mb-huge" data-aos="fade-up">
         <div class="text-center">
-          <div
-            class="bg-linear-to-r from-skin-primary via-indigo-400 to-skin-primary-2 bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">
+          <div class="animate-gradient">
             <h2 class="text-size-title tracking-tighter leading-none pb-small">
               About the Agency
             </h2>
@@ -111,13 +102,13 @@
           </div>
         </div>
       </div>
-      <div class="w-full overflow-visible!">
-        <div class="swiper aboutSwiper overflow-visible! mb-16 lg:mb-24" data-aos="fade-up">
+      <div class="w-full ">
+        <div class="swiper aboutSwiper overflow-visible!" data-aos="fade-up">
           <div class="swiper-wrapper">
             <!-- Slide 1 -->
             <div class="swiper-slide">
               <div
-                class="overflow-visible! container-custom py-0! grid grid-cols-1 sm:grid-cols-2 gap-large items-stretch h-[350px] sm:h-[400px]">
+                class="overflow-visible! grid grid-cols-1 sm:grid-cols-2 gap-large items-stretch h-[350px] sm:h-[400px]">
                 <div class="flex flex-col justify-center h-full">
                   <div class="mb-medium">
                     <span
@@ -200,7 +191,7 @@
             <!-- Slide 2 -->
             <div class="swiper-slide">
               <div
-                class="overflow-visible! container-custom py-0! grid grid-cols-1 sm:grid-cols-2 gap-large items-stretch h-[350px] sm:h-[400px]">
+                class="overflow-visible! grid grid-cols-1 sm:grid-cols-2 gap-large items-stretch h-[350px] sm:h-[400px]">
                 <div class="flex flex-col justify-center h-full">
                   <div class="mb-medium">
                     <span
@@ -284,7 +275,7 @@
             <!-- Slide 3 -->
             <div class="swiper-slide">
               <div
-                class="overflow-visible! container-custom py-0! grid grid-cols-1 sm:grid-cols-2 gap-large items-stretch h-[350px] sm:h-[400px]">
+                class="overflow-visible! grid grid-cols-1 sm:grid-cols-2 gap-large items-stretch h-[350px] sm:h-[400px]">
                 <div class="flex flex-col justify-center h-full">
                   <div class="mb-medium">
                     <span
@@ -368,7 +359,7 @@
             <!-- Slide 4 -->
             <div class="swiper-slide">
               <div
-                class="overflow-visible! container-custom py-0! grid grid-cols-1 sm:grid-cols-2 gap-large items-stretch h-[350px] sm:h-[400px]">
+                class="overflow-visible! grid grid-cols-1 sm:grid-cols-2 gap-large items-stretch h-[350px] sm:h-[400px]">
                 <div class="flex flex-col justify-center h-full">
                   <div class="mb-medium">
                     <span
@@ -482,8 +473,7 @@
       <div id="who-we-help" class="container-custom">
         <!-- Header -->
         <div class="text-center max-w-4xl mx-auto mb-huge px-medium" data-aos="fade-up">
-          <div
-            class="bg-linear-to-r from-skin-primary to-skin-secondary bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">
+          <div class="animate-gradient">
             <h2 class="text-size-title tracking-tighter leading-none pb-small">Who We Help</h2>
           </div>
           <p class="text-size-sub-header text-skin-accent-2 leading-relaxed max-w-2xl mx-auto ">
@@ -515,8 +505,7 @@
       <div class="container-custom">
         <div class="text-center max-w-4xl mx-auto mb-medium px-medium" data-aos="fade-up">
           <!-- Heading -->
-          <div
-            class="bg-linear-to-r from-skin-primary to-skin-secondary bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">
+          <div class="from-skin-primary to-skin-secondary animate-gradient">
             <h2 class="text-size-title pb-small">Our Services</h2>
           </div>
 
@@ -538,7 +527,7 @@
               <!-- Dynamically populated by service.js -->
             </div>
             <!-- Pagination & Navigation Controls -->
-            <div class="flex flex-col items-center mt-5 lg:mt-10">
+            <div class="flex flex-col items-center mt-small lg:mt-large">
               <!-- Desktop Pagination dots -->
               <div class="swiper-pagination services-pagination static! hidden lg:block"></div>
               <!-- Mobile Prev/Next Buttons -->
@@ -571,8 +560,7 @@
           <!-- Heading -->
           <h2 class="text-size-title text-skin-accent tracking-tight mb-medium leading-[1.1]">
             Strategic
-            <span
-              class="bg-linear-to-r from-skin-secondary to-skin-accent bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">
+            <span class="from-skin-secondary to-skin-accent animate-gradient">
               SEO Framework
             </span>
           </h2>
@@ -580,8 +568,7 @@
           <!-- Description -->
           <p class="text-size-body text-skin-accent-2 leading-relaxed max-w-2xl mx-auto">
             A specialized,
-            <span
-              class="bg-linear-to-r from-skin-secondary to-skin-accent bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">holistic
+            <span class="from-skin-secondary to-skin-accent animate-gradient">holistic
               approach</span>
             designed uniquely for the complex healthcare search ecosystem.
           </p>
@@ -611,8 +598,7 @@
           <div class="max-w-2xl">
             <h2 class="text-size-title text-white tracking-tight mb-medium">
               Innovation &
-              <span
-                class="bg-linear-to-r from-skin-primary via-skin-background to-skin-primary-2 bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">
+              <span class="from-skin-primary via-skin-background to-skin-primary-2 animate-gradient">
                 Technology
               </span>
             </h2>
@@ -637,8 +623,7 @@
         <div class="text-center max-w-3xl mx-auto mb-huge px-medium" data-aos="fade-up">
           <h2 class="text-size-title text-skin-accent tracking-tight leading-tight mb-medium">
             Our Proven
-            <span
-              class="bg-linear-to-r from-skin-primary via-skin-accent-4 to-skin-primary-2 bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">
+            <span class="from-skin-primary via-skin-accent-4 to-skin-primary-2 animate-gradient">
               Process
             </span>
           </h2>
@@ -677,8 +662,7 @@
           <!-- Heading -->
           <h2 class="text-size-title text-skin-accent tracking-tighter leading-tight mb-large">
             Our Work &
-            <span
-              class="bg-linear-to-r from-skin-primary via-skin-accent-4 to-skin-primary-2 bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">
+            <span class="from-skin-primary via-skin-accent-4 to-skin-primary-2 animate-gradient">
               Case Studies
             </span>
           </h2>
@@ -789,8 +773,7 @@
         <div class="text-center max-w-3xl mx-auto mb-huge" data-aos="fade-up">
           <h2 class="text-size-title font-black text-skin-accent tracking-tighter leading-tight mb-medium">
             What Our Healthcare
-            <span
-              class="bg-linear-to-r from-skin-primary via-indigo-600 to-skin-primary-2 bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">
+            <span class="from-skin-primary via-indigo-600 to-skin-primary-2 animate-gradient">
               Clients Say
             </span>
           </h2>
@@ -837,8 +820,7 @@
           <div class="max-w-2xl">
             <h2 class="text-size-title font-black text-skin-accent tracking-tighter leading-tight mb-large">
               Resources &
-              <span
-                class="bg-linear-to-r from-skin-primary via-indigo-600 to-skin-accent bg-size-[200%_auto] animate-gradient bg-clip-text text-transparent">
+              <span class="from-skin-primary via-indigo-600 to-skin-accent animate-gradient">
                 Insights
               </span>
             </h2>
@@ -882,8 +864,7 @@
           <h2 class="text-size-title font-black text-skin-accent mb-medium tracking-tighter leading-[1.1]"
             data-aos="fade-up" data-aos-delay="100">
             Let's Grow Your <br class="hidden md:block" />
-            <span
-              class="bg-linear-to-r from-skin-primary via-indigo-600 to-skin-primary bg-size-[200%_auto] animate-gradient text-transparent bg-clip-text">
+            <span class="from-skin-primary via-indigo-600 to-skin-primary animate-gradient">
               Healthcare Brand
             </span>
           </h2>

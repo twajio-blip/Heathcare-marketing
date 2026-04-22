@@ -4,17 +4,6 @@
 @layer base {
 
   /* ---------- Animations ---------- */
-  .animate-fadeSlide {
-    @apply animate-fadeSlide;
-  }
-
-  .animate-widthSlide {
-    @apply animate-widthSlide;
-  }
-
-  .animate-leftSlide {
-    @apply animate-leftSlide;
-  }
 
   @keyframes gradient {
     0% {
@@ -31,9 +20,25 @@
   }
 
   .animate-gradient {
-    animation: gradient 4s linear infinite;
+    animation: gradient 8s linear infinite;
     will-change: background-position;
-    @apply font-black bg-linear-to-r from-skin-primary-2 to-skin-primary bg-size-[200%_auto] bg-clip-text text-transparent leading-tight mb-large;
+    @apply font-black bg-linear-to-r from-skin-primary via-skin-secondary to-skin-accent bg-size-[200%_auto] bg-clip-text text-transparent leading-tight mb-large;
+  }
+
+  @keyframes fadeIn {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .nav-wrapper-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
   }
 
   /* Body */
@@ -82,7 +87,7 @@
   }
 
   .tab-btn {
-    @apply relative bg-white/50 text-skin-accent-2 border border-black/5 px-medium py-small rounded-full text-size-accent hover:bg-white hover:text-skin-primary hover:shadow-md transition-all duration-300 hover:scale-105;
+    @apply relative bg-white/50 text-skin-accent-2 border border-black/40 px-medium py-small rounded-full text-size-accent hover:bg-white hover:text-skin-primary hover:shadow-md transition-all duration-300 hover:scale-105;
   }
 
   .tab-btn.active {
@@ -251,7 +256,6 @@ html {
   border: 0;
 }
 
-
 /* ================================
        TYPING CURSOR
        ================================ */
@@ -366,7 +370,7 @@ html {
 
 /* Testimonial Swiper Custom Styles */
 .testimonial-pagination.swiper-pagination-bullets {
-  @apply flex items-center justify-center gap-2 mt-0!;
+  @apply flex items-center justify-center gap-2 mt-0;
   position: static;
   width: auto;
 }
