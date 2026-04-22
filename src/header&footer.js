@@ -4,13 +4,12 @@ import {
     initThirdPartyLibraries,
     initCounters
 } from './main.js';
-import { initWhoWeHelpTabs } from './js/WhoWeHelp.js';
 
 // Component Loader
 export async function loadComponents() {
     try {
         // Fetch and inject Header
-        const headerRes = await fetch('/components/header.html');
+        const headerRes = await fetch('/src/components/header.html');
         if (headerRes.ok) {
             const headerHTML = await headerRes.text();
             const headerContainer = document.getElementById('header-container');
@@ -18,7 +17,7 @@ export async function loadComponents() {
         }
 
         // Fetch and inject Footer
-        const footerRes = await fetch('/components/footer.html');
+        const footerRes = await fetch('/src/components/footer.html');
         if (footerRes.ok) {
             const footerHTML = await footerRes.text();
             const footerContainer = document.getElementById('footer-container');
@@ -31,7 +30,6 @@ export async function loadComponents() {
         initMobileMenus();
         initThirdPartyLibraries();
         initCounters();
-        initWhoWeHelpTabs();
     } catch (err) {
         console.error('Failed to load components', err);
     }
@@ -50,68 +48,60 @@ function initNavbarScroll() {
 
     if (!navbar || !navSecondary || !navSecondaryWrapper) return;
 
+    let lastScrollY = window.scrollY;
     let wasSticky = false;
 
     window.addEventListener('scroll', () => {
-        const isSticky = window.scrollY > 250;
+        const currentScrollY = window.scrollY;
+        const isSticky = currentScrollY > 350;
 
         // 1. Basic Navbar State
-        navbar.classList.toggle('fixed', isSticky);
-        // navbar.classList.toggle('absolute', !isSticky);
-        navbar.classList.toggle('bg-white', isSticky);
-        // navbar.classList.toggle('bg-skin-background/70', !isSticky);
-        navbar.classList.toggle('shadow-xl', isSticky);
-
-        // 2. primary nav visibility
+        ['fixed', 'nav-wrapper-fade-in'].forEach(cls => {
+            navbar.classList.toggle(cls, isSticky);
+        });
+        // 3. Primary nav visibility
         if (navPrimary) {
-            navPrimary.style.display = isSticky ? 'none' : '';
-        }
-
-        // 3. Components inside secondary nav
-        if (navSecondaryContainer) {
-            if (isSticky) {
-                navSecondaryContainer.classList.remove('py-large', 'lg:py-large', 'md:py-huge');
-                navSecondaryContainer.classList.add('py-small', 'lg:py-small', 'md:py-small');
-            } else {
-                navSecondaryContainer.classList.remove('py-small', 'lg:py-small', 'md:py-small');
-                navSecondaryContainer.classList.add('py-large', 'lg:py-large', 'md:py-huge');
-            }
-        }
-
-        if (navSecondaryBg) {
-            const bgClasses = ['lg:w-[75%]', 'xl:w-[70%]'];
-            bgClasses.forEach(cls => {
-                if (isSticky) {
-                    navSecondaryBg.classList.remove(cls);
-                } else {
-                    navSecondaryBg.classList.add(cls);
-                }
+            ['hidden'].forEach(cls => {
+                navPrimary.classList.toggle(cls, isSticky);
             });
-            navSecondaryBg.style.clipPath = isSticky ? 'none' : '';
+        }
+
+        // Handle wrapper margin for non-sticky layout
+        if (navSecondaryWrapper) {
+            if (isSticky) {
+                // When scrolling down
+                navSecondaryWrapper.classList.replace('h-20', 'h-16');
+                navSecondaryWrapper.classList.replace('lg:-mt-7', 'lg:mt-0');
+            } else {
+                // When at the top
+                navSecondaryWrapper.classList.replace('h-16', 'h-20');
+                navSecondaryWrapper.classList.replace('lg:mt-0', 'lg:-mt-7');
+            }
         }
 
         if (navSecondaryLogo) {
-            navSecondaryLogo.style.display = isSticky ? 'flex' : '';
+            ['lg:visible'].forEach(cls => {
+                navSecondaryLogo.classList.toggle(cls, isSticky);
+            });
         }
+        if (navSecondaryBg) {
+            ['lg:w-full', 'xl:w-full'].forEach(cls => {
+                navSecondaryBg.classList.toggle(cls, isSticky);
+            });
 
-        if (secodaryBtn) {
-            secodaryBtn.classList.toggle('lg:flex', isSticky);
-        }
-        // Handle wrapper margin for non-sticky layout
-        if (navSecondaryWrapper) {
-            navSecondaryWrapper.classList.toggle('lg:mt-25', !isSticky);
-
-            // Slide-in animation: target navSecondaryWrapper (has real height, so -100% = off-screen above)
-            // #navbar itself is 0-height when sticky, so translateY(-100%) on it = translateY(0) = no movement
-            if (isSticky && !wasSticky) {
-                navSecondaryWrapper.classList.remove('nav-wrapper-slide-in');
-                void navSecondaryWrapper.offsetHeight; // force reflow to restart animation
-                navSecondaryWrapper.classList.add('nav-wrapper-slide-in');
-            } else if (!isSticky) {
-                navSecondaryWrapper.classList.remove('nav-wrapper-slide-in');
+            if (isSticky) {
+                navSecondaryBg.classList.remove('lg:w-[75%]', 'xl:w-[70%]', 'lg:[clip-path:polygon(0_0,100%_0,100%_100%,35px_100%)]');
+            } else {
+                navSecondaryBg.classList.add('lg:w-[75%]', 'xl:w-[70%]', 'lg:[clip-path:polygon(0_0,100%_0,100%_100%,35px_100%)]');
             }
         }
 
+        if (secodaryBtn) {
+            ['lg:flex'].forEach(cls => {
+                secodaryBtn.classList.toggle(cls, isSticky);
+            });
+        }
         wasSticky = isSticky;
+        lastScrollY = currentScrollY;
     });
 }

@@ -3,6 +3,7 @@
 --------------------------------------------------- */
 @import "tailwindcss";
 @source "../node_modules/flowbite";
+@source "../components/**/*.html";
 
 /* ---------------------------------------------------
    Tailwind Custom Theme
@@ -17,8 +18,10 @@
   --color-skin-accent-dark: #0284C7;
   --color-skin-secondary-1: #27272a;
   --color-skin-secondary-2: #F8FAFC;
-  --color-skin-secondary-3: oklch(1 0 0);/* #ffffff */
-  --color-skin-neutral: oklch(0.9761 0 0); /* #f7f7f7 */
+  --color-skin-secondary-3: oklch(1 0 0);
+  /* #ffffff */
+  --color-skin-neutral: oklch(0.9761 0 0);
+  /* #f7f7f7 */
   --color-skin-background: #f8fafc;
   /* text-color */
   --color-skin-accent: #27272a;

@@ -51,7 +51,7 @@
 
   /* Primary Button - Premium Diagonal Shutter */
   .btn-primary {
-    @apply relative inline-block overflow-hidden text-skin-primary font-bold px-small md:px-medium py-small md:py-medium rounded-2xl uppercase transition-all duration-500 ease-in-out cursor-pointer border border-skin-primary;
+    @apply relative inline-block overflow-hidden text-skin-primary font-bold px-small md:px-medium py-small rounded-2xl uppercase transition-all duration-500 ease-in-out cursor-pointer border border-skin-primary;
   }
 
   .btn-primary::before {
