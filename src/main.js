@@ -1,5 +1,5 @@
 import { loadComponents } from './header&footer.js';
-import '/src/css/style.css';
+import './css/style.css';
 import Swiper from 'swiper';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';

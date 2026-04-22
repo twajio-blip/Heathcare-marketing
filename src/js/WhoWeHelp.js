@@ -1,5 +1,5 @@
 import { loadComponents } from '../header&footer.js';
-import '/src/css/style.css';
+import '../css/style.css';
 import 'swiper/css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
