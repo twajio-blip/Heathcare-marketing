@@ -1,3 +1,6 @@
+import headerHTML from './components/header.html?raw';
+import footerHTML from './components/footer.html?raw';
+
 import {
     initProgressBar,
     initMobileMenus,
@@ -8,21 +11,13 @@ import {
 // Component Loader
 export async function loadComponents() {
     try {
-        // Fetch and inject Header
-        const headerRes = await fetch('./src/components/header.html');
-        if (headerRes.ok) {
-            const headerHTML = await headerRes.text();
-            const headerContainer = document.getElementById('header-container');
-            if (headerContainer) headerContainer.innerHTML = headerHTML;
-        }
+        // Inject Header
+        const headerContainer = document.getElementById('header-container');
+        if (headerContainer) headerContainer.innerHTML = headerHTML;
 
-        // Fetch and inject Footer
-        const footerRes = await fetch('./src/components/footer.html');
-        if (footerRes.ok) {
-            const footerHTML = await footerRes.text();
-            const footerContainer = document.getElementById('footer-container');
-            if (footerContainer) footerContainer.innerHTML = footerHTML;
-        }
+        // Inject Footer
+        const footerContainer = document.getElementById('footer-container');
+        if (footerContainer) footerContainer.innerHTML = footerHTML;
 
         // Initialize scripts that depend on the injected DOM
         initNavbarScroll();
@@ -70,11 +65,11 @@ function initNavbarScroll() {
         if (navSecondaryWrapper) {
             if (isSticky) {
                 // When scrolling down
-                navSecondaryWrapper.classList.replace('h-20', 'h-16');
+                navSecondaryWrapper.classList.replace('lg:h-20', 'lg:h-16');
                 navSecondaryWrapper.classList.replace('lg:-mt-7', 'lg:mt-0');
             } else {
                 // When at the top
-                navSecondaryWrapper.classList.replace('h-16', 'h-20');
+                navSecondaryWrapper.classList.replace('lg:h-16', 'lg:h-20');
                 navSecondaryWrapper.classList.replace('lg:mt-0', 'lg:-mt-7');
             }
         }
