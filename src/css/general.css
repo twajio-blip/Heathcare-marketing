@@ -7,22 +7,22 @@
 
   @keyframes gradient {
     0% {
-      background-position: 0% 30%;
+      background-position: 0% 50%;
     }
 
     50% {
-      background-position: 100% 30%;
+      background-position: 100% 50%;
     }
 
     100% {
-      background-position: 0% 30%;
+      background-position: 0% 50%;
     }
   }
 
   .animate-gradient {
     animation: gradient 8s linear infinite;
     will-change: background-position;
-    @apply font-black bg-linear-to-r from-skin-primary via-skin-secondary to-skin-accent bg-size-[200%_auto] bg-clip-text text-transparent leading-tight mb-large;
+    @apply font-black bg-linear-to-r from-skin-primary via-skin-accent to-skin-secondary bg-size-[200%_auto] bg-clip-text text-transparent;
   }
 
   @keyframes fadeIn {
@@ -40,6 +40,24 @@
   .nav-wrapper-fade-in {
     animation: fadeIn 0.4s ease-out forwards;
   }
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+  .animate-bg-flow {
+    background-size: 200% 200% !important;
+    animation: gradient-flow 4s ease infinite;
+  }
+
 
   /* Body */
   body {

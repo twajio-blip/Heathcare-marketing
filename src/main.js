@@ -116,10 +116,10 @@ export function initThirdPartyLibraries() {
     new Swiper('.aboutSwiper', {
       modules: [Pagination, Autoplay, Navigation],
       slidesPerView: 1,
-      spaceBetween: 80,
+      spaceBetween: 30,
       loop: true,
       autoplay: {
-        delay: 3000,
+        delay: 300000,
       },
       pagination: {
         el: '.about-pagination',

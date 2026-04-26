@@ -2,56 +2,44 @@ const seoData = [
     {
         icon: "fa-chart-pie",
         title: "Data-Driven Research",
-        desc: "Analyzing market trends, patient demographics, and competitor strategies for precise targeting.",
+        desc: "Analyzing market trends and competitor strategies for precise targeting.",
+        hoverDesc: "We use advanced heatmapping and demographic data to ensure your marketing spend is directed toward high-conversion patients.",
         delay: 0
     },
     {
         icon: "fa-keyboard",
         title: "Keyword Research",
-        desc: "Identifying high-intent search terms patients use when seeking specialized medical care.",
+        desc: "Identifying high-intent search terms patients use for specialized care.",
+        hoverDesc: "We target 'Long-Tail' medical queries that have lower competition but 3x higher conversion rates than generic terms.",
         delay: 50
     },
     {
         icon: "fa-file-code",
         title: "On-Page Optimization",
-        desc: "Structuring website elements, meta tags, and internal links for maximum search engine visibility.",
+        desc: "Structuring website elements and meta tags for maximum visibility.",
+        hoverDesc: "We optimize your H1-H4 tags and schema markup so Google’s crawlers instantly recognize your clinic as a high-authority provider.",
         delay: 100
     },
     {
         icon: "fa-link",
         title: "Off-Page Optimization",
-        desc: "Building high-quality backlinks and digital authority across reputable healthcare directories.",
+        desc: "Building digital authority across reputable healthcare directories.",
+        hoverDesc: "We secure placements on medical journals and high-DA portals to transfer authority to your domain, boosting your trust score.",
         delay: 150
     },
     {
         icon: "fa-server",
         title: "Technical SEO",
-        desc: "Optimizing site speed, mobile responsiveness, and ensuring strict HIPAA-compliant architecture.",
+        desc: "Optimizing site speed and ensuring HIPAA-compliant architecture.",
+        hoverDesc: "Our 20-point technical audit ensures your site loads in under 2 seconds, preventing patient bounce and improving Core Web Vitals.",
         delay: 200
     },
     {
         icon: "fa-pen-nib",
         title: "Content Optimization",
-        desc: "Crafting authoritative, empathetic medical content that resonates with patients and search algorithms.",
+        desc: "Crafting authoritative medical content that resonates with algorithms.",
+        hoverDesc: "We implement the E-E-A-T framework required by Google for all 'Your Money or Your Life' (YMYL) medical content.",
         delay: 250
-    },
-    {
-        icon: "fa-map-location-dot",
-        title: "Local SEO",
-        desc: "Dominating Google Maps and local listings to capture \"near me\" healthcare searches.",
-        delay: 300
-    },
-    {
-        icon: "fa-arrow-trend-up",
-        title: "Ranking Improvements",
-        desc: "Continuous monitoring and adjustments to consistently climb SERPs for critical medical treatments.",
-        delay: 350
-    },
-    {
-        icon: "fa-chart-line",
-        title: "Analytics & Reporting",
-        desc: "Providing transparent, actionable insights into patient acquisition costs and campaign ROI.",
-        delay: 400
     }
 ];
 
@@ -63,33 +51,45 @@ export function renderSeoCards() {
 
     seoData.forEach(item => {
         const cardHtml = `
-            <div class="group relative h-[260px] md:h-[240px] w-full overflow-hidden rounded-3xl bg-white p-large shadow-md hover:shadow-xl transition-all duration-500"
-                 data-aos="fade-up" data-aos-delay="${item.delay}">
-                <!-- Default Content -->
-                <div class="hidden md:flex h-full w-full flex-col items-center justify-center transition-all duration-500 group-hover:scale-90 group-hover:opacity-0">
-                    <div class="mb-medium flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-skin-primary/10 to-skin-primary-2/10 text-skin-primary">
-                        <i class="fa-solid ${item.icon} text-size-badge"></i>
-                    </div>
-                    <h4 class="text-size-header text-skin-accent">${item.title}</h4>
+        <div class="group relative min-h-[340px] cursor-pointer overflow-hidden rounded-[2.5rem] bg-white p-medium md:p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-skin-primary/20"
+             data-aos="fade-up" data-aos-delay="${item.delay}">
+            
+            <div class="flex h-full flex-col items-center justify-center text-center transition-all duration-700 group-hover:opacity-0 group-hover:scale-90 group-active:scale-95">
+                <div class="mb-medium flex h-20 w-20 items-center justify-center rounded-3xl bg-skin-primary/5 text-skin-primary transition-all duration-500 group-hover:rotate-12">
+                    <i class="fa-solid ${item.icon} text-size-header"></i>
+                </div>
+                <h4 class="text-size-sub-header font-black text-skin-accent tracking-tight">${item.title}</h4>
+                <p class="mt-medium text-size-accent font-semibold text-slate-500 line-clamp-3">
+                    ${item.desc}
+                </p>
+            </div>
+
+            <div class="absolute inset-0 z-20 flex flex-col items-center justify-center p-large text-center 
+                        bg-linear-to-br from-skin-primary to-skin-secondary animate-bg-flow
+                        md:opacity-0 md:scale-0 md:translate-x-full md:-translate-y-full md:rounded-bl-[100%]
+                        transition-all duration-500 corner-spring
+                        group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:rounded-none
+                        group-active:opacity-100 group-active:scale-100 group-active:translate-x-0 group-active:translate-y-0 group-active:rounded-none">
+                
+                <div class="absolute top-6 right-6 opacity-10 rotate-12 pointer-events-none scale-150">
+                     <i class="fa-solid ${item.icon} text-8xl text-white"></i>
                 </div>
 
-                <!-- Hover Content -->
-                <div class="absolute inset-0 z-10 flex flex-col items-center justify-center bg-linear-to-br from-skin-primary to-skin-primary-2 p-large text-center translate-y-0 opacity-100 md:translate-y-full md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 ease-out">
-                    <h3 class="text-size-header text-skin-accent-3">${item.title}</h3>
-                    <p class="mt-medium mb-large text-size-body leading-relaxed text-skin-accent-3">
-                        ${item.desc}
-                    </p>
-                    <a href="#" class="text-size-body rounded-full bg-white/20 px-medium py-small text-size-small font-semibold text-white backdrop-blur-md transition hover:bg-white hover:text-skin-primary">
-                        Book appointment →
-                    </a>
-                </div>
+                <h3 class="relative z-30 text-size-header font-black text-skin-accent-3 mb-small tracking-tight">
+                    ${item.title}
+                </h3>
+                
+                <p class="relative z-30 text-size-accent font-medium leading-relaxed text-white/90 mb-huge max-w-[90%]">
+                    ${item.hoverDesc}
+                </p>
             </div>
-        `;
+
+            <div class="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-skin-primary/5 blur-3xl transition-opacity group-hover:opacity-0"></div>
+        </div>
+    `;
         grid.insertAdjacentHTML('beforeend', cardHtml);
     });
 }
-
-// Initialization Flow
 document.addEventListener('DOMContentLoaded', () => {
     renderSeoCards();
 });

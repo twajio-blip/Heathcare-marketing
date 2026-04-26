@@ -27,57 +27,63 @@
 
   <main class="w-full overflow-hidden pt-16 lg:pt-20">
     <!-- 1. HERO SECTION START -->
-    <section class="relative overflow-hidden h-screen flex items-center">
+    <section class="relative overflow-hidden h-auto md:h-screen flex items-center">
       <div class="hidden md:block absolute w-full h-full -z-10">
         <img src="./images/hero-bg-1.png" alt="Hero-bg" class="w-full h-full object-cover" />
       </div>
       <div class="absolute md:hidden w-full h-full -z-10">
         <img src="./images/hero-bg-2.png" alt="Hero-bg" class="w-full h-full object-cover" />
       </div>
-      <div class="container-custom relative">
-        <div class="flex flex-col items-center gap-huge mb-huge lg:flex-row lg:gap-20">
-          <div class="text-left lg:w-1/2" data-aos="fade-right">
-            <h1 class="text-size-title font-black tracking-tight leading-[1.1] mb-huge ">
+      <div class="container-custom flex flex-col h-full relative gap-48 md:gap-huge">
+        <div class="flex flex-col md:w-[60%] lg:w-[50%] ml-0 items-center">
+          <div data-aos="fade-right">
+            <h1 class="text-size-title font-black tracking-tight leading-[1.1] mb-medium">
               <span class="text-skin-accent">Accelerate Your Practice's Growth with</span>
-              <span class="from-skin-primary via-skin-secondary to-skin-accent animate-gradient">
+              <span class="animate-gradient">
                 Data-Driven Marketing
               </span>
             </h1>
 
-            <p class="hidden lg:block text-size-body leading-relaxed text-skin-accent-2 max-w-xl">
+            <p class="hidden md:block text-size-body leading-relaxed text-skin-accent-2 max-w-xl">
               We specialize in helping healthcare providers attract
               <span class="text-skin-primary font-extrabold">high-value patients</span>, build online authority, and
               scale predictably.
             </p>
           </div>
         </div>
-        <div class="flex lg:flex-row flex-col items-center justify-center gap-medium w-full lg:w-[50%] mt-30 md:mt-0">
-          <a href="./contact.html"
-            class="group relative w-auto inline-flex items-center justify-center gap-small px-medium md:px-large py-medium cursor-pointer overflow-hidden rounded-full bg-blue-600 font-bold text-white shadow-xl shadow-blue-600/20 transition-all duration-300 hover:scale-105 active:scale-95">
+        <div
+          class="flex flex-col justify-center md:justify-start xs:flex-row w-full md:w-[60%] lg:w-[50%] items-center gap-6">
+
+          <a href="./contact.html" data-aos="fade-in"
+            class="group relative w-full sm:w-[240px] h-[60px] inline-flex items-center justify-center gap-3 cursor-pointer overflow-hidden rounded-full bg-skin-accent-dark font-bold text-white shadow-xl shadow-blue-600/20 transition-all duration-300 hover:scale-105 active:scale-95">
 
             <div
               class="absolute inset-0 bg-linear-to-r from-blue-600 to-indigo-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
             </div>
-            <span class="text-size-sub-header relative z-10 whitespace-nowrap">Get a Free Marketing
-              Audit</span>
 
-            <svg
-              class="hidden md:flex relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
-              fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
+            <span class="text-size-sub-body text-skin-accent-3 font-bold relative z-10 whitespace-nowrap">
+              Get Free Audit
+            </span>
+
+            <div class="flex relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
           </a>
 
-          <a href="./work.html"
-            class="group w-auto flex items-center justify-center gap-small px-medium md:px-large py-medium cursor-pointer rounded-full md:border-2 border-skin-accent/40 bg-skin-background/50 backdrop-blur-sm font-bold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-blue-400 hover:bg-white active:scale-95">
+          <a href="./work.html" data-aos="fade-in"
+            class="group relative w-full sm:w-[240px] h-[60px] flex items-center justify-center gap-3 cursor-pointer rounded-full border-2 border-slate-200 bg-white/50 backdrop-blur-sm font-bold text-slate-700 shadow-sm transition-all duration-300 hover:scale-105 hover:border-blue-400 hover:bg-white active:scale-95">
+
             <div
-              class="hidden md:flex items-center justify-center rounded-full bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white group-hover:rotate-6">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+              class="flex items-center justify-center rounded-full bg-blue-50 p-1 text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white group-hover:rotate-6">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <span class="text-size-sub-header whitespace-nowrap">
-              View Our Case Studies
+
+            <span class="text-size-body xl:text-size-sub-body text-skin-accent whitespace-nowrap">
+              View Case Studies
             </span>
           </a>
         </div>
@@ -86,12 +92,12 @@
     <!-- 1. HERO SECTION END -->
 
     <!-- 2. About us Section Start -->
-    <section id="about" class="container-custom relative overflow-visible!">
+    <section id="about" class="container-custom relative">
       <!-- Section Header -->
       <div class="text-center mb-medium lg:mb-huge" data-aos="fade-up">
         <div class="text-center">
-          <div class="animate-gradient">
-            <h2 class="text-size-title tracking-tighter leading-none pb-small">
+          <div class="animate-gradient mb-medium">
+            <h2 class="text-size-title">
               About the Agency
             </h2>
           </div>
@@ -103,346 +109,9 @@
         </div>
       </div>
       <div class="w-full ">
-        <div class="swiper aboutSwiper overflow-visible!" data-aos="fade-up">
-          <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-              <div
-                class="overflow-visible! grid grid-cols-1 sm:grid-cols-2 gap-large items-stretch h-[350px] sm:h-[400px]">
-                <div class="flex flex-col justify-center h-full">
-                  <div class="mb-medium">
-                    <span
-                      class="text-size-header relative inline-block text-size-xsmall font-bold  uppercase text-skin-primary opacity-80">
-                      Our Identity
-                    </span>
-                    <h3
-                      class="text-size-sub-header leading-tight mt-small text-transparent bg-clip-text bg-linear-to-r from-skin-primary via-skin-primary-2 to-skin-secondary">
-                      Who We Are
-                    </h3>
-                  </div>
-                  <p
-                    class="text-size-body hidden sm:block text-skin-accent-2 font-medium leading-relaxed mb-medium border-l-2 border-skin-primary-2 pl-medium italic">
-                    Growth engineers and digital strategists dedicated to
-                    scaling healthcare brands through clinical precision.
-                  </p>
-
-                  <div class="flex flex-col justify-between flex-1">
-                    <div
-                      class="flex items-center gap-medium px-small py-medium sm:py-small rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-500/30 transition-all duration-300 group cursor-default">
-                      <div
-                        class="w-12 h-12 shrink-0 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center transition-all duration-500 group-hover:bg-teal-600 group-hover:text-white group-hover:rotate-6">
-                        <i class="fa-solid fa-stethoscope text-size-medium"></i>
-                      </div>
-                      <div>
-                        <h4 class="text-size-sub-header text-skin-accent uppercase tracking-wide">
-                          Market Leadership
-                        </h4>
-                        <p class="text-size-body text-skin-accent-2">Turning practices into leaders via <span
-                            class="text-teal-600">data-driven strategy.</span></p>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex items-center gap-medium px-small py-medium sm:py-small rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-indigo-500/30 transition-all duration-300 group cursor-default">
-                      <div
-                        class="w-12 h-12 shrink-0 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center transition-all duration-500 group-hover:bg-indigo-600 group-hover:text-white group-hover:-rotate-6">
-                        <i class="fa-solid fa-rocket text-size-medium"></i>
-                      </div>
-                      <div>
-                        <h4 class="text-size-sub-header text-skin-accent uppercase tracking-wide">
-                          Beyond Marketing
-                        </h4>
-                        <p class="text-size-body text-skin-accent-2">Scaling legacy brands with <span
-                            class="text-indigo-600">clinical precision.</span></p>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex items-center gap-medium px-small py-medium sm:py-small rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-violet-500/30 transition-all duration-300 group cursor-default">
-                      <div
-                        class="w-12 h-12 shrink-0 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center transition-all duration-500 group-hover:bg-violet-600 group-hover:text-white group-hover:rotate-6">
-                        <i class="fa-solid fa-handshake-angle text-size-medium"></i>
-                      </div>
-                      <div>
-                        <h4 class="text-size-sub-header text-skin-accent uppercase tracking-wide">
-                          Strategic Partner
-                        </h4>
-                        <p class="text-size-body text-skin-accent-2">Operating as your <span
-                            class="text-violet-600">internal team</span> for success.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="hidden sm:block relative h-full">
-                  <div class="relative h-full rounded-4xl overflow-hidden shadow-2xl border border-slate-200 group">
-                    <img src="./images/WhoWeAre.png" alt="Who We Are"
-                      class="w-full h-full max-h-[350px] sm:max-h-[400px] object-cover transition-transform duration-1000 group-hover:scale-110" />
-                    <div
-                      class="absolute bottom-medium left-medium right-medium p-small bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
-                      <p class="text-size-body text-white uppercase tracking-widest text-center drop-shadow-md">
-                        Legacy Health Growth Methodology
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-              <div
-                class="overflow-visible! grid grid-cols-1 sm:grid-cols-2 gap-large items-stretch h-[350px] sm:h-[400px]">
-                <div class="flex flex-col justify-center h-full">
-                  <div class="mb-medium">
-                    <span
-                      class="text-size-header relative inline-block text-size-xsmall font-bold  uppercase text-skin-primary opacity-80">
-                      Our Purpose
-                    </span>
-                    <h3
-                      class="text-size-sub-header leading-tight mt-small text-transparent bg-clip-text bg-linear-to-r from-skin-primary via-skin-primary-2 to-skin-secondary">
-                      Our Mission
-                    </h3>
-                  </div>
-                  <p
-                    class="text-size-body hidden sm:block text-skin-accent-2 font-medium leading-relaxed mb-medium border-l-2 border-skin-primary-2 pl-medium italic">
-                    To empower healthcare providers with predictable systems
-                    that bridge the gap between clinical excellence and
-                    digital visibility.
-                  </p>
-                  <div class="flex flex-col justify-between flex-1">
-                    <div
-                      class="flex items-center gap-medium px-small py-medium sm:py-small rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-500/30 transition-all duration-300 group cursor-default">
-                      <div
-                        class="w-12 h-12 shrink-0 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center transition-all duration-500 group-hover:bg-teal-600 group-hover:text-white group-hover:rotate-6">
-                        <i class="fa-solid fa-rocket text-size-medium"></i>
-                      </div>
-                      <div>
-                        <h4 class="text-size-sub-header text-skin-accent uppercase tracking-wide">
-                          Predictable Systems
-                        </h4>
-                        <p class="text-size-body text-skin-accent-2">Building <span class="text-teal-600">scalable
-                            foundations</span> for patient care.</p>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex items-center gap-medium px-small py-medium sm:py-small rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-indigo-500/30 transition-all duration-300 group cursor-default">
-                      <div
-                        class="w-12 h-12 shrink-0 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center transition-all duration-500 group-hover:bg-indigo-600 group-hover:text-white group-hover:-rotate-6">
-                        <i class="fa-solid fa-chart-pie text-size-medium"></i>
-                      </div>
-                      <div>
-                        <h4 class="text-size-sub-header text-skin-accent uppercase tracking-wide">
-                          Transparent Data
-                        </h4>
-                        <p class="text-size-body text-skin-accent-2">Eliminating uncertainty through <span
-                            class="text-indigo-600">measurable growth.</span></p>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex items-center gap-medium px-small py-medium sm:py-small rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-violet-500/30 transition-all duration-300 group cursor-default">
-                      <div
-                        class="w-12 h-12 shrink-0 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center transition-all duration-500 group-hover:bg-violet-600 group-hover:text-white group-hover:rotate-6">
-                        <i class="fa-solid fa-bridge text-size-medium"></i>
-                      </div>
-                      <div>
-                        <h4 class="text-size-sub-header text-skin-accent uppercase tracking-wide">
-                          Digital Bridge
-                        </h4>
-                        <p class="text-size-body text-skin-accent-2">Connecting clinical excellence with <span
-                            class="text-violet-600">online authority.</span></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="hidden sm:block relative h-full">
-                  <div class="relative h-full rounded-4xl overflow-hidden shadow-2xl border border-slate-200 group">
-                    <img src="./images/OurMission.jpg" alt="Our Mission"
-                      class="w-full h-full max-h-[350px] sm:max-h-[400px] object-cover transition-transform duration-1000 group-hover:scale-110" />
-                    <div
-                      class="absolute bottom-medium left-medium right-medium p-small bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
-                      <p class="text-size-body text-white uppercase tracking-widest text-center drop-shadow-md">
-                        Bridge Clinical &amp; Digital
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-              <div
-                class="overflow-visible! grid grid-cols-1 sm:grid-cols-2 gap-large items-stretch h-[350px] sm:h-[400px]">
-                <div class="flex flex-col justify-center h-full">
-                  <div class="mb-medium">
-                    <span
-                      class="text-size-header relative inline-block text-size-xsmall font-bold  uppercase text-skin-primary opacity-80">
-                      Proven Track Record
-                    </span>
-                    <h3
-                      class="text-size-sub-header leading-tight mt-small text-transparent bg-clip-text bg-linear-to-r from-skin-primary via-skin-primary-2 to-skin-secondary">
-                      Our Experience
-                    </h3>
-                  </div>
-                  <p
-                    class="text-size-body hidden sm:block text-skin-accent-2 font-medium leading-relaxed mb-medium border-l-2 border-skin-primary-2 pl-medium italic">
-                    Over a decade in the trenches of medical marketing,
-                    scaling local clinics into regional powerhouses.
-                  </p>
-                  <div class="flex flex-col justify-between flex-1">
-                    <div
-                      class="flex items-center gap-medium px-small py-medium sm:py-small rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-500/30 transition-all duration-300 group cursor-default">
-                      <div
-                        class="w-12 h-12 shrink-0 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center transition-all duration-500 group-hover:bg-teal-600 group-hover:text-white group-hover:rotate-6">
-                        <i class="fa-solid fa-users text-size-medium"></i>
-                      </div>
-                      <div>
-                        <h4 class="text-size-sub-header text-skin-accent uppercase tracking-wide">
-                          500+ Practices
-                        </h4>
-                        <p class="text-size-body text-skin-accent-2">Actively managed and <span
-                            class="text-teal-600">scaled globally.</span></p>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex items-center gap-medium px-small py-medium sm:py-small rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-indigo-500/30 transition-all duration-300 group cursor-default">
-                      <div
-                        class="w-12 h-12 shrink-0 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center transition-all duration-500 group-hover:bg-indigo-600 group-hover:text-white group-hover:-rotate-6">
-                        <i class="fa-solid fa-dollar-sign text-size-medium"></i>
-                      </div>
-                      <div>
-                        <h4 class="text-size-sub-header text-skin-accent uppercase tracking-wide">
-                          $50M+ Ad Spend
-                        </h4>
-                        <p class="text-size-body text-skin-accent-2">Optimized for <span class="text-indigo-600">maximum
-                            ROI.</span></p>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex items-center gap-medium px-small py-medium sm:py-small rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-violet-500/30 transition-all duration-300 group cursor-default">
-                      <div
-                        class="w-12 h-12 shrink-0 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center transition-all duration-500 group-hover:bg-violet-600 group-hover:text-white group-hover:rotate-6">
-                        <i class="fa-solid fa-trophy text-size-medium"></i>
-                      </div>
-                      <div>
-                        <h4 class="text-size-sub-header text-skin-accent uppercase tracking-wide">
-                          15+ Years
-                        </h4>
-                        <p class="text-size-body text-skin-accent-2">Combined industry <span
-                            class="text-violet-600">experience.</span></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="hidden sm:block relative h-full">
-                  <div class="relative h-full rounded-4xl overflow-hidden shadow-2xl border border-slate-200 group">
-                    <img
-                      src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                      alt="Experience"
-                      class="w-full h-full max-h-[350px] sm:max-h-[400px] object-cover transition-transform duration-1000 group-hover:scale-110" />
-                    <div
-                      class="absolute bottom-medium left-medium right-medium p-small bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
-                      <p class="text-size-body text-white uppercase tracking-widest text-center drop-shadow-md">
-                        Legacy Health Growth Methodology
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Slide 4 -->
-            <div class="swiper-slide">
-              <div
-                class="overflow-visible! grid grid-cols-1 sm:grid-cols-2 gap-large items-stretch h-[350px] sm:h-[400px]">
-                <div class="flex flex-col justify-center h-full">
-                  <div class="mb-medium">
-                    <span
-                      class="text-size-header relative inline-block text-size-xsmall font-bold  uppercase text-skin-primary opacity-80">
-                      Sector Expertise
-                    </span>
-                    <h3
-                      class="text-size-sub-header leading-tight mt-small text-transparent bg-clip-text bg-linear-to-r from-skin-primary via-skin-primary-2 to-skin-secondary">
-                      Why Specialized Marketing?
-                    </h3>
-                  </div>
-                  <p
-                    class="text-size-body hidden sm:block text-skin-accent-2 font-medium leading-relaxed mb-medium border-l-2 border-skin-primary-2 pl-medium italic">
-                    The patient journey is deeply personal, heavily regulated,
-                    and built entirely on trust.
-                  </p>
-                  <div class="flex flex-col justify-between flex-1">
-                    <div
-                      class="flex items-center gap-medium px-small py-medium sm:py-small rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-500/30 transition-all duration-300 group cursor-default">
-                      <div
-                        class="w-12 h-12 shrink-0 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center transition-all duration-500 group-hover:bg-teal-600 group-hover:text-white group-hover:rotate-6">
-                        <i class="fa-solid fa-shield-virus text-size-medium"></i>
-                      </div>
-                      <div>
-                        <h4 class="text-size-sub-header text-skin-accent uppercase tracking-wide">
-                          HIPAA Compliance
-                        </h4>
-                        <p class="text-size-body text-skin-accent-2">Navigating privacy regulations with
-                          <span class="text-teal-600">100% confidence.</span>
-                        </p>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex items-center gap-medium px-small py-medium sm:py-small rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-indigo-500/30 transition-all duration-300 group cursor-default">
-                      <div
-                        class="w-12 h-12 shrink-0 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center transition-all duration-500 group-hover:bg-indigo-600 group-hover:text-white group-hover:-rotate-6">
-                        <i class="fa-solid fa-hand-holding-heart text-size-medium"></i>
-                      </div>
-                      <div>
-                        <h4 class="text-size-sub-header text-skin-accent uppercase tracking-wide">
-                          Empathy Content
-                        </h4>
-                        <p class="text-size-body text-skin-accent-2">Communicating expertise with
-                          <span class="text-indigo-600">clarity and compassion.</span>
-                        </p>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex items-center gap-medium px-small py-medium sm:py-small rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-violet-500/30 transition-all duration-300 group cursor-default">
-                      <div
-                        class="w-12 h-12 shrink-0 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center transition-all duration-500 group-hover:bg-violet-600 group-hover:text-white group-hover:rotate-6">
-                        <i class="fa-solid fa-chart-line text-size-medium"></i>
-                      </div>
-                      <div>
-                        <h4 class="text-size-sub-header text-skin-accent uppercase tracking-wide">
-                          Data-Backed Growth
-                        </h4>
-                        <p class="text-size-body text-skin-accent-2">Tracking every lead for <span
-                            class="text-violet-600">measurable patient ROI.</span></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="hidden sm:block relative h-full">
-                  <div class="relative h-full rounded-4xl overflow-hidden shadow-2xl border border-slate-200 group">
-                    <img
-                      src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=1000&q=80"
-                      alt="Doctor explaining results"
-                      class="w-full h-full max-h-[350px] sm:max-h-[400px] object-cover transition-transform duration-1000 group-hover:scale-110" />
-                    <div
-                      class="absolute bottom-medium left-medium right-medium p-small bg-white/10 backdrop-blur-md rounded-xl border border-white/20 shadow-lg">
-                      <p class="text-size-body text-white uppercase tracking-widest text-center drop-shadow-md">
-                        Healthcare-First Strategy
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+        <div class="swiper aboutSwiper" data-aos="fade-up">
+          <div id="about-swiper-wrapper" class="swiper-wrapper">
+            <!-- Dynamic Content Injected by about.js -->
           </div>
 
           <div class="flex flex-col items-center gap-huge mt-5 lg:mt-10">
@@ -459,7 +128,6 @@
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -472,23 +140,20 @@
       </div>
       <div id="who-we-help" class="container-custom">
         <!-- Header -->
-        <div class="text-center max-w-4xl mx-auto mb-huge px-medium" data-aos="fade-up">
+        <div class="flex flex-col text-center max-w-2xl mx-auto mb-huge gap-medium px-medium" data-aos="fade-up">
           <div class="animate-gradient">
-            <h2 class="text-size-title tracking-tighter leading-none pb-small">Who We Help</h2>
+            <h2 class="text-size-title">Who We Help</h2>
           </div>
-          <p class="text-size-sub-header text-skin-accent-2 leading-relaxed max-w-2xl mx-auto ">
+          <p class="text-size-sub-header text-skin-accent-2 mx-auto ">
             We partner with <span class="text-skin-primary font-semibold">forward-thinking</span>
             healthcare organizations ready to scale their impact and patient volume through clinical-grade
             marketing.
           </p>
-          <div class="mt-medium flex justify-center">
-            <div class="w-16 h-1 rounded-full bg-linear-to-r from-skin-primary/40 to-skin-accent/40"></div>
-          </div>
         </div>
 
         <!-- Tabs Menu -->
         <div id="tabs-menu"
-          class="grid grid-cols-2 xs:grid-cols-4 md:flex flex-wrap justify-center gap-small md:gap-medium mt-medium mb-huge"
+          class="grid grid-cols-2 xs:grid-cols-4 md:flex flex-wrap justify-center gap-small md:gap-medium mb-huge"
           data-aos="fade-up" data-aos-delay="100">
         </div>
 
@@ -503,14 +168,14 @@
     <!-- 4. SERVICES SECTION START -->
     <section id="services" class="relative">
       <div class="container-custom">
-        <div class="text-center max-w-4xl mx-auto mb-medium px-medium" data-aos="fade-up">
+        <div class="flex flex-col  text-center max-w-2xl mx-auto px-medium gap-medium" data-aos="fade-up">
           <!-- Heading -->
           <div class="from-skin-primary to-skin-secondary animate-gradient">
-            <h2 class="text-size-title pb-small">Our Services</h2>
+            <h2 class="text-size-title">Our Services</h2>
           </div>
 
           <!-- Description -->
-          <p class="text-size-body text-skin-accent-2 leading-relaxed max-w-2xl mx-auto ">
+          <p class="text-size-body text-skin-accent-2 leading-relaxed mx-auto ">
             End-to-end digital marketing solutions engineered to accelerate patient acquisition and practice growth.
           </p>
 
@@ -523,11 +188,11 @@
         <!-- Services Swiper Container -->
         <div class="overflow-hidden px-medium" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper servicesSwiper">
-            <div id="services-swiper-wrapper" class="swiper-wrapper">
+            <div id="services-swiper-wrapper" class="swiper-wrapper pt-8">
               <!-- Dynamically populated by service.js -->
             </div>
             <!-- Pagination & Navigation Controls -->
-            <div class="flex flex-col items-center mt-small lg:mt-large">
+            <div class="flex flex-col items-center mt-small">
               <!-- Desktop Pagination dots -->
               <div class="swiper-pagination services-pagination static! hidden lg:block"></div>
               <!-- Mobile Prev/Next Buttons -->
@@ -555,18 +220,19 @@
         <img src="./images/seo-bg.png" alt="seo-bg" class="w-full h-full object-cover" />
       </div>
       <div class="container-custom py-16 lg:py-24">
-        <div class="text-center max-w-4xl mx-auto mb-medium px-medium" data-aos="fade-up">
+        <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-huge gap-medium px-medium"
+          data-aos="fade-up">
 
           <!-- Heading -->
-          <h2 class="text-size-title text-skin-accent tracking-tight mb-medium leading-[1.1]">
+          <h2 class="text-size-title text-skin-accent tracking-tight  leading-[1.1]">
             Strategic
-            <span class="from-skin-secondary to-skin-accent animate-gradient">
+            <span class="animate-gradient">
               SEO Framework
             </span>
           </h2>
 
           <!-- Description -->
-          <p class="text-size-body text-skin-accent-2 leading-relaxed max-w-2xl mx-auto">
+          <p class="text-size-body text-skin-accent mx-auto">
             A specialized,
             <span class="from-skin-secondary to-skin-accent animate-gradient">holistic
               approach</span>
@@ -574,7 +240,7 @@
           </p>
 
           <!-- Divider -->
-          <div class="mt-medium flex justify-center">
+          <div class="flex justify-center">
             <div class="w-16 h-1 rounded-full bg-linear-to-r from-skin-primary/40 to-skin-accent/40"></div>
           </div>
         </div>
@@ -582,6 +248,14 @@
         <div id="seo-cards-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-large">
           <!-- Dynamically populated by SeoSection.js -->
         </div>
+        <a href="./contact.html"
+          class="mx-auto mt-large relative z-30 flex w-fit flex-row justify-center items-center gap-small rounded-full border border-white/40 bg-white/10 px-huge py-medium font-bold text-size-sub-header text-skin-accent-3 backdrop-blur-xl transition-all hover:bg-skin-secondary-3 hover:text-skin-primary hover:scale-105 active:scale-95 shadow-2xl shadow-black/20">
+
+          Book Appointment
+
+          <i
+            class="fa-solid fa-arrow-right text-size-accent transition-transform group-hover:translate-x-1 group-active:translate-x-1"></i>
+        </a>
       </div>
     </section>
     <!-- 5. STRATEGIC SEO FRAMEWORK SECTION END -->
@@ -598,7 +272,7 @@
           <div class="max-w-2xl">
             <h2 class="text-size-title text-white tracking-tight mb-medium">
               Innovation &
-              <span class="from-skin-primary via-skin-background to-skin-primary-2 animate-gradient">
+              <span class="from-skin-primary to-skin-primary-2 animate-gradient">
                 Technology
               </span>
             </h2>
@@ -621,11 +295,8 @@
     <section id="process" class="bg-white relative overflow-hidden">
       <div class="container-custom">
         <div class="text-center max-w-3xl mx-auto mb-huge px-medium" data-aos="fade-up">
-          <h2 class="text-size-title text-skin-accent tracking-tight leading-tight mb-medium">
-            Our Proven
-            <span class="from-skin-primary via-skin-accent-4 to-skin-primary-2 animate-gradient">
-              Process
-            </span>
+          <h2 class="text-size-title mb-medium animate-gradient">
+            Our Proven Process
           </h2>
           <div class="mt-medium flex justify-center">
             <div class="w-16 h-1 rounded-full bg-linear-to-r from-skin-primary/40 to-skin-accent/40"></div>
@@ -660,9 +331,9 @@
         <div class="text-center max-w-3xl mx-auto mb-huge px-medium" data-aos="fade-up">
 
           <!-- Heading -->
-          <h2 class="text-size-title text-skin-accent tracking-tighter leading-tight mb-large">
+          <h2 class="text-size-title text-skin-accent mb-large">
             Our Work &
-            <span class="from-skin-primary via-skin-accent-4 to-skin-primary-2 animate-gradient">
+            <span class="from-skin-primary to-skin-primary-2 animate-gradient">
               Case Studies
             </span>
           </h2>
@@ -773,7 +444,7 @@
         <div class="text-center max-w-3xl mx-auto mb-huge" data-aos="fade-up">
           <h2 class="text-size-title font-black text-skin-accent tracking-tighter leading-tight mb-medium">
             What Our Healthcare
-            <span class="from-skin-primary via-indigo-600 to-skin-primary-2 animate-gradient">
+            <span class="from-skin-primary to-skin-primary-2 animate-gradient">
               Clients Say
             </span>
           </h2>
@@ -820,7 +491,7 @@
           <div class="max-w-2xl">
             <h2 class="text-size-title font-black text-skin-accent tracking-tighter leading-tight mb-large">
               Resources &
-              <span class="from-skin-primary via-indigo-600 to-skin-accent animate-gradient">
+              <span class="from-skin-primary to-skin-primary-2 animate-gradient">
                 Insights
               </span>
             </h2>
@@ -864,7 +535,7 @@
           <h2 class="text-size-title font-black text-skin-accent mb-medium tracking-tighter leading-[1.1]"
             data-aos="fade-up" data-aos-delay="100">
             Let's Grow Your <br class="hidden md:block" />
-            <span class="from-skin-primary via-indigo-600 to-skin-primary animate-gradient">
+            <span class="animate-gradient">
               Healthcare Brand
             </span>
           </h2>
@@ -927,6 +598,7 @@
   <div id="footer-container"></div>
 
   <script type="module" src="./src/main.js"></script>
+  <script type="module" src="./src/js/about.js"></script>
   <script type="module" src="./src/js/WhoWeHelp.js"></script>
   <script type="module" src="./src/js/service.js"></script>
   <script type="module" src="./src/js/SeoSection.js"></script>

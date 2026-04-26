@@ -15,7 +15,7 @@
   --color-skin-primary: #2b46b1;
   --color-skin-primary-2: #14b8a6;
   --color-skin-secondary: #7c3aed;
-  --color-skin-accent-dark: #0284C7;
+  --color-skin-accent-dark: #155dfc;
   --color-skin-secondary-1: #27272a;
   --color-skin-secondary-2: #F8FAFC;
   --color-skin-secondary-3: oklch(1 0 0);
@@ -31,12 +31,13 @@
 
 
   /* Breakpoints */
-  --breakpoint-xs: 540px;
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 720px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1140px;
-  --breakpoint-2xl: 1140px;
+  --breakpoint-xs: 480px;   /* Small phones */
+  --breakpoint-sm: 640px;   /* Large phones / Small tablets */
+  --breakpoint-md: 768px;   /* Standard Tablets (iPad) */
+  --breakpoint-lg: 1024px;  /* Laptops / Large Tablets */
+  --breakpoint-xl: 1280px;  /* Desktop Monitors */
+  --breakpoint-2xl: 1536px; /* High-res Ultra-wide */
+
 
   /* -------------------------
      Spacing
