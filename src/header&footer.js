@@ -61,15 +61,26 @@ function initNavbarScroll() {
             });
         }
 
-        // Handle wrapper margin for non-sticky layout
+        // Configuration
+        const delayTime = 200; // 200ms delay between margin move and height shrink
+
         if (navSecondaryWrapper) {
             if (isSticky) {
-                // When scrolling down
-                navSecondaryWrapper.classList.replace('lg:h-20', 'lg:h-16');
+                // 1. Immediate Action: Fix the margin
                 navSecondaryWrapper.classList.replace('lg:-mt-7', 'lg:mt-0');
+
+                // 2. Delayed Action: Shrink the height
+                setTimeout(() => {
+                    if (window.scrollY > 50) { // Safety check to ensure user is still scrolling
+                        navSecondaryWrapper.classList.replace('lg:h-20', 'lg:h-16');
+                    }
+                }, delayTime);
+
             } else {
-                // When at the top
+                // 1. Immediate Action: Grow the height back
                 navSecondaryWrapper.classList.replace('lg:h-16', 'lg:h-20');
+
+                // 2. Immediate Action: Restore the margin (usually looks better without delay when going UP)
                 navSecondaryWrapper.classList.replace('lg:mt-0', 'lg:-mt-7');
             }
         }

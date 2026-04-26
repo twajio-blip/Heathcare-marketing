@@ -80,7 +80,7 @@ export function renderInnovation() {
       <div class="relative z-0 flex flex-col h-full">
         <div
           class="w-14 h-14 rounded-2xl bg-${item.color}-500/20 text-${item.color}-400 flex items-center justify-center mb-large group-hover:bg-${item.color}-600 group-hover:text-white group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 shadow-lg">
-          <i class="fa-solid ${item.icon} text-size-badge"></i>
+          <i class="fa-solid ${item.icon} text-size-header"></i>
         </div>
         <h3 class="text-size-header text-skin-accent-3 mb-small tracking-tight">${item.title}</h3>
         <p

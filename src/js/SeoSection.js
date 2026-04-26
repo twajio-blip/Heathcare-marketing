@@ -51,7 +51,7 @@ export function renderSeoCards() {
 
     seoData.forEach(item => {
         const cardHtml = `
-        <div class="group relative min-h-[340px] cursor-pointer overflow-hidden rounded-[2.5rem] bg-white p-medium md:p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-skin-primary/20"
+        <div class="group relative min-h-[250px] cursor-pointer overflow-hidden rounded-[2.5rem] bg-white p-medium md:p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-skin-primary/20"
              data-aos="fade-up" data-aos-delay="${item.delay}">
             
             <div class="flex h-full flex-col items-center justify-center text-center transition-all duration-700 group-hover:opacity-0 group-hover:scale-90 group-active:scale-95">

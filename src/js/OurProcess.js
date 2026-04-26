@@ -1,59 +1,54 @@
-import AOS from 'aos';
-
+/**
+ * DATA DEFINITION
+ */
 const processData = [
   {
     id: 1,
     title: "Market Research & Audit",
     description: "In-depth analysis of your <span class=\"text-skin-accent/90 font-bold\">local healthcare market</span>, direct competitors, and patient demographics.",
     icon: "fa-magnifying-glass-chart",
-    color: "blue-600",
-    hoverBorder: "blue-300",
-    hoverBg: "blue-50/40",
+    color: "#2563eb", // blue-600
+    glow: "rgba(37, 99, 235, 0.05)"
   },
   {
     id: 2,
     title: "Strategy & Compliance",
     description: "Developing a roadmap while ensuring all systems meet <span class=\"text-skin-accent/90 font-bold\">strict HIPAA and medical advertising standards.</span>",
     icon: "fa-clipboard-check",
-    color: "teal-500",
-    hoverBorder: "teal-300",
-    hoverBg: "teal-50/40",
+    color: "#14b8a6", // teal-500
+    glow: "rgba(20, 184, 166, 0.05)"
   },
   {
     id: 3,
     title: "Creative & Technical Dev",
     description: "Building out the assets: <span class=\"text-skin-accent/90 font-bold\">website redesigns, ad creatives, and automation workflows.</span>",
     icon: "fa-laptop-code",
-    color: "purple-500",
-    hoverBorder: "purple-300",
-    hoverBg: "purple-50/40",
+    color: "#a855f7", // purple-500
+    glow: "rgba(168, 85, 247, 0.05)"
   },
   {
     id: 4,
     title: "Campaign Launch",
     description: "Deploying multi-channel campaigns precisely targeted at <span class=\"text-skin-accent/90 font-bold\">acquiring high-value patients.</span>",
     icon: "fa-rocket",
-    color: "rose-500",
-    hoverBorder: "rose-300",
-    hoverBg: "rose-50/40",
+    color: "#f43f5e", // rose-500
+    glow: "rgba(244, 63, 94, 0.05)"
   },
   {
     id: 5,
     title: "Optimize & Report",
     description: "Continuous A/B testing and delivering <span class=\"text-skin-accent/90 font-bold\">transparent performance reports</span> directly to you.",
     icon: "fa-chart-line",
-    color: "amber-500",
-    hoverBorder: "amber-300",
-    hoverBg: "amber-50/40",
+    color: "#f59e0b", // amber-500
+    glow: "rgba(245, 158, 11, 0.05)"
   },
   {
     id: 6,
     title: "Growth & Expansion",
     description: "Scaling successful strategies to capture more market share or <span class=\"text-skin-accent/90 font-bold\">introduce additional service lines.</span>",
     icon: "fa-arrow-trend-up",
-    color: "emerald-500",
-    hoverBorder: "emerald-300",
-    hoverBg: "emerald-50/40",
+    color: "#10b981", // emerald-500
+    glow: "rgba(16, 185, 129, 0.05)"
   }
 ];
 
@@ -63,47 +58,57 @@ export function renderProcess() {
 
   container.innerHTML = processData.map((item, index) => {
     const isEven = (index + 1) % 2 === 0;
-    const phaseLabel = `Phase ${item.id.toString().padStart(2, '0')}`;
 
     return `
-            <div class="relative flex flex-col md:flex-row items-center justify-between group py-medium md:py-huge"
-              data-aos="fade-up">
-              
-              <!-- Mobile Circle (Hidden on Desktop because absolute circle is used) -->
-              <div class="flex md:hidden w-12 h-12 rounded-full border-4 border-${item.color} text-${item.color} items-center justify-center font-black mb-medium bg-white shadow-lg">
-                ${item.id}
-              </div>
+      <div class="relative flex flex-col md:flex-row items-center justify-between group py-12 md:py-24"
+           data-aos="fade-up"
+           style="--step-primary: ${item.color}; --step-glow: ${item.glow};">
+        
+        <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-100 hidden md:block -z-10"></div>
 
-              <!-- Content -->
-              <div class="md:w-5/12 text-center ${isEven ? 'md:text-left md:pl-12 group-hover:translate-x-2' : 'md:text-right md:pr-12 group-hover:-translate-x-2'} transition-all duration-500">
-                <h3 class="text-size-header text-skin-accent mb-small tracking-tight">${item.title}</h3>
-                <p class="text-skin-accent-2 text-size-body font-medium leading-relaxed">
-                  ${item.description}
-                </p>
-              </div>
+        <div class="flex md:hidden w-14 h-14 rounded-full border-4 items-center justify-center font-black mb-8 bg-white shadow-xl"
+             style="border-color: var(--step-primary); color: var(--step-primary);">
+          ${item.id}
+        </div>
 
-              <!-- Desktop Number Circle (Absolute) -->
-              <div
-                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white border-4 border-${item.color} text-${item.color} hidden md:flex items-center justify-center font-black shadow-xl z-20 transition-all duration-500 group-hover:scale-110 group-hover:bg-${item.color} group-hover:text-white">
-                ${item.id}
-              </div>
+        <div class="md:w-[42%] text-center ${isEven ? 'md:text-left md:order-2' : 'md:text-right md:order-1'} transition-all duration-500 group-hover:translate-y-[-5px]">
+          <span class="text-[10px] font-black tracking-[0.3em] uppercase opacity-50" style="color: var(--step-primary)">Phase ${item.id.toString().padStart(2, '0')}</span>
+          <h3 class="text-2xl md:text-3xl font-bold text-skin-accent mt-2 mb-4 tracking-tight">${item.title}</h3>
+          <p class="text-slate-500 text-sm md:text-base font-medium leading-relaxed">
+            ${item.description}
+          </p>
+        </div>
 
-              <!-- Icon Box (Visible only on desktop, placeholder for other side) -->
-              <div class="md:w-5/12 ${isEven ? 'md:pr-12 order-first' : 'md:pl-12'} hidden md:block">
-                <div
-                  class="h-32 bg-slate-50/50 rounded-3xl border-2 border-slate-100 border-dashed flex items-center justify-center transition-all duration-500 group-hover:border-${item.hoverBorder} group-hover:bg-${item.hoverBg}">
-                  <i class="fa-solid ${item.icon} text-size-heading text-slate-300 group-hover:text-${item.hoverBorder}"></i>
-                </div>
-              </div>
-            </div>
-        `;
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white border-4 hidden md:flex items-center justify-center font-black shadow-xl z-30 transition-all duration-500 
+                    group-hover:scale-125 group-hover:text-white"
+             style="border-color: var(--step-primary); color: var(--step-primary); --hover-bg: ${item.color};">
+          <style>
+            .group:hover .absolute { background-color: var(--step-primary) !important; color: white !important; }
+          </style>
+          ${item.id}
+        </div>
+
+        <div class="md:w-[42%] hidden md:block ${isEven ? 'md:order-1' : 'md:order-2'}">
+          <div class="relative h-48 rounded-[2.5rem] border-2 border-dashed border-slate-200 bg-slate-50/30 flex items-center justify-center overflow-hidden transition-all duration-700 
+                      group-hover:border-solid group-hover:shadow-2xl group-hover:bg-white"
+               style="--hover-border: var(--step-primary);">
+             
+             <i class="fa-solid ${item.icon} absolute -bottom-4 -right-4 text-8xl opacity-[0.03] transition-all duration-700 group-hover:scale-150 group-hover:opacity-[0.07]" style="color: var(--step-primary)"></i>
+             
+             <i class="fa-solid ${item.icon} text-5xl md:text-6xl text-slate-300 transition-all duration-500 group-hover:scale-110" 
+                style="--icon-color: var(--step-primary);">
+                <style>
+                    .group:hover .h-48 { border-color: var(--step-primary) !important; }
+                    .group:hover .fa-solid { color: var(--step-primary) !important; }
+                </style>
+             </i>
+          </div>
+        </div>
+      </div>
+    `;
   }).join('');
 
-  if (typeof AOS !== 'undefined') {
-    AOS.refresh();
-  }
+  if (window.AOS) window.AOS.refresh();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderProcess();
-});
+document.addEventListener('DOMContentLoaded', renderProcess);
