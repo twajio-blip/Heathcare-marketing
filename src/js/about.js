@@ -93,7 +93,7 @@ export function renderAboutSwiper() {
     if (!wrapper) return;
 
     wrapper.innerHTML = aboutSectionsData.map(section => `
-        <div class="swiper-slide">
+        <div class="swiper-slide h-full">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-large">
             <div class="flex flex-col gap-medium">
                 <div>
@@ -104,7 +104,7 @@ export function renderAboutSwiper() {
                     ${section.cards.map((card, idx) => createAboutCard(card, idx)).join('')}
                 </div>
             </div>
-                <div class="rounded-3xl overflow-hidden h-full shadow-lg border-2 border-black relative group">
+                <div class="hidden md:block rounded-3xl overflow-hidden h-full shadow-lg border-2 border-black relative group">
                     <img src="${section.image}" class="w-full h-full object-cover" alt="preview">
                     <div class="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end justify-center pb-4">
                          <span class="text-[9px] text-white font-bold uppercase tracking-widest">${section.imageOverlay || ''}</span>
