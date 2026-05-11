@@ -117,6 +117,5 @@ export function renderWorks() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderWorks();
-});
+// renderWorks is now called by main.js
+

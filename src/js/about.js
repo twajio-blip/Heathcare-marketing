@@ -21,7 +21,7 @@ const aboutSectionsData = [
         badge: "Our Purpose",
         title: "Our Mission",
         description: "To empower healthcare providers with predictable systems that bridge the gap between clinical excellence and digital visibility.",
-        image: "https://images.unsplash.com/photo-1576091160550-2173dad99901?auto=format&fit=crop&w=1000&q=80",
+        image: "https://images.unsplash.com/photo-1576091160550-2173dad99901?auto=format&fit=crop&w=800&q=60",
         imageOverlay: "Bridge Clinical & Digital",
         imageOnRight: false,
         cards: [
@@ -35,7 +35,7 @@ const aboutSectionsData = [
         badge: "Proven Track Record",
         title: "Our Experience",
         description: "Over a decade in the trenches of medical marketing, scaling local clinics into regional powerhouses.",
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=80",
+        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=60",
         imageOverlay: "Global Healthcare Scaling",
         imageOnRight: true,
         cards: [
@@ -49,7 +49,7 @@ const aboutSectionsData = [
         badge: "Sector Expertise",
         title: "Why Specialized Marketing?",
         description: "The patient journey is deeply personal, heavily regulated, and built entirely on trust.",
-        image: "https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=1000&q=80",
+        image: "https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&w=800&q=60",
         imageOverlay: "Healthcare-First Strategy",
         imageOnRight: false,
         cards: [
@@ -94,7 +94,7 @@ export function renderAboutSwiper() {
 
     wrapper.innerHTML = aboutSectionsData.map(section => `
         <div class="swiper-slide h-full">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-large">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-large h-[90%]">
             <div class="flex flex-col gap-medium">
                 <div>
                     <span class="text-size-sub-header font-semibold uppercase text-skin-primary">${section.badge}</span>
@@ -105,9 +105,9 @@ export function renderAboutSwiper() {
                 </div>
             </div>
                 <div class="hidden md:block rounded-3xl overflow-hidden h-full shadow-lg border-2 border-black relative group">
-                    <img src="${section.image}" class="w-full h-full object-cover" alt="preview">
-                    <div class="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end justify-center pb-4">
-                         <span class="text-[9px] text-white font-bold uppercase tracking-widest">${section.imageOverlay || ''}</span>
+                    <img src="${section.image}" class="w-full h-full object-cover" alt="preview" loading="lazy">
+                    <div class="absolute inset-0 bg-linear-to-t from-black/50 to-transparent flex items-end justify-center">
+                         <span class="text-size-accent mb-large text-white font-bold uppercase tracking-widest">${section.imageOverlay || ''}</span>
                     </div>
                 </div>
             </div>
@@ -115,9 +115,51 @@ export function renderAboutSwiper() {
     `).join('');
 }
 
+export function renderAboutPageContent() {
+    const container = document.querySelector('#about-content-container');
+    if (!container) return;
+
+    container.innerHTML = aboutSectionsData.map((section, index) => {
+        const textContent = `
+            <div class="flex flex-col justify-center lg:w-1/2" data-aos="fade-${section.imageOnRight ? 'right' : 'left'}">
+                <div class="mb-6">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-skin-primary/10 text-skin-primary text-size-accent font-bold uppercase tracking-wider mb-4 border border-skin-primary/20">${section.badge}</span>
+                    <h2 class="text-size-header font-black text-skin-accent mb-4">${section.title}</h2>
+                    <p class="text-size-body text-skin-accent-2 font-medium leading-relaxed">${section.description}</p>
+                </div>
+                <div class="grid grid-cols-1 gap-4">
+                    ${section.cards.map((card, idx) => createAboutCard(card, idx)).join('')}
+                </div>
+            </div>
+        `;
+
+        const imageContent = `
+            <div class="relative group lg:w-1/2" data-aos="fade-${section.imageOnRight ? 'left' : 'right'}">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 aspect-video lg:aspect-auto lg:h-full">
+                    <img src="${section.image}" alt="${section.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-size-accent font-bold uppercase tracking-widest rounded-xl shadow-lg">
+                            ${section.imageOverlay || ''}
+                        </span>
+                    </div>
+                </div>
+                <!-- Decorative background blob -->
+                <div class="absolute -z-10 inset-0 ${section.imageOnRight ? 'translate-x-4' : '-translate-x-4'} translate-y-4 bg-skin-primary/20 rounded-3xl blur-xl transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6 group-hover:bg-skin-primary/30"></div>
+            </div>
+        `;
+
+        return `
+            <div class="flex flex-col ${section.imageOnRight ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-large lg:gap-16 items-stretch w-full py-8 lg:py-12">
+                ${textContent}
+                ${imageContent}
+            </div>
+        `;
+    }).join('');
+}
+
 /**
  * INITIALIZATION
  */
-document.addEventListener('DOMContentLoaded', () => {
-    renderAboutSwiper();
-});
+// renderAboutSwiper and renderAboutPageContent are now called by main.js
+// to ensure proper initialization order.

@@ -97,7 +97,5 @@ export function renderInnovation() {
   }
 }
 
-// Initialize on DOM Load
-document.addEventListener('DOMContentLoaded', () => {
-  renderInnovation();
-});
+// renderInnovation is now called by main.js
+

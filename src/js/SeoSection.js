@@ -90,6 +90,4 @@ export function renderSeoCards() {
         grid.insertAdjacentHTML('beforeend', cardHtml);
     });
 }
-document.addEventListener('DOMContentLoaded', () => {
-    renderSeoCards();
-});
+// renderSeoCards is now called by main.js

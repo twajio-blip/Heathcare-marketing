@@ -126,7 +126,6 @@ export function initTestimonialSwiper() {
 }
 
 // Initialization Flow
-document.addEventListener('DOMContentLoaded', () => {
-    renderTestimonials();
-    initTestimonialSwiper();
-});
+// renderTestimonials and initTestimonialSwiper are now called by main.js
+// to ensure proper initialization order.
+

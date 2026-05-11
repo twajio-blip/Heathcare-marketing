@@ -8,6 +8,17 @@ import 'swiper/css/navigation';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+// Import Dynamic Renderers
+import { renderAboutSwiper, renderAboutPageContent } from './js/about.js';
+import { renderServices, initServicesSwiper } from './js/service.js';
+import { renderTestimonials, initTestimonialSwiper } from './js/clint.js';
+import { renderTabs, initWhoWeHelpTabs } from './js/WhoWeHelp.js';
+import { renderSeoCards } from './js/SeoSection.js';
+import { renderInnovation } from './js/inovation.js';
+import { renderProcess } from './js/OurProcess.js';
+import { renderWorks } from './js/OurWork.js';
+import { renderResources } from './js/Resource&Isights.js';
+
 
 
 // Run loader when DOM is ready
@@ -112,29 +123,46 @@ export function initThirdPartyLibraries() {
   // Initialize AOS
   AOS.init({ once: true, offset: 50, duration: 800 });
 
+  // 1. Render All Dynamic Content
+  renderAboutSwiper();
+  renderAboutPageContent();
+  renderServices();
+  renderTestimonials();
+  renderTabs();
+  renderSeoCards();
+  renderInnovation();
+  renderProcess();
+  renderWorks();
+  renderResources();
+
+  // 2. Initialize Interactive Components
+  initWhoWeHelpTabs();
+
+  // 3. Initialize Swipers
   if (document.querySelector('.aboutSwiper')) {
     new Swiper('.aboutSwiper', {
       modules: [Pagination, Autoplay, Navigation],
       slidesPerView: 1,
       spaceBetween: 30,
       loop: true,
+      grabCursor: true,
+      watchSlidesProgress: true,
+      // Removed loopedSlides: 4 to let Swiper 12 handle the loop correctly
       autoplay: {
-        delay: 300000,
+        delay: 500000, // Reduced from 300000 to 5000 for better UX
+        disableOnInteraction: false,
       },
       pagination: {
         el: '.about-pagination',
         clickable: true,
-        // This ensures the "Real Index" is used for the bullets
-        bulletActiveClass: 'swiper-pagination-bullet-active',
       },
-
-      navigation: {
-        nextEl: '.about-next',
-        prevEl: '.about-prev',
-      },
-      speed: 800,
+      speed: 600,
     });
   }
+
+  // Initialize other swipers from their respective modules
+  initServicesSwiper();
+  initTestimonialSwiper();
 
   if (document.querySelector('.approachSwiper')) {
     new Swiper('.approachSwiper', {

@@ -319,13 +319,16 @@ html {
 /* ================================
        SWIPER CUSTOM STYLES
        ================================ */
-.swiper-slide {
-  height: auto;
+.swiper-wrapper {
+  will-change: transform;
 }
 
-.swiper-pagination-bullet-active {
-  background: var(--color-skin-primary) !important;
+.swiper-slide {
+  height: auto;
+  will-change: transform, opacity;
 }
+
+
 
 /* Testimonial Middle Card Effect */
 @media (min-width: 1024px) {
@@ -347,28 +350,30 @@ html {
   }
 }
 
-/* 1. Style for all bullets (Inactive) */
-.swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  background-color: #94a3b8;
-  /* slate-400 */
-  opacity: 0.6;
-  border-radius: 99px;
-  /* Keeps them circular */
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  /* Smooth expansion */
+/* 1. Container alignment */
+.about-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px; /* Optional: gives you precise control over spacing */
 }
 
-/* 2. Style for the Active bullet (The Long Pill) */
-.swiper-pagination-bullet-active {
+/* 2. Style for all bullets (Inactive) */
+.about-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #94a3b8; /* slate-400 */
+  opacity: 0.6;
+  border-radius: 99px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0 !important; /* Removes Swiper's default margin to use flex gap */
+}
+
+/* 3. Style for the Active bullet (The Long Pill) */
+.about-pagination .swiper-pagination-bullet-active {
   width: 28px !important;
-  /* This makes it "long" */
-  background-color: #0d9488 !important;
-  /* teal-600 */
+  background-color: #0d9488 !important; /* teal-600 or var(--color-skin-primary) */
   opacity: 1;
-  border-radius: 99px !important;
-  /* Keeps the ends rounded */
 }
 
 /* servicesSwiper & testimonialSwiper – equal-height cards */

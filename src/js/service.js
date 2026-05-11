@@ -69,7 +69,7 @@ export function renderServices() {
           
           <div class="absolute inset-0 bg-linear-to-tr from-skin-primary/5 via-transparent to-skin-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2.5rem]"></div>
 
-          <div class="absolute -top-8 left-1/2 -translate-x-1/2 z-20 w-16 h-16 rounded-2xl bg-white shadow-lg text-skin-primary flex items-center justify-center group-hover:bg-skin-primary group-hover:text-white group-hover:rotate-6 transition-all duration-500 border border-skin-primary/10">
+          <div class="absolute -top-8 left-1/2 -translate-x-1/2 z-20 w-16 h-16 rounded-2xl bg-skin-background shadow-lg text-skin-primary flex items-center justify-center group-hover:bg-skin-primary! group-hover:text-skin-primary-2 group-hover:rotate-6 transition-all duration-500 border border-skin-primary/10">
             <i class="fa-solid ${service.icon} text-size-header"></i>
           </div>
 
@@ -130,7 +130,6 @@ export function initServicesSwiper() {
 }
 
 // Initialization Flow
-document.addEventListener('DOMContentLoaded', () => {
-    renderServices();
-    initServicesSwiper();
-});
+// renderServices and initServicesSwiper are now called by main.js
+// to ensure proper initialization order.
+

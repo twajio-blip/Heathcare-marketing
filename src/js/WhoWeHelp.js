@@ -262,7 +262,5 @@ export function initWhoWeHelpTabs() {
 }
 
 // Initialization Flow
-document.addEventListener('DOMContentLoaded', () => {
-  renderTabs();
-  initWhoWeHelpTabs();
-});
+// renderTabs and initWhoWeHelpTabs are now called by main.js
+

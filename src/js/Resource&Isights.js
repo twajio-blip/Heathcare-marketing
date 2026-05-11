@@ -56,61 +56,54 @@ export function renderResources() {
   if (!container) return;
 
   container.innerHTML = resourceData.map((item, index) => {
-    // Color rhythm based on index for floating orbs
     const primaryOrbColor = index % 2 === 0 ? 'bg-skin-primary' : 'bg-skin-primary-2';
     const accentOrbColor = index % 2 === 0 ? 'bg-skin-accent-4' : 'bg-skin-secondary';
 
     return `
         <a href="#"
-            class="group relative bg-white transition-all duration-700 ease-out rounded-[2.5rem] overflow-hidden shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-skin-primary/10 hover:-translate-y-3 border border-skin-primary/30 p-huge min-h-[400px] flex flex-col justify-between"
+            class="group relative bg-white rounded-[2.5rem] overflow-hidden border border-skin-primary/20 p-huge min-h-[400px] flex flex-col justify-between  
+           shadow-xl shadow-skin-accent-2/10 
+           hover:shadow-2xl hover:shadow-skin-primary/15 
+           hover:-translate-y-6 transition-all duration-500 ease-in-out"
             data-aos="fade-up" data-aos-delay="${item.delay}">
             
-            <!-- NEW: Pure CSS "Digital Glass" Background System -->
             <div class="absolute inset-0 -z-10 overflow-hidden select-none pointer-events-none">
-                <!-- Soft Canvas Base -->
-                <div class="absolute inset-0 bg-linear-to-br from-slate-50/50 via-white to-slate-50/30"></div>
+                <div class="absolute inset-0 bg-linear-to-br from-slate-50 via-white to-slate-50/50"></div>
                 
-                <!-- Floating Animated Orb 1 (Expanded on hover) -->
-                <div class="absolute -top-24 -right-24 w-80 h-80 ${primaryOrbColor}/5 rounded-full blur-[80px] group-hover:scale-150 group-hover:${primaryOrbColor}/10 transition-all duration-1000 ease-in-out"></div>
+                <div class="absolute -top-32 -right-32 w-96 h-96 ${primaryOrbColor} opacity-[0.03] rounded-full blur-[100px] transition-all duration-1000 ease-in-out group-hover:opacity-[0.08] group-hover:-translate-x-12 group-hover:translate-y-12 group-hover:scale-125" style="will-change: transform, opacity;"></div>
                 
-                <!-- Floating Animated Orb 2 (Drifts slightly) -->
-                <div class="absolute -bottom-24 -left-24 w-80 h-80 ${accentOrbColor}/5 rounded-full blur-[80px] group-hover:scale-150 group-hover:${accentOrbColor}/10 transition-all duration-1000 ease-in-out delay-100"></div>
+                <div class="absolute -bottom-32 -left-32 w-96 h-96 ${accentOrbColor} opacity-[0.03] rounded-full blur-[100px] transition-all duration-1000 ease-in-out delay-75 group-hover:opacity-[0.08] group-hover:translate-x-12 group-hover:-translate-y-12 group-hover:scale-125" style="will-change: transform, opacity;"></div>
 
-                <!-- Subtle Clinical Grid Motif -->
-                <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#2563eb 1px, transparent 1px); background-size: 30px 30px;"></div>
+                <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(var(--color-skin-primary) 0.5px, transparent 0.5px); background-size: 40px 40px;"></div>
             </div>
 
-            <!-- Left Premium Accent Bar (Full height reveal on hover) -->
-            <div class="absolute top-0 left-0 w-1.5 h-0 bg-skin-primary group-hover:h-full transition-all duration-700 ease-in-out shadow-lg shadow-skin-primary/20"></div>
+            <div class="absolute top-0 left-0 w-1 h-0 bg-skin-primary group-hover:h-full transition-all duration-700 ease-in-out" style="will-change: height;"></div>
 
             <div class="relative z-10">
-              <!-- Re-styled Category Tag -->
-              <div class="text-size-body inline-flex items-center px-medium py-1.5 rounded-xl bg-skin-primary/5 text-skin-primary text-size-accent font-black uppercase mb-large group-hover:bg-skin-primary group-hover:text-white transition-all duration-500 transform group-hover:translate-x-1">
+              <div class="text-[10px] inline-flex items-center px-4 py-1.5 rounded-xl bg-skin-primary/5 text-skin-primary font-black uppercase mb-large transition-all duration-500 group-hover:bg-skin-primary group-hover:text-white group-hover:scale-105 origin-left">
                 ${item.category}
               </div>
               
-              <h3 class="text-size-header font-black text-skin-accent leading-tight mb-large group-hover:text-skin-primary transition-colors duration-300">
+              <h3 class="text-2xl font-black text-skin-accent leading-tight mb-large group-hover:text-skin-primary transition-colors duration-500">
                 ${item.title}
               </h3>
               
-              <!-- Dynamic Separator -->
-              <div class="w-12 h-1 bg-skin-primary/20 rounded-full mb-medium group-hover:w-28 group-hover:bg-skin-primary/40 transition-all duration-700 ease-in-out"></div>
+              <div class="w-10 h-1 bg-skin-primary/10 rounded-full mb-medium group-hover:w-24 group-hover:bg-skin-primary/30 transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1)"></div>
               
-              <p class="text-size-body text-skin-accent-2 font-medium leading-relaxed line-clamp-3">
+              <p class="text-sm text-slate-500 font-medium leading-relaxed line-clamp-3">
                 ${item.description}
               </p>
             </div>
 
-            <div class="relative z-10 mt-huge flex items-center justify-between border-t border-slate-100 pt-huge">
-              <div class="flex items-center gap-small">
-                <span class="text-size-body font-bold text-skin-accent-4 uppercase tracking-widest">${item.date}</span>
-                <span class="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-skin-primary/30 transition-colors duration-300"></span>
-                <span class="text-size-body font-bold text-skin-accent-4 uppercase tracking-widest">${item.extraInfo}</span>
+            <div class="relative z-10 mt-huge flex items-center justify-between border-t border-slate-100 pt-8">
+              <div class="flex items-center gap-3">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">${item.date}</span>
+                <span class="w-1 h-1 rounded-full bg-slate-200"></span>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">${item.extraInfo}</span>
               </div>
               
-              <!-- Pulse-style Read More Button -->
-              <div class="w-10 h-10 rounded-full bg-skin-primary/10 text-skin-primary flex items-center justify-center transform group-hover:translate-x-2 group-hover:bg-skin-primary group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-lg group-hover:shadow-skin-primary/30">
-                <i class="fa-solid fa-plus text-xs transform group-hover:rotate-90 transition-transform duration-700"></i>
+              <div class="w-12 h-12 rounded-full bg-skin-primary/5 text-skin-primary flex items-center justify-center transition-all duration-500 group-hover:bg-skin-primary group-hover:text-white group-hover:rotate-[360deg] shadow-sm">
+                <i class="fa-solid fa-plus transition-transform duration-700"></i>
               </div>
             </div>
         </a>
