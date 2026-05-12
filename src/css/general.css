@@ -2,7 +2,6 @@
    THEME BASE LAYER
    ================================ */
 @layer base {
-
   /* ---------- Animations ---------- */
 
   @keyframes gradient {
@@ -41,34 +40,33 @@
     animation: fadeIn 0.4s ease-out forwards;
   }
 
-@keyframes gradient-flow {
-  0% {
-    background-position: 100% 50%;
+  @keyframes gradient-flow {
+    0% {
+      background-position: 100% 50%;
+    }
+    50% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
   }
-  50% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
 
   .animate-bg-flow {
     background-size: 200% 200% !important;
     animation: gradient-flow 4s ease infinite;
   }
 
-
   /* Body */
   body {
     @apply bg-white overflow-x-hidden;
+    -webkit-tap-highlight-color: transparent;
   }
 
   /* Custom Utilities */
   .container-custom {
     @apply w-full max-w-7xl mx-auto px-medium sm:px-large lg:px-huge py-16 lg:py-24;
   }
-
 
   /* ---------- Buttons ---------- */
 
@@ -105,7 +103,7 @@
   }
 
   .tab-btn {
-    @apply relative bg-white/50 text-skin-accent-2 border border-black/40 px-medium py-small rounded-full text-size-accent hover:bg-white hover:text-skin-primary hover:shadow-md transition-all duration-300 hover:scale-105;
+    @apply relative bg-white/50 text-skin-accent-2 border border-black/40 px-small md:px-medium py-small rounded-xl text-nowrap text-size-accent hover:bg-white hover:text-skin-primary hover:shadow-md transition-all duration-300 hover:scale-105;
   }
 
   .tab-btn.active {
@@ -120,10 +118,10 @@
     @apply h-[calc(100%-15px)] w-[calc(100%-15px)] bg-white rounded-full grid place-items-center text-[25px] md:text-[35px] text-skin-secondary;
   }
 
-#nav-secondary-wrapper{
+  #nav-secondary-wrapper {
     transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: height;
-}
+  }
 
   /* Cart Button */
   .btn-cart {
@@ -299,7 +297,7 @@ html {
 }
 
 .nav-link-hover::after {
-  content: '';
+  content: "";
   @apply absolute bottom-0 right-0 w-0 h-[2px] bg-skin-primary-2 transition-all duration-300 ease-in-out;
 }
 
@@ -328,12 +326,12 @@ html {
   will-change: transform, opacity;
 }
 
-
-
 /* Testimonial Middle Card Effect */
 @media (min-width: 1024px) {
   .testimonialSwiper .swiper-slide {
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    transition:
+      transform 0.4s ease,
+      opacity 0.4s ease;
     transform: scale(0.85);
     /* Side cards smaller */
     opacity: 0.7;
@@ -345,7 +343,9 @@ html {
     opacity: 1;
     z-index: 10;
     position: relative;
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    box-shadow:
+      0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
     border-color: transparent;
   }
 }
@@ -385,6 +385,22 @@ html {
 .servicesSwiper .swiper-slide,
 .testimonialSwiper .swiper-slide {
   @apply h-auto transition-all duration-700;
+}
+
+/* Services Pagination styling */
+.services-pagination {
+  @apply flex items-center justify-center gap-2 mt-6;
+  position: static !important;
+  width: auto !important;
+}
+
+.services-pagination .swiper-pagination-bullet {
+  @apply w-2.5 h-2.5 bg-slate-300 opacity-60 transition-all duration-300 rounded-full cursor-pointer;
+  margin: 0 !important;
+}
+
+.services-pagination .swiper-pagination-bullet-active {
+  @apply w-8 bg-skin-primary opacity-100 rounded-full;
 }
 
 /* Testimonial Centered Focus Effect */

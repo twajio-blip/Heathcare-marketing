@@ -126,7 +126,7 @@
       </div>
       <div id="who-we-help" class="container-custom">
         <!-- Header -->
-        <div class="flex flex-col text-center max-w-2xl mx-auto mb-huge gap-medium px-medium" data-aos="fade-up">
+        <div class="flex flex-col text-center max-w-2xl mx-auto mb-large gap-medium px-medium" data-aos="fade-up">
           <div class="animate-gradient">
             <h2 class="text-size-title">Who We Help</h2>
           </div>
@@ -139,20 +139,19 @@
 
         <!-- Tabs Menu -->
         <div id="tabs-menu"
-          class="grid grid-cols-2 xs:grid-cols-4 md:flex flex-wrap justify-center gap-small md:gap-medium mb-huge"
+          class="flex flex-nowrap overflow-x-auto pb-4 no-scrollbar md:pb-0 md:flex-wrap md:justify-center gap-small md:gap-medium mb-large md:overflow-visible"
           data-aos="fade-up" data-aos-delay="100">
         </div>
 
         <!-- Tabs Content -->
-        <div id="tabs-content-root" class="overflow-visible relative min-h-[400px]" data-aos="fade-up"
-          data-aos-delay="200">
+        <div id="tabs-content-root" class="overflow-visible relative" data-aos="fade-up" data-aos-delay="200">
         </div>
       </div>
     </section>
     <!-- 3. Who We Help Section END -->
 
     <!-- 4. SERVICES SECTION START -->
-    <section id="services" class="relative">
+    <section id="services">
       <div class="container-custom">
         <div class="flex flex-col  text-center max-w-2xl mx-auto px-medium gap-medium" data-aos="fade-up">
           <!-- Heading -->
@@ -172,7 +171,7 @@
         </div>
 
         <!-- Services Swiper Container -->
-        <div class="overflow-hidden px-medium" data-aos="fade-up" data-aos-delay="100">
+        <div class="overflow-visible" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper servicesSwiper">
             <div id="services-swiper-wrapper" class="swiper-wrapper pt-8">
               <!-- Dynamically populated by service.js -->
@@ -180,18 +179,7 @@
             <!-- Pagination & Navigation Controls -->
             <div class="flex flex-col items-center mt-small">
               <!-- Desktop Pagination dots -->
-              <div class="swiper-pagination services-pagination static! hidden lg:block"></div>
-              <!-- Mobile Prev/Next Buttons -->
-              <div class="flex lg:hidden items-center gap-6">
-                <button
-                  class="services-prev w-14 h-14 rounded-full border-2 border-skin-primary flex items-center justify-center text-skin-primary hover:bg-skin-primary hover:text-white transition-all duration-300 cursor-pointer active:scale-95">
-                  <i class="fa-solid fa-arrow-left text-large"></i>
-                </button>
-                <button
-                  class="services-next w-14 h-14 rounded-full border-2 border-skin-primary flex items-center justify-center text-skin-primary hover:bg-skin-primary hover:text-white transition-all duration-300 cursor-pointer active:scale-95">
-                  <i class="fa-solid fa-arrow-right text-large"></i>
-                </button>
-              </div>
+              <div class="swiper-pagination services-pagination hidden lg:block"></div>
             </div>
           </div>
           <!-- end outer shadow-clip wrapper -->

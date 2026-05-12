@@ -1,8 +1,7 @@
 import Swiper from 'swiper';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
 const servicesData = [
     {
@@ -64,13 +63,13 @@ export function renderServices() {
 
     servicesData.forEach(service => {
         const slideHtml = `
-      <div class="swiper-slide pt-huge pb-medium group">
-        <div class="h-full min-h-[300px] w-full bg-skin-primary/5 border border-skin-primary/10 p-medium md:p-large rounded-[2.5rem] transition-all duration-500 relative flex flex-col items-center text-center hover:-translate-y-2 hover:bg-white hover:border-skin-primary/20 hover:shadow-2xl hover:shadow-skin-primary/10">
+      <div class="swiper-slide pt-huge pb-medium">
+        <div class="group h-full min-h-[300px] w-full bg-skin-primary/5 border border-skin-primary/10 p-medium md:p-large rounded-[2.5rem] transition-all duration-500 relative flex flex-col items-center text-center hover:-translate-y-2 hover:bg-white hover:border-skin-primary/20 hover:shadow-2xl hover:shadow-skin-primary/10">
           
           <div class="absolute inset-0 bg-linear-to-tr from-skin-primary/5 via-transparent to-skin-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2.5rem]"></div>
-
-          <div class="absolute -top-8 left-1/2 -translate-x-1/2 z-20 w-16 h-16 rounded-2xl bg-skin-background shadow-lg text-skin-primary flex items-center justify-center group-hover:bg-skin-primary! group-hover:text-skin-primary-2 group-hover:rotate-6 transition-all duration-500 border border-skin-primary/10">
-            <i class="fa-solid ${service.icon} text-size-header"></i>
+ 
+          <div class="absolute -top-8 left-1/2 -translate-x-1/2 z-20 w-16 h-16 rounded-2xl bg-skin-background shadow-lg text-skin-primary flex items-center justify-center group-hover:bg-skin-primary group-hover:text-skin-primary-2! group-active:text-skin-primary-2! group-focus:text-skin-primary-2! group-hover:rotate-6 transition-all duration-500 border border-skin-primary/10">
+            <i class="fa-solid ${service.icon} text-size-header transition-colors duration-500"></i>
           </div>
 
           <div class="mt-10 relative z-10 flex flex-col items-center grow">
@@ -100,30 +99,39 @@ export function initServicesSwiper() {
     const swiperEl = document.querySelector('.servicesSwiper');
     if (!swiperEl) return;
 
+    // Helper to get pixel value from your CSS variables if you want it dynamic
+    const getSpacing = (prop) => {
+        return parseInt(getComputedStyle(document.documentElement).getPropertyValue(`--spacing-${prop}`)) || 20;
+    };
+
     new Swiper('.servicesSwiper', {
-        modules: [Pagination, Navigation],
+        modules: [Pagination, Autoplay],
         slidesPerView: 1,
-        spaceBetween: 20,
+        // Mobile: px-medium
+        spaceBetween: getSpacing('medium'), 
         loop: true,
+        autoplay: {
+            delay: 300000,
+            disableOnInteraction: false,
+        },
         pagination: {
             el: '.services-pagination',
             clickable: true,
         },
-        navigation: {
-            nextEl: '.services-next',
-            prevEl: '.services-prev',
-        },
         breakpoints: {
-            540: {
-                slidesPerView: 2,
-                spaceBetween: 20,
+            // Tablet: px-large (using sm: 640px to match Tailwind default)
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20
             },
-            720: {
+            // Desktop: px-huge (using lg: 1024px to match Tailwind default)
+            1024: {
                 slidesPerView: 2,
-                spaceBetween: 30,
+                spaceBetween: 30
             },
-            1140: {
+            1280: {
                 slidesPerView: 3,
+                spaceBetween: 40
             }
         }
     });

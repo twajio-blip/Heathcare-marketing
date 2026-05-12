@@ -26,7 +26,7 @@ const helperData = [
   },
   {
     id: "tab-clinics",
-    title: "Dental Practices",
+    title: "Dental",
     heading: "Dominate the local pack and",
     highlight: "fill your dental chairs.",
     desc: "Targeted digital strategies specifically crafted to attract new patients and build a loyal patient base for your clinic.",
@@ -64,7 +64,7 @@ const helperData = [
   },
   {
     id: "tab-startups",
-    title: "Healthcare Startups",
+    title: "Startups",
     heading: "Accelerate user acquisition for your",
     highlight: "healthtech startup.",
     desc: "Lean, aggressive growth strategies to help you scale fast, secure funding, and capture market share quickly.",
@@ -83,7 +83,7 @@ const helperData = [
   },
   {
     id: "tab-diagnostic",
-    title: "Diagnostic Centers",
+    title: "Diagnostic",
     heading: "Increase booking volume for your",
     highlight: "essential diagnostic services.",
     desc: "Position your center as the preferred, trusted choice for both referring physicians and direct patients in your region.",
@@ -121,7 +121,7 @@ const helperData = [
   },
   {
     id: "tab-device",
-    title: "Medical Device & Tech",
+    title: "Device&Tech",
     heading: "Connect your innovations with the",
     highlight: "right decision-makers.",
     desc: "B2B marketing strategies designed specifically for complex sales cycles in the modern healthcare industry.",
@@ -193,14 +193,14 @@ export function renderTabs() {
         </div>
 
         <!-- Right Image -->
-        <div class="hidden md:block lg:w-1/2 w-full relative overflow-visible">
-          <div class="rounded-[2.5rem] overflow-hidden shadow-lg bg-slate-100 aspect-4/3 relative group border border-slate-200/50">
-            <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+        <div class="hidden md:block lg:w-1/2 w-full shadow-lg relative overflow-visible rounded-2xl">
+          <div class="rounded-3xl overflow-hidden bg-slate-100 aspect-4/3 relative group border border-slate-200/50">
+            <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-1000" />
             <div class="absolute inset-0 bg-linear-to-t from-slate-900/30 to-transparent pointer-events-none"></div>
           </div>
 
           <!-- Stat Card -->
-          <div class="overflow-visible hidden sm:block absolute -bottom-medium -left-medium bg-white/90 backdrop-blur-xl p-medium rounded-2xl shadow-lg border border-white z-10 animate-bounce hover:scale-105 transition-transform duration-500">
+          <div class="overflow-visible hidden sm:block absolute bottom-0 left-0 xl:-left-medium bg-white/90 backdrop-blur-xl p-medium rounded-2xl shadow-lg border border-white z-99 animate-bounce hover:scale-105 transition-transform duration-500">
             <div class="flex items-center gap-small">
               <div class="w-12 h-12 rounded-xl bg-linear-to-br ${item.color} flex items-center justify-center text-white shadow-lg shadow-teal-500/30">
                 <i class="fa-solid ${item.icon} text-size-medium"></i>
